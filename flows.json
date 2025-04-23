@@ -1,0 +1,126 @@
+[
+    {
+        "id": "4f197a1ac03259d0",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a4a67dfe31634376",
+        "type": "tibber-api-endpoint",
+        "queryUrl": "https://api.tibber.com/v1-beta/gql",
+        "feedConnectionTimeout": 30,
+        "feedTimeout": "50",
+        "queryRequestTimeout": 30,
+        "name": "tibber_api"
+    },
+    {
+        "id": "11fd522141c5a65e",
+        "type": "tibber-data",
+        "z": "4f197a1ac03259d0",
+        "name": "tibber",
+        "active": true,
+        "apiEndpointRef": "a4a67dfe31634376",
+        "queryName": "getConsumption",
+        "homeId": "12",
+        "energyResolution": "HOURLY",
+        "lastCount": 10,
+        "x": 470,
+        "y": 380,
+        "wires": [
+            [
+                "9b647384622bbf6a"
+            ]
+        ]
+    },
+    {
+        "id": "9b647384622bbf6a",
+        "type": "debug",
+        "z": "4f197a1ac03259d0",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "94aeb8b24b5ffbab",
+        "type": "tibber-query",
+        "z": "4f197a1ac03259d0",
+        "name": "name",
+        "active": true,
+        "apiEndpointRef": "a4a67dfe31634376",
+        "x": 490,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dc53eac36c83c1d7",
+        "type": "tibber-feed",
+        "z": "4f197a1ac03259d0",
+        "name": "tib",
+        "active": true,
+        "apiEndpointRef": "a4a67dfe31634376",
+        "homeId": "12",
+        "timestamp": "1",
+        "power": "1",
+        "lastMeterConsumption": "1",
+        "accumulatedConsumption": "1",
+        "accumulatedProduction": "1",
+        "accumulatedConsumptionLastHour": "1",
+        "accumulatedProductionLastHour": "1",
+        "accumulatedCost": "1",
+        "accumulatedReward": "1",
+        "currency": "1",
+        "minPower": "1",
+        "averagePower": "1",
+        "maxPower": "1",
+        "powerProduction": "1",
+        "minPowerProduction": "1",
+        "maxPowerProduction": "1",
+        "lastMeterProduction": "1",
+        "powerFactor": "1",
+        "voltagePhase1": "1",
+        "voltagePhase2": "1",
+        "voltagePhase3": "1",
+        "currentL1": "1",
+        "currentL2": "1",
+        "currentL3": "1",
+        "signalStrength": "1",
+        "x": 470,
+        "y": 560,
+        "wires": [
+            [
+                "2f56a69a08bf6d1c"
+            ]
+        ]
+    },
+    {
+        "id": "2f56a69a08bf6d1c",
+        "type": "debug",
+        "z": "4f197a1ac03259d0",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1030,
+        "y": 540,
+        "wires": []
+    }
+]
