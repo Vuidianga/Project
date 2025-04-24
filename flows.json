@@ -17,63 +17,35 @@
         "name": "tibber_api"
     },
     {
-        "id": "6b018cdbf1a675b5",
-        "type": "python-function",
+        "id": "0315b7b921baf9a1",
+        "type": "pythonshell in",
         "z": "4f197a1ac03259d0",
         "name": "",
-        "func": "node.error(\"Error msg\", msg)",
-        "outputs": 1,
-        "x": 620,
+        "pyfile": "C:\\Users\\asant\\.node-red\\projects\\thws_industrial_project\\try.py",
+        "virtualenv": "",
+        "continuous": true,
+        "stdInData": false,
+        "x": 560,
         "y": 160,
         "wires": [
             [
-                "4a92903ddb35e520"
+                "abb051a19191b4c4"
             ]
         ]
     },
     {
-        "id": "051abc0a54b61453",
-        "type": "inject",
-        "z": "4f197a1ac03259d0",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 360,
-        "y": 140,
-        "wires": [
-            [
-                "6b018cdbf1a675b5"
-            ]
-        ]
-    },
-    {
-        "id": "4a92903ddb35e520",
+        "id": "abb051a19191b4c4",
         "type": "debug",
         "z": "4f197a1ac03259d0",
-        "name": "debug 2",
+        "name": "debug 1",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
+        "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 860,
+        "x": 800,
         "y": 160,
         "wires": []
     }
