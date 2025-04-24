@@ -28,8 +28,22 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 800,
-        "y": 160,
+        "x": 480,
+        "y": 140,
         "wires": []
+    },
+    {
+        "id": "f7469faf53d226f4",
+        "type": "status",
+        "z": "4f197a1ac03259d0",
+        "name": "",
+        "scope": null,
+        "x": 200,
+        "y": 140,
+        "wires": [
+            [
+                "abb051a19191b4c4"
+            ]
+        ]
     }
 ]
