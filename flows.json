@@ -17,23 +17,6 @@
         "name": "tibber_api"
     },
     {
-        "id": "0315b7b921baf9a1",
-        "type": "pythonshell in",
-        "z": "4f197a1ac03259d0",
-        "name": "",
-        "pyfile": "C:\\Users\\asant\\.node-red\\projects\\thws_industrial_project\\try.py",
-        "virtualenv": "",
-        "continuous": true,
-        "stdInData": false,
-        "x": 560,
-        "y": 160,
-        "wires": [
-            [
-                "abb051a19191b4c4"
-            ]
-        ]
-    },
-    {
         "id": "abb051a19191b4c4",
         "type": "debug",
         "z": "4f197a1ac03259d0",
