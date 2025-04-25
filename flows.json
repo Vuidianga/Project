@@ -26,19 +26,6 @@
         "name": ""
     },
     {
-        "id": "38d352d72f0ee9d6",
-        "type": "tibber-query",
-        "z": "4f197a1ac03259d0",
-        "name": "TibberQuery",
-        "active": true,
-        "apiEndpointRef": "75e3df28d4239b1f",
-        "x": 510,
-        "y": 180,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "95656262bdebca0c",
         "type": "pythonshell in",
         "z": "4f197a1ac03259d0",
