@@ -29,7 +29,7 @@
         "y": 80,
         "wires": [
             [
-                "c0071d0b8b153941"
+                "296e111b4f6789ff"
             ]
         ]
     },
@@ -63,7 +63,7 @@
         "y": 200,
         "wires": [
             [
-                "c0071d0b8b153941"
+                "73bb5d7bd0a164b0"
             ]
         ]
     },
@@ -80,7 +80,7 @@
         "y": 440,
         "wires": [
             [
-                "c0071d0b8b153941"
+                "5d9142b88d59b4dc"
             ]
         ]
     },
@@ -106,7 +106,7 @@
         "type": "pythonshell in",
         "z": "4f197a1ac03259d0",
         "name": "get_market_price",
-        "pyfile": "",
+        "pyfile": "C:\\Users\\asant\\.node-red\\projects\\thws_industrial_project\\get_market_price.py",
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
@@ -114,7 +114,7 @@
         "y": 260,
         "wires": [
             [
-                "c0071d0b8b153941"
+                "37966c3a5d5a8b7f"
             ]
         ]
     },
@@ -131,7 +131,7 @@
         "y": 360,
         "wires": [
             [
-                "c0071d0b8b153941"
+                "2c8422cf73f6e122"
             ]
         ]
     },
@@ -156,13 +156,13 @@
         "id": "c0071d0b8b153941",
         "type": "pythonshell in",
         "z": "4f197a1ac03259d0",
-        "name": "sort_data",
+        "name": "combine_and_sort",
         "pyfile": "",
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
-        "x": 1220,
-        "y": 140,
+        "x": 1310,
+        "y": 160,
         "wires": [
             [
                 "8fcf40321ecd367a"
@@ -178,8 +178,8 @@
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
-        "x": 1430,
-        "y": 140,
+        "x": 1550,
+        "y": 160,
         "wires": [
             [
                 "0011f92d31acbd73"
@@ -198,8 +198,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1780,
-        "y": 140,
+        "x": 1900,
+        "y": 160,
         "wires": []
     },
     {
@@ -208,7 +208,7 @@
         "z": "4f197a1ac03259d0",
         "name": "",
         "pauseType": "delay",
-        "timeout": "5",
+        "timeout": "1",
         "timeoutUnits": "seconds",
         "rate": "1",
         "nbRateUnits": "1",
@@ -280,8 +280,8 @@
         "z": "4f197a1ac03259d0",
         "name": "data_to_logic unit",
         "info": "",
-        "x": 1780,
-        "y": 80,
+        "x": 1880,
+        "y": 60,
         "wires": []
     },
     {
@@ -349,8 +349,8 @@
         "strings": true,
         "include_empty_strings": "",
         "include_null_values": "",
-        "x": 1630,
-        "y": 140,
+        "x": 1750,
+        "y": 160,
         "wires": [
             [
                 "0af3b0363a337d11"
@@ -366,8 +366,170 @@
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
-        "x": 860,
+        "x": 880,
         "y": 140,
+        "wires": [
+            [
+                "151d118eb8484cb0"
+            ]
+        ]
+    },
+    {
+        "id": "05d0ab31e2ae82c4",
+        "type": "debug",
+        "z": "4f197a1ac03259d0",
+        "name": "test",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1370,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "37966c3a5d5a8b7f",
+        "type": "csv",
+        "z": "4f197a1ac03259d0",
+        "name": "market_prices",
+        "spec": "rfc",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\r\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 1080,
+        "y": 260,
+        "wires": [
+            [
+                "c0071d0b8b153941",
+                "05d0ab31e2ae82c4"
+            ]
+        ]
+    },
+    {
+        "id": "73bb5d7bd0a164b0",
+        "type": "csv",
+        "z": "4f197a1ac03259d0",
+        "name": "grid_prices",
+        "spec": "rfc",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\r\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 1070,
+        "y": 200,
+        "wires": [
+            [
+                "c0071d0b8b153941"
+            ]
+        ]
+    },
+    {
+        "id": "151d118eb8484cb0",
+        "type": "csv",
+        "z": "4f197a1ac03259d0",
+        "name": "solar_data",
+        "spec": "rfc",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\r\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 1070,
+        "y": 140,
+        "wires": [
+            [
+                "c0071d0b8b153941"
+            ]
+        ]
+    },
+    {
+        "id": "296e111b4f6789ff",
+        "type": "csv",
+        "z": "4f197a1ac03259d0",
+        "name": "weather_data",
+        "spec": "rfc",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\r\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 1080,
+        "y": 80,
+        "wires": [
+            [
+                "c0071d0b8b153941"
+            ]
+        ]
+    },
+    {
+        "id": "2c8422cf73f6e122",
+        "type": "csv",
+        "z": "4f197a1ac03259d0",
+        "name": "maret_prices",
+        "spec": "rfc",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\r\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 1070,
+        "y": 360,
+        "wires": [
+            [
+                "c0071d0b8b153941"
+            ]
+        ]
+    },
+    {
+        "id": "5d9142b88d59b4dc",
+        "type": "csv",
+        "z": "4f197a1ac03259d0",
+        "name": "maret_prices",
+        "spec": "rfc",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\r\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 1070,
+        "y": 440,
         "wires": [
             [
                 "c0071d0b8b153941"
