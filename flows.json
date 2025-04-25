@@ -17,94 +17,25 @@
         "name": "tibber_api"
     },
     {
-        "id": "abb051a19191b4c4",
-        "type": "debug",
+        "id": "75e3df28d4239b1f",
+        "type": "tibber-api-endpoint",
+        "queryUrl": "https://api.tibber.com/v1-beta/gql",
+        "feedConnectionTimeout": 30,
+        "feedTimeout": 60,
+        "queryRequestTimeout": 30,
+        "name": ""
+    },
+    {
+        "id": "38d352d72f0ee9d6",
+        "type": "tibber-query",
         "z": "4f197a1ac03259d0",
-        "name": "debug 1",
+        "name": "TibberQuery",
         "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 480,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "f7469faf53d226f4",
-        "type": "status",
-        "z": "4f197a1ac03259d0",
-        "name": "",
-        "scope": null,
-        "x": 200,
-        "y": 140,
+        "apiEndpointRef": "75e3df28d4239b1f",
+        "x": 510,
+        "y": 180,
         "wires": [
-            [
-                "abb051a19191b4c4"
-            ]
-        ]
-    },
-    {
-        "id": "2bbaab195076b4e5",
-        "type": "complete",
-        "z": "4f197a1ac03259d0",
-        "name": "",
-        "scope": [],
-        "uncaught": false,
-        "x": 210,
-        "y": 40,
-        "wires": [
-            [
-                "abb051a19191b4c4"
-            ]
-        ]
-    },
-    {
-        "id": "86df089f6c54f42e",
-        "type": "status",
-        "z": "4f197a1ac03259d0",
-        "name": "",
-        "scope": null,
-        "x": 140,
-        "y": 220,
-        "wires": [
-            [
-                "abb051a19191b4c4",
-                "4c581b09087e266a"
-            ]
-        ]
-    },
-    {
-        "id": "4c581b09087e266a",
-        "type": "debug",
-        "z": "4f197a1ac03259d0",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 760,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "b846818719694ecb",
-        "type": "catch",
-        "z": "4f197a1ac03259d0",
-        "name": "",
-        "scope": null,
-        "uncaught": false,
-        "x": 200,
-        "y": 360,
-        "wires": [
-            [
-                "4c581b09087e266a"
-            ]
+            []
         ]
     }
 ]
