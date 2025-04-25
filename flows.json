@@ -8,6 +8,22 @@
         "env": []
     },
     {
+        "id": "50737603fe829997",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1bd85a2efd165349",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "a4a67dfe31634376",
         "type": "tibber-api-endpoint",
         "queryUrl": "https://api.tibber.com/v1-beta/gql",
