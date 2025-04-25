@@ -161,7 +161,7 @@
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
-        "x": 1310,
+        "x": 1370,
         "y": 160,
         "wires": [
             [
@@ -178,7 +178,7 @@
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
-        "x": 1550,
+        "x": 1610,
         "y": 160,
         "wires": [
             [
@@ -198,7 +198,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1900,
+        "x": 1960,
         "y": 160,
         "wires": []
     },
@@ -280,7 +280,7 @@
         "z": "4f197a1ac03259d0",
         "name": "data_to_logic unit",
         "info": "",
-        "x": 1880,
+        "x": 1940,
         "y": 60,
         "wires": []
     },
@@ -349,7 +349,7 @@
         "strings": true,
         "include_empty_strings": "",
         "include_null_values": "",
-        "x": 1750,
+        "x": 1810,
         "y": 160,
         "wires": [
             [
@@ -387,8 +387,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1410,
-        "y": 260,
+        "x": 1070,
+        "y": 320,
         "wires": []
     },
     {
