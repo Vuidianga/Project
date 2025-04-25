@@ -45,5 +45,20 @@
                 "abb051a19191b4c4"
             ]
         ]
+    },
+    {
+        "id": "2bbaab195076b4e5",
+        "type": "complete",
+        "z": "4f197a1ac03259d0",
+        "name": "",
+        "scope": [],
+        "uncaught": false,
+        "x": 210,
+        "y": 40,
+        "wires": [
+            [
+                "abb051a19191b4c4"
+            ]
+        ]
     }
 ]
