@@ -153,23 +153,6 @@
         ]
     },
     {
-        "id": "c0071d0b8b153941",
-        "type": "pythonshell in",
-        "z": "4f197a1ac03259d0",
-        "name": "combine_and_sort",
-        "pyfile": "",
-        "virtualenv": "",
-        "continuous": false,
-        "stdInData": false,
-        "x": 1370,
-        "y": 160,
-        "wires": [
-            [
-                "8fcf40321ecd367a"
-            ]
-        ]
-    },
-    {
         "id": "8fcf40321ecd367a",
         "type": "pythonshell in",
         "z": "4f197a1ac03259d0",
@@ -280,8 +263,8 @@
         "z": "4f197a1ac03259d0",
         "name": "data_to_logic unit",
         "info": "",
-        "x": 1940,
-        "y": 60,
+        "x": 1960,
+        "y": 100,
         "wires": []
     },
     {
@@ -387,8 +370,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1070,
-        "y": 320,
+        "x": 1590,
+        "y": 280,
         "wires": []
     },
     {
@@ -399,7 +382,7 @@
         "spec": "rfc",
         "sep": ",",
         "hdrin": true,
-        "hdrout": "none",
+        "hdrout": "all",
         "multi": "one",
         "ret": "\\r\\n",
         "temp": "",
@@ -411,8 +394,7 @@
         "y": 260,
         "wires": [
             [
-                "c0071d0b8b153941",
-                "05d0ab31e2ae82c4"
+                "c0071d0b8b153941"
             ]
         ]
     },
@@ -533,6 +515,24 @@
         "wires": [
             [
                 "c0071d0b8b153941"
+            ]
+        ]
+    },
+    {
+        "id": "c0071d0b8b153941",
+        "type": "pythonshell in",
+        "z": "4f197a1ac03259d0",
+        "name": "combine_and_sort",
+        "pyfile": "C:\\Users\\asant\\.node-red\\projects\\thws_industrial_project\\combine_and_sort.py",
+        "virtualenv": "",
+        "continuous": true,
+        "stdInData": true,
+        "x": 1370,
+        "y": 160,
+        "wires": [
+            [
+                "8fcf40321ecd367a",
+                "05d0ab31e2ae82c4"
             ]
         ]
     }
