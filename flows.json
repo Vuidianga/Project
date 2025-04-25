@@ -17,7 +17,177 @@
         "name": "tibber_api"
     },
     {
-        "id": "abb051a19191b4c4",
+        "id": "95656262bdebca0c",
+        "type": "pythonshell in",
+        "z": "4f197a1ac03259d0",
+        "name": "get_weather_data",
+        "pyfile": "",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 650,
+        "y": 80,
+        "wires": [
+            [
+                "c0071d0b8b153941"
+            ]
+        ]
+    },
+    {
+        "id": "8c9c93a8b3e48727",
+        "type": "pythonshell in",
+        "z": "4f197a1ac03259d0",
+        "name": "get_loads_state(shelly_switch)",
+        "pyfile": "",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 670,
+        "y": 600,
+        "wires": [
+            [
+                "4af115a64b6fd9ff"
+            ]
+        ]
+    },
+    {
+        "id": "1e5dec98b2d97cc3",
+        "type": "pythonshell in",
+        "z": "4f197a1ac03259d0",
+        "name": "get_grid_price",
+        "pyfile": "",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 640,
+        "y": 200,
+        "wires": [
+            [
+                "c0071d0b8b153941"
+            ]
+        ]
+    },
+    {
+        "id": "581306d237f06dbd",
+        "type": "pythonshell in",
+        "z": "4f197a1ac03259d0",
+        "name": "get_energy_consumption_from_shelly_meter",
+        "pyfile": "",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 710,
+        "y": 440,
+        "wires": [
+            [
+                "c0071d0b8b153941"
+            ]
+        ]
+    },
+    {
+        "id": "f638736c0c10c459",
+        "type": "pythonshell in",
+        "z": "4f197a1ac03259d0",
+        "name": "get_solar_data",
+        "pyfile": "",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 640,
+        "y": 140,
+        "wires": [
+            [
+                "ca7859adecde56f8"
+            ]
+        ]
+    },
+    {
+        "id": "f0bc0b2d7ba5484a",
+        "type": "pythonshell in",
+        "z": "4f197a1ac03259d0",
+        "name": "get_market_price",
+        "pyfile": "",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 650,
+        "y": 260,
+        "wires": [
+            [
+                "c0071d0b8b153941"
+            ]
+        ]
+    },
+    {
+        "id": "cbeb37f343898efe",
+        "type": "pythonshell in",
+        "z": "4f197a1ac03259d0",
+        "name": "get_energy_consumption_from_user(tipper)",
+        "pyfile": "",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 710,
+        "y": 360,
+        "wires": [
+            [
+                "c0071d0b8b153941"
+            ]
+        ]
+    },
+    {
+        "id": "658289e24a3e4843",
+        "type": "pythonshell in",
+        "z": "4f197a1ac03259d0",
+        "name": "get_battery_state",
+        "pyfile": "",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 630,
+        "y": 680,
+        "wires": [
+            [
+                "4d89cd8af18f0b22"
+            ]
+        ]
+    },
+    {
+        "id": "c0071d0b8b153941",
+        "type": "pythonshell in",
+        "z": "4f197a1ac03259d0",
+        "name": "sort_data",
+        "pyfile": "",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 1220,
+        "y": 140,
+        "wires": [
+            [
+                "8fcf40321ecd367a"
+            ]
+        ]
+    },
+    {
+        "id": "8fcf40321ecd367a",
+        "type": "pythonshell in",
+        "z": "4f197a1ac03259d0",
+        "name": "update_database",
+        "pyfile": "",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 1430,
+        "y": 140,
+        "wires": [
+            [
+                "0011f92d31acbd73"
+            ]
+        ]
+    },
+    {
+        "id": "0af3b0363a337d11",
         "type": "debug",
         "z": "4f197a1ac03259d0",
         "name": "debug 1",
@@ -28,56 +198,42 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 480,
+        "x": 1780,
         "y": 140,
         "wires": []
     },
     {
-        "id": "f7469faf53d226f4",
-        "type": "status",
+        "id": "6834176699a5dcf7",
+        "type": "delay",
         "z": "4f197a1ac03259d0",
         "name": "",
-        "scope": null,
-        "x": 200,
-        "y": 140,
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 360,
+        "y": 200,
         "wires": [
             [
-                "abb051a19191b4c4"
+                "95656262bdebca0c",
+                "f638736c0c10c459",
+                "1e5dec98b2d97cc3",
+                "f0bc0b2d7ba5484a",
+                "cbeb37f343898efe",
+                "581306d237f06dbd"
             ]
         ]
     },
     {
-        "id": "2bbaab195076b4e5",
-        "type": "complete",
-        "z": "4f197a1ac03259d0",
-        "name": "",
-        "scope": [],
-        "uncaught": false,
-        "x": 210,
-        "y": 40,
-        "wires": [
-            [
-                "abb051a19191b4c4"
-            ]
-        ]
-    },
-    {
-        "id": "86df089f6c54f42e",
-        "type": "status",
-        "z": "4f197a1ac03259d0",
-        "name": "",
-        "scope": null,
-        "x": 140,
-        "y": 220,
-        "wires": [
-            [
-                "abb051a19191b4c4",
-                "4c581b09087e266a"
-            ]
-        ]
-    },
-    {
-        "id": "4c581b09087e266a",
+        "id": "4af115a64b6fd9ff",
         "type": "debug",
         "z": "4f197a1ac03259d0",
         "name": "debug 2",
@@ -88,22 +244,133 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 760,
-        "y": 140,
+        "x": 1600,
+        "y": 600,
         "wires": []
     },
     {
-        "id": "b846818719694ecb",
-        "type": "catch",
+        "id": "4d89cd8af18f0b22",
+        "type": "debug",
         "z": "4f197a1ac03259d0",
-        "name": "",
-        "scope": null,
-        "uncaught": false,
-        "x": 200,
-        "y": 360,
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1600,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "1207ab89c8b2f804",
+        "type": "comment",
+        "z": "4f197a1ac03259d0",
+        "name": "Data Querry ",
+        "info": "",
+        "x": 630,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "496db75d3898523e",
+        "type": "comment",
+        "z": "4f197a1ac03259d0",
+        "name": "data_to_logic unit",
+        "info": "",
+        "x": 1780,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "f0a970a82f7c0c68",
+        "type": "comment",
+        "z": "4f197a1ac03259d0",
+        "name": "get_hardware_component_status",
+        "info": "",
+        "x": 670,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "89346c3eb7a35b8c",
+        "type": "inject",
+        "z": "4f197a1ac03259d0",
+        "name": "start_querry_data_signal",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 200,
         "wires": [
             [
-                "4c581b09087e266a"
+                "6834176699a5dcf7"
+            ]
+        ]
+    },
+    {
+        "id": "f5be252955905415",
+        "type": "comment",
+        "z": "4f197a1ac03259d0",
+        "name": "data_to_logic unit",
+        "info": "",
+        "x": 1600,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "0011f92d31acbd73",
+        "type": "csv",
+        "z": "4f197a1ac03259d0",
+        "name": "",
+        "spec": "rfc",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\r\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 1630,
+        "y": 140,
+        "wires": [
+            [
+                "0af3b0363a337d11"
+            ]
+        ]
+    },
+    {
+        "id": "ca7859adecde56f8",
+        "type": "pythonshell in",
+        "z": "4f197a1ac03259d0",
+        "name": "caliberate_solar_data",
+        "pyfile": "",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 860,
+        "y": 140,
+        "wires": [
+            [
+                "c0071d0b8b153941"
             ]
         ]
     }
