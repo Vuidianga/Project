@@ -91,5 +91,20 @@
         "x": 760,
         "y": 140,
         "wires": []
+    },
+    {
+        "id": "b846818719694ecb",
+        "type": "catch",
+        "z": "4f197a1ac03259d0",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 200,
+        "y": 360,
+        "wires": [
+            [
+                "4c581b09087e266a"
+            ]
+        ]
     }
 ]
