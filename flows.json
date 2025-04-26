@@ -166,15 +166,16 @@
         "type": "pythonshell in",
         "z": "4f197a1ac03259d0",
         "name": "combine_and_sort",
-        "pyfile": "",
+        "pyfile": "C:\\Users\\asant\\.node-red\\projects\\thws_industrial_project\\combine_and_sort.py",
         "virtualenv": "",
-        "continuous": false,
-        "stdInData": false,
-        "x": 1310,
+        "continuous": true,
+        "stdInData": true,
+        "x": 1370,
         "y": 160,
         "wires": [
             [
-                "8fcf40321ecd367a"
+                "8fcf40321ecd367a",
+                "05d0ab31e2ae82c4"
             ]
         ]
     },
@@ -187,7 +188,7 @@
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
-        "x": 1550,
+        "x": 1610,
         "y": 160,
         "wires": [
             [
@@ -207,7 +208,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1900,
+        "x": 1960,
         "y": 160,
         "wires": []
     },
@@ -289,8 +290,8 @@
         "z": "4f197a1ac03259d0",
         "name": "data_to_logic unit",
         "info": "",
-        "x": 1880,
-        "y": 60,
+        "x": 1960,
+        "y": 100,
         "wires": []
     },
     {
@@ -358,7 +359,7 @@
         "strings": true,
         "include_empty_strings": "",
         "include_null_values": "",
-        "x": 1750,
+        "x": 1810,
         "y": 160,
         "wires": [
             [
@@ -396,8 +397,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1410,
-        "y": 260,
+        "x": 1590,
+        "y": 280,
         "wires": []
     },
     {
@@ -408,7 +409,7 @@
         "spec": "rfc",
         "sep": ",",
         "hdrin": true,
-        "hdrout": "none",
+        "hdrout": "all",
         "multi": "one",
         "ret": "\\r\\n",
         "temp": "",
@@ -420,8 +421,7 @@
         "y": 260,
         "wires": [
             [
-                "c0071d0b8b153941",
-                "05d0ab31e2ae82c4"
+                "c0071d0b8b153941"
             ]
         ]
     },
