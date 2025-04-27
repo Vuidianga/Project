@@ -98,7 +98,7 @@
         "type": "pythonshell in",
         "z": "4f197a1ac03259d0",
         "name": "get_solar_data",
-        "pyfile": "",
+        "pyfile": "C:\\Users\\vudia\\.node-red\\projects\\Project\\get_solar_data.py",
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
@@ -106,7 +106,7 @@
         "y": 140,
         "wires": [
             [
-                "ca7859adecde56f8"
+                "151d118eb8484cb0"
             ]
         ]
     },
@@ -368,23 +368,6 @@
         ]
     },
     {
-        "id": "ca7859adecde56f8",
-        "type": "pythonshell in",
-        "z": "4f197a1ac03259d0",
-        "name": "caliberate_solar_data",
-        "pyfile": "",
-        "virtualenv": "",
-        "continuous": false,
-        "stdInData": false,
-        "x": 880,
-        "y": 140,
-        "wires": [
-            [
-                "151d118eb8484cb0"
-            ]
-        ]
-    },
-    {
         "id": "05d0ab31e2ae82c4",
         "type": "debug",
         "z": "4f197a1ac03259d0",
@@ -421,7 +404,8 @@
         "y": 260,
         "wires": [
             [
-                "c0071d0b8b153941"
+                "c0071d0b8b153941",
+                "458e42f56ba05936"
             ]
         ]
     },
@@ -469,7 +453,8 @@
         "y": 140,
         "wires": [
             [
-                "c0071d0b8b153941"
+                "c0071d0b8b153941",
+                "771def4fa38457da"
             ]
         ]
     },
@@ -564,15 +549,35 @@
         "wires": []
     },
     {
-        "id": "cbe87b3ec88eb4e6",
-        "type": "status",
+        "id": "771def4fa38457da",
+        "type": "debug",
         "z": "4f197a1ac03259d0",
-        "name": "",
-        "scope": null,
-        "x": 1520,
-        "y": 400,
-        "wires": [
-            []
-        ]
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1340,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "458e42f56ba05936",
+        "type": "debug",
+        "z": "4f197a1ac03259d0",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1340,
+        "y": 340,
+        "wires": []
     }
 ]
