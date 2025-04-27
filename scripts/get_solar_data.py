@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import requests
 import datetime
 
@@ -31,7 +30,7 @@ def fetch_solar_forecast(latitude, longitude):
 
         hours = solar_data.get("hourly", {}).get("time", [])
         shortwave = solar_data.get("hourly", {}).get("shortwave_radiation", [])
-        print("Time , Solar Production Estimate - kW")
+        print("Time,Solar Production Estimate - kW")
 
         for time, sw in zip(hours, shortwave):
             estimated_power_watts = sw * EFFECTIVE_AREA  # W
