@@ -251,7 +251,7 @@
         "continuous": false,
         "stdInData": false,
         "x": 730,
-        "y": 360,
+        "y": 380,
         "wires": [
             [
                 "3fb6d188b0ca3098"
@@ -379,8 +379,8 @@
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 1000,
-        "y": 360,
+        "x": 1020,
+        "y": 380,
         "wires": [
             [
                 "f259e687832ad330"
@@ -480,12 +480,11 @@
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 900,
+        "x": 1020,
         "y": 320,
         "wires": [
             [
-                "64c70a5678ebedd2",
-                "acb38882c9aa9a65"
+                "f259e687832ad330"
             ]
         ]
     },
