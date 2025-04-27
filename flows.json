@@ -67,7 +67,8 @@
                 "1e5dec98b2d97cc3",
                 "f0bc0b2d7ba5484a",
                 "cbeb37f343898efe",
-                "9a90f52afcac38b6"
+                "9a90f52afcac38b6",
+                "99cc92f7be54cd0a"
             ]
         ]
     },
@@ -267,7 +268,7 @@
         "continuous": false,
         "stdInData": false,
         "x": 710,
-        "y": 360,
+        "y": 380,
         "wires": [
             [
                 "3fb6d188b0ca3098"
@@ -580,8 +581,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1300,
-        "y": 60,
+        "x": 1100,
+        "y": 40,
         "wires": []
     },
     {
@@ -611,6 +612,43 @@
         "y": 300,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "99cc92f7be54cd0a",
+        "type": "pythonshell in",
+        "z": "4f197a1ac03259d0",
+        "name": "get_negative_prices",
+        "pyfile": "C:\\Users\\vudia\\.node-red\\projects\\Project\\scripts\\get_negative_prices.py",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 660,
+        "y": 320,
+        "wires": [
+            [
+                "e11b05734da12d67"
+            ]
+        ]
+    },
+    {
+        "id": "e11b05734da12d67",
+        "type": "file",
+        "z": "4f197a1ac03259d0",
+        "name": "temp_negative_prices",
+        "filename": "C:\\Users\\vudia\\.node-red\\projects\\Project\\temporal_file\\temp_negative_prices.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 900,
+        "y": 320,
+        "wires": [
+            [
+                "64c70a5678ebedd2",
+                "acb38882c9aa9a65"
+            ]
         ]
     }
 ]
