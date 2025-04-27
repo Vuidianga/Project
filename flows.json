@@ -251,7 +251,7 @@
         "continuous": false,
         "stdInData": false,
         "x": 730,
-        "y": 380,
+        "y": 360,
         "wires": [
             [
                 "3fb6d188b0ca3098"
@@ -379,8 +379,8 @@
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 1020,
-        "y": 380,
+        "x": 1000,
+        "y": 360,
         "wires": [
             [
                 "f259e687832ad330"
