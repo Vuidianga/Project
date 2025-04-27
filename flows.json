@@ -37,7 +37,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2080,
+        "x": 2140,
         "y": 180,
         "wires": []
     },
@@ -173,28 +173,11 @@
         "wires": []
     },
     {
-        "id": "05d0ab31e2ae82c4",
-        "type": "debug",
-        "z": "4f197a1ac03259d0",
-        "name": "test",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2070,
-        "y": 280,
-        "wires": []
-    },
-    {
         "id": "95656262bdebca0c",
         "type": "pythonshell in",
         "z": "4f197a1ac03259d0",
         "name": "get_weather_data",
-        "pyfile": "C:\\Users\\vudia\\.node-red\\projects\\Project\\scripts\\get_weather_data.py",
+        "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\get_weather_data.py",
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
@@ -211,7 +194,7 @@
         "type": "pythonshell in",
         "z": "4f197a1ac03259d0",
         "name": "get_grid_price",
-        "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\get_market_price.py",
+        "pyfile": "",
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
@@ -228,7 +211,7 @@
         "type": "pythonshell in",
         "z": "4f197a1ac03259d0",
         "name": "get_solar_data",
-        "pyfile": "C:\\Users\\vudia\\.node-red\\projects\\Project\\scripts\\get_solar_data.py",
+        "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\get_solar_data.py",
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
@@ -245,7 +228,7 @@
         "type": "pythonshell in",
         "z": "4f197a1ac03259d0",
         "name": "get_market_price",
-        "pyfile": "C:\\Users\\vudia\\.node-red\\projects\\Project\\scripts\\get_market_price.py",
+        "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\get_market_price.py",
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
@@ -262,11 +245,11 @@
         "type": "pythonshell in",
         "z": "4f197a1ac03259d0",
         "name": "get_energy_consumption_from_user(tibber)",
-        "pyfile": "C:\\Users\\vudia\\.node-red\\projects\\Project\\scripts\\get_consumption_from_user.py",
+        "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\get_consumption_from_user.py",
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
-        "x": 710,
+        "x": 730,
         "y": 360,
         "wires": [
             [
@@ -296,15 +279,14 @@
         "type": "pythonshell in",
         "z": "4f197a1ac03259d0",
         "name": "combine_sort_and_append_to_data_base",
-        "pyfile": "C:\\Users\\vudia\\.node-red\\projects\\Project\\scripts\\combine_sort_and_append.py",
+        "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\combine_sort_and_append.py",
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
-        "x": 1540,
+        "x": 1600,
         "y": 180,
         "wires": [
             [
-                "51fbeff930ea265a",
                 "693fa8576fef09e3"
             ]
         ]
@@ -314,18 +296,17 @@
         "type": "file",
         "z": "4f197a1ac03259d0",
         "name": "temp_market_price",
-        "filename": "C:\\Users\\vudia\\.node-red\\projects\\Project\\temporal_file\\temp_market_prices.csv",
+        "filename": "C:\\Users\\asantee\\.node-red\\projects\\Project\\temporal_file\\temp_market_prices.csv",
         "filenameType": "str",
         "appendNewline": true,
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 890,
+        "x": 1010,
         "y": 260,
         "wires": [
             [
-                "acb38882c9aa9a65",
-                "1cf63016961604c5"
+                "f259e687832ad330"
             ]
         ]
     },
@@ -334,17 +315,17 @@
         "type": "file",
         "z": "4f197a1ac03259d0",
         "name": "temp_grid_price",
-        "filename": "C:\\Users\\vudia\\.node-red\\projects\\Project\\temporal_file\\grid_price.csv",
+        "filename": "C:\\Users\\asantee\\.node-red\\projects\\Project\\temporal_file\\grid_price.csv",
         "filenameType": "str",
         "appendNewline": false,
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 880,
+        "x": 1000,
         "y": 200,
         "wires": [
             [
-                "acb38882c9aa9a65"
+                "f259e687832ad330"
             ]
         ]
     },
@@ -353,7 +334,7 @@
         "type": "file",
         "z": "4f197a1ac03259d0",
         "name": "temp_consump_shelly",
-        "filename": "C:\\Users\\vudia\\.node-red\\projects\\Project\\temporal_file\\temp_market_prices.csv",
+        "filename": "C:\\Users\\asantee\\.node-red\\projects\\Project\\temporal_file\\temp_market_prices.csv",
         "filenameType": "str",
         "appendNewline": true,
         "createDir": false,
@@ -363,7 +344,7 @@
         "y": 440,
         "wires": [
             [
-                "acb38882c9aa9a65"
+                "f259e687832ad330"
             ]
         ]
     },
@@ -372,18 +353,17 @@
         "type": "file",
         "z": "4f197a1ac03259d0",
         "name": "temp_solar",
-        "filename": "C:\\Users\\vudia\\.node-red\\projects\\Project\\temporal_file\\temp_solar_data.csv",
+        "filename": "C:\\Users\\asantee\\.node-red\\projects\\Project\\temporal_file\\temp_solar_data.csv",
         "filenameType": "str",
         "appendNewline": true,
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 910,
+        "x": 990,
         "y": 140,
         "wires": [
             [
-                "acb38882c9aa9a65",
-                "ee53ff98a308a277"
+                "f259e687832ad330"
             ]
         ]
     },
@@ -392,7 +372,7 @@
         "type": "file",
         "z": "4f197a1ac03259d0",
         "name": "temp_consum",
-        "filename": "C:\\Users\\vudia\\.node-red\\projects\\Project\\temporal_file\\temp_user_consumption.csv",
+        "filename": "C:\\Users\\asantee\\.node-red\\projects\\Project\\temporal_file\\temp_user_consumption.csv",
         "filenameType": "str",
         "appendNewline": true,
         "createDir": false,
@@ -402,8 +382,7 @@
         "y": 360,
         "wires": [
             [
-                "acb38882c9aa9a65",
-                "f9b7f0b203c1451d"
+                "f259e687832ad330"
             ]
         ]
     },
@@ -412,18 +391,17 @@
         "type": "file",
         "z": "4f197a1ac03259d0",
         "name": "temp_weather_data",
-        "filename": "C:\\Users\\vudia\\.node-red\\projects\\Project\\temporal_file\\temp_weather.csv",
+        "filename": "C:\\Users\\asantee\\.node-red\\projects\\Project\\temporal_file\\temp_weather.csv",
         "filenameType": "str",
         "appendNewline": false,
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 880,
+        "x": 1020,
         "y": 80,
         "wires": [
             [
-                "acb38882c9aa9a65",
-                "14f64d69df564386"
+                "f259e687832ad330"
             ]
         ]
     },
@@ -455,39 +433,17 @@
         ]
     },
     {
-        "id": "51fbeff930ea265a",
-        "type": "exec",
-        "z": "4f197a1ac03259d0",
-        "command": "rm -rf /file_focation",
-        "addpay": "",
-        "append": "",
-        "useSpawn": "false",
-        "timer": "",
-        "winHide": false,
-        "oldrc": false,
-        "name": "remove_temp_files",
-        "x": 1890,
-        "y": 280,
-        "wires": [
-            [],
-            [
-                "05d0ab31e2ae82c4"
-            ],
-            []
-        ]
-    },
-    {
         "id": "693fa8576fef09e3",
         "type": "file",
         "z": "4f197a1ac03259d0",
         "name": "final_csv_db",
-        "filename": "C:\\Users\\vudia\\.node-red\\projects\\Project\\DataBase\\db.csv",
+        "filename": "C:\\Users\\asantee\\.node-red\\projects\\Project\\DataBase\\db.csv",
         "filenameType": "str",
         "appendNewline": true,
         "createDir": false,
         "overwriteFile": "false",
         "encoding": "none",
-        "x": 1870,
+        "x": 1930,
         "y": 180,
         "wires": [
             [
@@ -496,121 +452,32 @@
         ]
     },
     {
-        "id": "acb38882c9aa9a65",
-        "type": "delay",
+        "id": "f259e687832ad330",
+        "type": "join",
         "z": "4f197a1ac03259d0",
         "name": "",
-        "pauseType": "delay",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 1240,
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "payload",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": false,
+        "accumulate": true,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1270,
         "y": 180,
         "wires": [
             [
                 "c0071d0b8b153941"
             ]
-        ]
-    },
-    {
-        "id": "14f64d69df564386",
-        "type": "debug",
-        "z": "4f197a1ac03259d0",
-        "name": "debug 4",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1140,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "ee53ff98a308a277",
-        "type": "debug",
-        "z": "4f197a1ac03259d0",
-        "name": "debug 5",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1240,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "1cf63016961604c5",
-        "type": "debug",
-        "z": "4f197a1ac03259d0",
-        "name": "debug 6",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1260,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "64c70a5678ebedd2",
-        "type": "debug",
-        "z": "4f197a1ac03259d0",
-        "name": "debug 7",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1300,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "f9b7f0b203c1451d",
-        "type": "debug",
-        "z": "4f197a1ac03259d0",
-        "name": "debug 8",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1280,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "6975dea0da898bf3",
-        "type": "complete",
-        "z": "4f197a1ac03259d0",
-        "name": "",
-        "scope": [],
-        "uncaught": false,
-        "x": 2470,
-        "y": 300,
-        "wires": [
-            []
         ]
     }
 ]

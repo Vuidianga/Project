@@ -22,19 +22,19 @@ def sort_and_combine(folder_path, output_path):
         combined_csv = new_csv
 
     # Sort by Date and Time
-    combined_csv = combined_csv.sort_values(by=['Date', ' Time'])
+    combined_csv = combined_csv.sort_values(by=['Date', 'Time'])
 
     # Optional: remove exact duplicates
     combined_csv = combined_csv.drop_duplicates().reset_index(drop=True)
 
     # Save back to output path (overwrite)
     combined_csv.to_csv(output_path, index=False)
-    print(f"Saved combined and sorted CSV to {output_path}")
+    print(f"appended new data to database successfully")
 
     return combined_csv
 
 if __name__ == "__main__":
     sort_and_combine(
-        r"C:\Users\vudia\.node-red\projects\Project\temporal_file",
-        r"C:\Users\vudia\.node-red\projects\Project\DataBase\db.csv"
+        r"C:\Users\asantee\.node-red\projects\Project\temporal_file",
+        r"C:\Users\asantee\.node-red\projects\Project\DataBase\db.csv"
     )

@@ -1,6 +1,4 @@
-import json
 import requests
-
 
 def get_consumption_from_user():
     API_KEY = 'yBAKkSc0W8n-xxpDnQ4brbAZiZ1T45eUlWkC-kNILNU'  # Replace with your actual API key
