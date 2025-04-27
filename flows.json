@@ -227,16 +227,16 @@
         "id": "f638736c0c10c459",
         "type": "pythonshell in",
         "z": "4f197a1ac03259d0",
-        "name": "get_and_caliberate_solar_data",
-        "pyfile": "",
+        "name": "get_solar_data",
+        "pyfile": "C:\\Users\\vudia\\.node-red\\projects\\Project\\get_solar_data.py",
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
-        "x": 690,
+        "x": 640,
         "y": 140,
         "wires": [
             [
-                "d94153e716c850fd"
+                "151d118eb8484cb0"
             ]
         ]
     },
@@ -515,5 +515,37 @@
                 "c0071d0b8b153941"
             ]
         ]
+    },
+    {
+        "id": "771def4fa38457da",
+        "type": "debug",
+        "z": "4f197a1ac03259d0",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1340,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "458e42f56ba05936",
+        "type": "debug",
+        "z": "4f197a1ac03259d0",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1340,
+        "y": 340,
+        "wires": []
     }
 ]
