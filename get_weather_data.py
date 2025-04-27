@@ -1,61 +1,68 @@
+# -*- coding: utf-8 -*-
 import requests
-from datetime import datetime, timedelta
+import datetime
 
-def fetch_coordinates(city_name):
-    geo_url = f"https://geocoding-api.open-meteo.com/v1/search?name={city_name}&count=1"
-    response = requests.get(geo_url)
-    
-    if response.status_code == 200:
-        geo_data = response.json()
-        if geo_data.get('results'):
-            lat = geo_data['results'][0]['latitude']
-            lon = geo_data['results'][0]['longitude']
-            return lat, lon
-        else:
-            print("City not found.")
-            return None, None
-    else:
-        print("Error fetching coordinates.")
-        return None, None
+def fetch_weather(latitude, longitude):
+    now = datetime.datetime.now(datetime.timezone.utc)
+    start_date = now.strftime("%Y-%m-%d")
+    end_date = (now + datetime.timedelta(days=1)).strftime("%Y-%m-%d")
 
-def fetch_weather(lat, lon):
-    now = datetime.utcnow()
-    tomorrow = now + timedelta(hours=24)
-    
-    start = now.strftime('%Y-%m-%dT%H:00')
-    end = tomorrow.strftime('%Y-%m-%dT%H:00')
-    
-    weather_url = (
-        f"https://api.open-meteo.com/v1/forecast"
-        f"?latitude={lat}&longitude={lon}"
-        f"&hourly=temperature_2m"
-        f"&start={start}&end={end}"
-        f"&timezone=auto"
+    url = (
+        f"https://api.open-meteo.com/v1/forecast?"
+        f"latitude={latitude}&longitude={longitude}&"
+        f"hourly=temperature_2m,weathercode&"
+        f"start_date={start_date}&end_date={end_date}&timezone=auto"
     )
-    
-    response = requests.get(weather_url)
-    
-    if response.status_code == 200:
+
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
         weather_data = response.json()
-        hours = weather_data.get('hourly', {}).get('time', [])
-        temperatures = weather_data.get('hourly', {}).get('temperature_2m', [])
-        
-        if hours and temperatures:
-            for time, temp in zip(hours, temperatures):
-                print(f"{time} → {temp}°C")
-        else:
-            print("No weather data available.")
-    else:
-        print("Error fetching weather.")
+
+        print(f"Weather forecast for Schweinfurt\n")  # 📍 emoji removed to prevent Windows error
+        hours = weather_data.get("hourly", {}).get("time", [])
+        temperatures = weather_data.get("hourly", {}).get("temperature_2m", [])
+        weather_codes = weather_data.get("hourly", {}).get("weathercode", [])
+
+        for time, temp, code in zip(hours, temperatures, weather_codes):
+            readable_time = datetime.datetime.fromisoformat(time).strftime("%Y-%m-%d %H:%M")
+            condition = weather_code_to_description(code)
+            print(f"{readable_time} - {temp}°C - {condition}")
+
+    except requests.RequestException as e:
+        print(f"Error fetching weather data: {e}")
+
+def weather_code_to_description(code):
+    """Translate Open-Meteo weather codes to human readable descriptions"""
+    mapping = {
+        0: "Clear sky",
+        1: "Mainly clear",
+        2: "Partly cloudy",
+        3: "Overcast",
+        45: "Fog",
+        48: "Depositing rime fog",
+        51: "Light drizzle",
+        53: "Moderate drizzle",
+        55: "Dense drizzle",
+        61: "Slight rain",
+        63: "Moderate rain",
+        65: "Heavy rain",
+        71: "Slight snow fall",
+        73: "Moderate snow fall",
+        75: "Heavy snow fall",
+        80: "Slight rain showers",
+        81: "Moderate rain showers",
+        82: "Violent rain showers",
+        95: "Thunderstorm",
+        96: "Thunderstorm with slight hail",
+        99: "Thunderstorm with heavy hail"
+    }
+    return mapping.get(code, "Unknown")
 
 def main():
-    city = input("Enter your city name: ")
-    lat, lon = fetch_coordinates(city)
-    
-    if lat is not None and lon is not None:
-        print(f"Coordinates for {city}: {lat}, {lon}")
-        print("Fetching 24-hour weather forecast...\n")
-        fetch_weather(lat, lon)
+    latitude = 50.0494   # Schweinfurt latitude
+    longitude = 10.2218  # Schweinfurt longitude
+    fetch_weather(latitude, longitude)
 
 if __name__ == "__main__":
     main()

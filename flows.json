@@ -562,5 +562,17 @@
         "x": 1360,
         "y": 80,
         "wires": []
+    },
+    {
+        "id": "cbe87b3ec88eb4e6",
+        "type": "status",
+        "z": "4f197a1ac03259d0",
+        "name": "",
+        "scope": null,
+        "x": 1520,
+        "y": 400,
+        "wires": [
+            []
+        ]
     }
 ]
