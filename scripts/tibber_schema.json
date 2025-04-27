@@ -1,0 +1,404 @@
+{
+  "data": {
+    "__schema": {
+      "types": [
+        {
+          "name": "Address",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "address1"
+            },
+            {
+              "name": "address2"
+            },
+            {
+              "name": "address3"
+            },
+            {
+              "name": "city"
+            },
+            {
+              "name": "postalCode"
+            },
+            {
+              "name": "country"
+            },
+            {
+              "name": "latitude"
+            },
+            {
+              "name": "longitude"
+            }
+          ]
+        },
+        {
+          "name": "ContactInfo",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "email"
+            },
+            {
+              "name": "mobile"
+            }
+          ]
+        },
+        {
+          "name": "LegalEntity",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "firstName"
+            },
+            {
+              "name": "isCompany"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "middleName"
+            },
+            {
+              "name": "lastName"
+            },
+            {
+              "name": "organizationNo"
+            },
+            {
+              "name": "language"
+            },
+            {
+              "name": "contactInfo"
+            },
+            {
+              "name": "address"
+            }
+          ]
+        },
+        {
+          "name": "HomeConsumptionPageInfo",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "endCursor"
+            },
+            {
+              "name": "hasNextPage"
+            },
+            {
+              "name": "hasPreviousPage"
+            },
+            {
+              "name": "startCursor"
+            },
+            {
+              "name": "count"
+            },
+            {
+              "name": "currency"
+            },
+            {
+              "name": "totalCost"
+            },
+            {
+              "name": "totalConsumption"
+            },
+            {
+              "name": "filtered"
+            }
+          ]
+        },
+        {
+          "name": "HomeProductionPageInfo",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "endCursor"
+            },
+            {
+              "name": "hasNextPage"
+            },
+            {
+              "name": "hasPreviousPage"
+            },
+            {
+              "name": "startCursor"
+            },
+            {
+              "name": "count"
+            },
+            {
+              "name": "currency"
+            },
+            {
+              "name": "totalProfit"
+            },
+            {
+              "name": "totalProduction"
+            },
+            {
+              "name": "filtered"
+            }
+          ]
+        },
+        {
+          "name": "PriceRatingEntry",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "time"
+            },
+            {
+              "name": "energy"
+            },
+            {
+              "name": "total"
+            },
+            {
+              "name": "tax"
+            },
+            {
+              "name": "difference"
+            },
+            {
+              "name": "level"
+            }
+          ]
+        },
+        {
+          "name": "PriceRatingType",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "minEnergy"
+            },
+            {
+              "name": "maxEnergy"
+            },
+            {
+              "name": "minTotal"
+            },
+            {
+              "name": "maxTotal"
+            },
+            {
+              "name": "currency"
+            },
+            {
+              "name": "entries"
+            }
+          ]
+        },
+        {
+          "name": "Subscription",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "subscriber"
+            },
+            {
+              "name": "validFrom"
+            },
+            {
+              "name": "validTo"
+            },
+            {
+              "name": "status"
+            },
+            {
+              "name": "priceInfo"
+            },
+            {
+              "name": "priceRating"
+            }
+          ]
+        },
+        {
+          "name": "Consumption",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "from"
+            },
+            {
+              "name": "to"
+            },
+            {
+              "name": "unitPrice"
+            },
+            {
+              "name": "unitPriceVAT"
+            },
+            {
+              "name": "consumption"
+            },
+            {
+              "name": "consumptionUnit"
+            },
+            {
+              "name": "cost"
+            },
+            {
+              "name": "currency"
+            }
+          ]
+        },
+        {
+          "name": "Production",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "from"
+            },
+            {
+              "name": "to"
+            },
+            {
+              "name": "unitPrice"
+            },
+            {
+              "name": "unitPriceVAT"
+            },
+            {
+              "name": "production"
+            },
+            {
+              "name": "productionUnit"
+            },
+            {
+              "name": "profit"
+            },
+            {
+              "name": "currency"
+            }
+          ]
+        },
+        {
+          "name": "MeteringPointData",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "consumptionEan"
+            },
+            {
+              "name": "gridCompany"
+            },
+            {
+              "name": "gridAreaCode"
+            },
+            {
+              "name": "priceAreaCode"
+            },
+            {
+              "name": "productionEan"
+            },
+            {
+              "name": "energyTaxType"
+            },
+            {
+              "name": "vatType"
+            },
+            {
+              "name": "estimatedAnnualConsumption"
+            }
+          ]
+        },
+        {
+          "name": "LiveMeasurement",
+          "kind": "OBJECT",
+          "fields": [
+            {
+              "name": "timestamp"
+            },
+            {
+              "name": "power"
+            },
+            {
+              "name": "lastMeterConsumption"
+            },
+            {
+              "name": "accumulatedConsumption"
+            },
+            {
+              "name": "accumulatedProduction"
+            },
+            {
+              "name": "accumulatedConsumptionLastHour"
+            },
+            {
+              "name": "accumulatedProductionLastHour"
+            },
+            {
+              "name": "accumulatedCost"
+            },
+            {
+              "name": "accumulatedReward"
+            },
+            {
+              "name": "currency"
+            },
+            {
+              "name": "minPower"
+            },
+            {
+              "name": "averagePower"
+            },
+            {
+              "name": "maxPower"
+            },
+            {
+              "name": "powerProduction"
+            },
+            {
+              "name": "powerReactive"
+            },
+            {
+              "name": "powerProductionReactive"
+            },
+            {
+              "name": "minPowerProduction"
+            },
+            {
+              "name": "maxPowerProduction"
+            },
+            {
+              "name": "lastMeterProduction"
+            },
+            {
+              "name": "powerFactor"
+            },
+            {
+              "name": "voltagePhase1"
+            },
+            {
+              "name": "voltagePhase2"
+            },
+            {
+              "name": "voltagePhase3"
+            },
+            {
+              "name": "currentL1"
+            },
+            {
+              "name": "currentL2"
+            },
+            {
+              "name": "currentL3"
+            },
+            {
+              "name": "signalStrength"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
