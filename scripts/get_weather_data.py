@@ -22,12 +22,12 @@ def fetch_weather(latitude, longitude):
         hours = weather_data.get("hourly", {}).get("time", [])
         temperatures = weather_data.get("hourly", {}).get("temperature_2m", [])
         weather_codes = weather_data.get("hourly", {}).get("weathercode", [])
-        print("Time,Temperature (degree C) ,Weather condition")
+        print("Date,Time,Temperature (degree C) ,Weather condition")
 
         for time, temp, code in zip(hours, temperatures, weather_codes):
             readable_time = datetime.datetime.fromisoformat(time).strftime("%Y-%m-%d %H:%M")
             condition = weather_code_to_description(code)
-            print(f"{readable_time} , {temp} , {condition}")
+            print(f"{readable_time[:10]},{readable_time[11:]},{temp},{condition}")
 
     except requests.RequestException as e:
         print(f"Error fetching weather data: {e}")

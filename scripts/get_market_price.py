@@ -73,12 +73,12 @@ def get_market_price():
             #print(f"Today's Prices:")
             print('Date,Time,Timezone, Prices[EUR/kWh]  ')
             for price in price_info['today']:
-                print(f"{price['startsAt'][:10]},{price['startsAt'][11:23]},{price['startsAt'][23:]},{price['total']}")
+                print(f"{price['startsAt'][:10]},{price['startsAt'][11:16]},{price['startsAt'][23:]},{price['total']}")
 
             if price_info['tomorrow']:
                 #print("\nTomorrow's Prices:")
                 for price in price_info['tomorrow']:
-                    print(f"{price['startsAt'][:10]},{price['startsAt'][11:23]},{price['startsAt'][23:]},{price['total']}")
+                    print(f"{price['startsAt'][:10]},{price['startsAt'][11:16]},{price['startsAt'][23:]},{price['total']}")
 
     except requests.exceptions.RequestException as e:
         print(f"Request Error: {e}")

@@ -30,14 +30,14 @@ def fetch_solar_forecast(latitude, longitude):
 
         hours = solar_data.get("hourly", {}).get("time", [])
         shortwave = solar_data.get("hourly", {}).get("shortwave_radiation", [])
-        print("Time,Solar Production Estimate - kW")
+        print("Date,Time,Solar Production Estimate - kW")
 
         for time, sw in zip(hours, shortwave):
             estimated_power_watts = sw * EFFECTIVE_AREA  # W
             estimated_energy_kwh = estimated_power_watts / 1000  # kW
 
             readable_time = datetime.datetime.fromisoformat(time).strftime("%Y-%m-%d %H:%M")
-            print(f"{readable_time} ,  {estimated_energy_kwh:.2f} ")
+            print(f"{readable_time[:10]},{readable_time[11:]},{estimated_energy_kwh:.2f} ")
 
     except requests.RequestException as e:
         print(f"Error fetching solar forecast: {e}")
