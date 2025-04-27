@@ -185,7 +185,7 @@
         "type": "pythonshell in",
         "z": "4f197a1ac03259d0",
         "name": "get_weather_data",
-        "pyfile": "",
+        "pyfile": "C:\\Users\\vudia\\.node-red\\projects\\Project\\get_weather_data.py",
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
@@ -193,7 +193,7 @@
         "y": 80,
         "wires": [
             [
-                "e9cf1031970a6702"
+                "296e111b4f6789ff"
             ]
         ]
     },
@@ -236,7 +236,7 @@
         "type": "pythonshell in",
         "z": "4f197a1ac03259d0",
         "name": "get_market_price",
-        "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\get_market_price.py",
+        "pyfile": "C:\\Users\\vudia\\.node-red\\projects\\Project\\get_market_price.py",
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
@@ -244,7 +244,7 @@
         "y": 260,
         "wires": [
             [
-                "32e2bec2664d6799"
+                "37966c3a5d5a8b7f"
             ]
         ]
     },
@@ -505,6 +505,44 @@
             [
                 "c0071d0b8b153941"
             ]
+        ]
+    },
+    {
+        "id": "75e3df28d4239b1f",
+        "type": "tibber-api-endpoint",
+        "queryUrl": "https://api.tibber.com/v1-beta/gql",
+        "feedConnectionTimeout": 30,
+        "feedTimeout": 60,
+        "queryRequestTimeout": 30,
+        "name": ""
+    },
+    {
+        "id": "db9f8493372304af",
+        "type": "debug",
+        "z": "4f197a1ac03259d0",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1360,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "cbe87b3ec88eb4e6",
+        "type": "status",
+        "z": "4f197a1ac03259d0",
+        "name": "",
+        "scope": null,
+        "x": 1520,
+        "y": 400,
+        "wires": [
+            []
         ]
     }
 ]
