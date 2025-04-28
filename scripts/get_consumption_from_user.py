@@ -81,7 +81,7 @@ def get_consumption_from_user():
             if entry.get('consumption') is not None:
                 timestamp = entry['to']
                 date = timestamp[:10]
-                time = timestamp[11:19]  # Get only HH:MM:SS
+                time = timestamp[11:16]  # Get only HH:MM:SS
                 timezone = timestamp[23:]
                 cost = entry['cost']
                 unit_price = entry['unitPrice']

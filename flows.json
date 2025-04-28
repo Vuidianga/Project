@@ -37,7 +37,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2140,
+        "x": 2360,
         "y": 180,
         "wires": []
     },
@@ -84,7 +84,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2080,
+        "x": 2300,
         "y": 500,
         "wires": []
     },
@@ -100,7 +100,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2080,
+        "x": 2300,
         "y": 680,
         "wires": []
     },
@@ -120,7 +120,7 @@
         "z": "4f197a1ac03259d0",
         "name": "data_to_logic unit",
         "info": "",
-        "x": 2100,
+        "x": 2320,
         "y": 120,
         "wires": []
     },
@@ -169,7 +169,7 @@
         "z": "4f197a1ac03259d0",
         "name": "data_to_logic unit",
         "info": "",
-        "x": 2080,
+        "x": 2300,
         "y": 460,
         "wires": []
     },
@@ -251,7 +251,7 @@
         "continuous": false,
         "stdInData": false,
         "x": 730,
-        "y": 380,
+        "y": 360,
         "wires": [
             [
                 "3fb6d188b0ca3098"
@@ -284,7 +284,7 @@
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
-        "x": 1600,
+        "x": 1860,
         "y": 180,
         "wires": [
             [
@@ -444,7 +444,7 @@
         "createDir": false,
         "overwriteFile": "false",
         "encoding": "none",
-        "x": 1930,
+        "x": 2150,
         "y": 180,
         "wires": [
             [
@@ -492,7 +492,7 @@
         "id": "f259e687832ad330",
         "type": "join",
         "z": "4f197a1ac03259d0",
-        "name": "",
+        "name": "have all data",
         "mode": "custom",
         "build": "object",
         "property": "payload",
@@ -509,7 +509,32 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 1270,
+        "x": 1300,
+        "y": 180,
+        "wires": [
+            [
+                "69e66e41133da508"
+            ]
+        ]
+    },
+    {
+        "id": "69e66e41133da508",
+        "type": "delay",
+        "z": "4f197a1ac03259d0",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1540,
         "y": 180,
         "wires": [
             [

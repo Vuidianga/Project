@@ -37,7 +37,7 @@ def fetch_solar_forecast(latitude, longitude):
             estimated_energy_kwh = estimated_power_watts / 1000  # kW
 
             readable_time = datetime.datetime.fromisoformat(time).strftime("%Y-%m-%d %H:%M")
-            print(f"{readable_time} ,  {estimated_energy_kwh:.2f} ")
+            print(f"{readable_time[:10]},{readable_time[11:]},{estimated_energy_kwh:.2f} ")
 
     except requests.RequestException as e:
         print(f"Error fetching solar forecast: {e}")

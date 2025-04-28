@@ -27,7 +27,7 @@ def fetch_weather(latitude, longitude):
         for time, temp, code in zip(hours, temperatures, weather_codes):
             readable_time = datetime.datetime.fromisoformat(time).strftime("%Y-%m-%d %H:%M")
             condition = weather_code_to_description(code)
-            print(f"{readable_time} , {temp} , {condition}")
+            print(f"{readable_time[:10]},{readable_time[11:]},{temp},{condition}")
 
     except requests.RequestException as e:
         print(f"Error fetching weather data: {e}")
