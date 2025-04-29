@@ -26,6 +26,16 @@
         "name": ""
     },
     {
+        "id": "706a742c0b62e1e3",
+        "type": "ui_group",
+        "name": "Location Input",
+        "tab": "",
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
         "id": "0af3b0363a337d11",
         "type": "debug",
         "z": "4f197a1ac03259d0",
@@ -68,7 +78,8 @@
                 "f0bc0b2d7ba5484a",
                 "cbeb37f343898efe",
                 "9a90f52afcac38b6",
-                "99cc92f7be54cd0a"
+                "99cc92f7be54cd0a",
+                "9a85546e80245962"
             ]
         ]
     },
@@ -110,8 +121,8 @@
         "z": "4f197a1ac03259d0",
         "name": "Data Querry ",
         "info": "",
-        "x": 630,
-        "y": 40,
+        "x": 650,
+        "y": 20,
         "wires": []
     },
     {
@@ -131,7 +142,7 @@
         "name": "get_hardware_component_status",
         "info": "",
         "x": 650,
-        "y": 440,
+        "y": 460,
         "wires": []
     },
     {
@@ -183,7 +194,7 @@
         "continuous": false,
         "stdInData": false,
         "x": 650,
-        "y": 80,
+        "y": 60,
         "wires": [
             [
                 "e9cf1031970a6702"
@@ -200,7 +211,7 @@
         "continuous": false,
         "stdInData": false,
         "x": 640,
-        "y": 200,
+        "y": 220,
         "wires": [
             [
                 "6ce78b6b369ffff1"
@@ -211,13 +222,13 @@
         "id": "f638736c0c10c459",
         "type": "pythonshell in",
         "z": "4f197a1ac03259d0",
-        "name": "get_solar_data",
+        "name": "get_solar_data(fixed calibration)",
         "pyfile": "C:\\Users\\vudia\\.node-red\\projects\\Project\\scripts\\get_solar_data.py",
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
-        "x": 640,
-        "y": 140,
+        "x": 690,
+        "y": 120,
         "wires": [
             [
                 "d94153e716c850fd"
@@ -233,8 +244,8 @@
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
-        "x": 690,
-        "y": 260,
+        "x": 670,
+        "y": 280,
         "wires": [
             [
                 "32e2bec2664d6799"
@@ -251,7 +262,7 @@
         "continuous": false,
         "stdInData": false,
         "x": 690,
-        "y": 380,
+        "y": 400,
         "wires": [
             [
                 "3fb6d188b0ca3098"
@@ -268,7 +279,7 @@
         "continuous": false,
         "stdInData": false,
         "x": 630,
-        "y": 680,
+        "y": 660,
         "wires": [
             [
                 "4d89cd8af18f0b22"
@@ -304,7 +315,7 @@
         "overwriteFile": "true",
         "encoding": "none",
         "x": 1010,
-        "y": 260,
+        "y": 280,
         "wires": [
             [
                 "f259e687832ad330",
@@ -324,7 +335,7 @@
         "overwriteFile": "true",
         "encoding": "none",
         "x": 1000,
-        "y": 200,
+        "y": 220,
         "wires": [
             [
                 "f259e687832ad330"
@@ -343,7 +354,7 @@
         "overwriteFile": "true",
         "encoding": "none",
         "x": 1020,
-        "y": 440,
+        "y": 480,
         "wires": [
             [
                 "f259e687832ad330"
@@ -382,7 +393,7 @@
         "overwriteFile": "true",
         "encoding": "none",
         "x": 1020,
-        "y": 380,
+        "y": 400,
         "wires": [
             [
                 "f259e687832ad330"
@@ -427,8 +438,8 @@
         "devicetypemustmatchexactly": true,
         "captureblutooth": false,
         "outputs": 1,
-        "x": 590,
-        "y": 500,
+        "x": 570,
+        "y": 540,
         "wires": [
             [
                 "2bcd55f22d8dd5a9",
@@ -465,7 +476,7 @@
         "continuous": false,
         "stdInData": false,
         "x": 660,
-        "y": 320,
+        "y": 340,
         "wires": [
             [
                 "e11b05734da12d67"
@@ -484,7 +495,7 @@
         "overwriteFile": "true",
         "encoding": "none",
         "x": 1020,
-        "y": 320,
+        "y": 340,
         "wires": [
             [
                 "f259e687832ad330",
@@ -609,5 +620,22 @@
         "x": 1300,
         "y": 380,
         "wires": []
+    },
+    {
+        "id": "9a85546e80245962",
+        "type": "pythonshell in",
+        "z": "4f197a1ac03259d0",
+        "name": "solar_energy(user's calibration)",
+        "pyfile": "C:\\Users\\vudia\\.node-red\\projects\\Project\\scripts\\solar_radiation.py",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 690,
+        "y": 160,
+        "wires": [
+            [
+                "d94153e716c850fd"
+            ]
+        ]
     }
 ]
