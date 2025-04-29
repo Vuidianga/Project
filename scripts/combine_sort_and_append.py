@@ -35,6 +35,6 @@ def sort_and_combine(folder_path, output_path):
 
 if __name__ == "__main__":
     sort_and_combine(
-        r"C:\Users\asantee\.node-red\projects\Project\temporal_file",
-        r"C:\Users\asantee\.node-red\projects\Project\DataBase\db.csv"
+        r"C:\Users\vudia\.node-red\projects\Project\temporal_file",
+        r"C:\Users\vudia\.node-red\projects\Project\DataBase\db.csv"
     )

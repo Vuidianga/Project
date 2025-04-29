@@ -233,7 +233,7 @@
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
-        "x": 650,
+        "x": 690,
         "y": 260,
         "wires": [
             [
@@ -250,7 +250,7 @@
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
-        "x": 730,
+        "x": 690,
         "y": 380,
         "wires": [
             [
@@ -279,12 +279,12 @@
         "id": "c0071d0b8b153941",
         "type": "pythonshell in",
         "z": "4f197a1ac03259d0",
-        "name": "combine_sort_and_append_to_data_base",
-        "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\combine_sort_and_append.py",
+        "name": "combine_sort_and_append",
+        "pyfile": "C:\\Users\\vudia\\.node-red\\projects\\Project\\scripts\\combine_sort_and_append.py",
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
-        "x": 1860,
+        "x": 1820,
         "y": 180,
         "wires": [
             [
@@ -307,7 +307,8 @@
         "y": 260,
         "wires": [
             [
-                "f259e687832ad330"
+                "f259e687832ad330",
+                "14b44b6aca05a049"
             ]
         ]
     },
@@ -354,7 +355,7 @@
         "type": "file",
         "z": "4f197a1ac03259d0",
         "name": "temp_solar",
-        "filename": "C:\\Users\\asantee\\.node-red\\projects\\Project\\temporal_file\\temp_solar_data.csv",
+        "filename": "C:\\Users\\vudia\\.node-red\\projects\\Project\\temporal_file\\temp_solar_data.csv",
         "filenameType": "str",
         "appendNewline": true,
         "createDir": false,
@@ -364,7 +365,8 @@
         "y": 140,
         "wires": [
             [
-                "f259e687832ad330"
+                "f259e687832ad330",
+                "678267ed67b95e62"
             ]
         ]
     },
@@ -379,8 +381,8 @@
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 1000,
-        "y": 360,
+        "x": 1020,
+        "y": 380,
         "wires": [
             [
                 "f259e687832ad330"
@@ -402,7 +404,8 @@
         "y": 80,
         "wires": [
             [
-                "f259e687832ad330"
+                "f259e687832ad330",
+                "4f7a979ebaef398b"
             ]
         ]
     },
@@ -438,7 +441,7 @@
         "type": "file",
         "z": "4f197a1ac03259d0",
         "name": "final_csv_db",
-        "filename": "C:\\Users\\asantee\\.node-red\\projects\\Project\\DataBase\\db.csv",
+        "filename": "C:\\Users\\vudia\\.node-red\\projects\\Project\\DataBase\\db.csv",
         "filenameType": "str",
         "appendNewline": true,
         "createDir": false,
@@ -484,7 +487,8 @@
         "y": 320,
         "wires": [
             [
-                "f259e687832ad330"
+                "f259e687832ad330",
+                "bbfb53bb75778bf9"
             ]
         ]
     },
@@ -541,5 +545,69 @@
                 "c0071d0b8b153941"
             ]
         ]
+    },
+    {
+        "id": "4f7a979ebaef398b",
+        "type": "debug",
+        "z": "4f197a1ac03259d0",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1280,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "678267ed67b95e62",
+        "type": "debug",
+        "z": "4f197a1ac03259d0",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1300,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "14b44b6aca05a049",
+        "type": "debug",
+        "z": "4f197a1ac03259d0",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1340,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "bbfb53bb75778bf9",
+        "type": "debug",
+        "z": "4f197a1ac03259d0",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1300,
+        "y": 380,
+        "wires": []
     }
 ]

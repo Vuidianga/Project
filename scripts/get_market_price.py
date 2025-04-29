@@ -73,11 +73,10 @@ def get_market_price():
             #print(f"Today's Prices:")
             print('Date,Time,Timezone, Prices[EUR/kWh]  ')
             for price in price_info['today']:
-<<<<<<< HEAD
+
                 print(f"{price['startsAt'][:10]},{price['startsAt'][11:23]},{price['startsAt'][23:]},{price['total']}")
-=======
-                print(f"{price['startsAt'][:10]},{price['startsAt'][11:16]},{price['startsAt'][23:]},{price['total']}")
->>>>>>> 84344b08e2bb7a3c53f7b52ea828327a56879ab4
+
+
 
             if price_info['tomorrow']:
                 #print("\nTomorrow's Prices:")

@@ -71,27 +71,27 @@ def get_market_price():
 
             print("\n--- Negative Prices Today ---")
             for price in price_info['today']:
-                if price['total'] < 0:
+                if price['energy'] < 0:
                     negative_prices.append({
                         'date': price['startsAt'][:10],
                         'time': price['startsAt'][11:19],
-                        'price': price['total']
+                        'price': price['energy']
                     })
 
             if price_info['tomorrow']:
                 print("\n--- Negative Prices Tomorrow ---")
                 for price in price_info['tomorrow']:
-                    if price['total'] < 0:
+                    if price['energy'] < 0:
                         negative_prices.append({
                             'date': price['startsAt'][:10],
                             'time': price['startsAt'][11:19],
-                            'price': price['total']
+                            'price': price['energy']
                         })
 
         if negative_prices:
             print("\n Found Negative Prices:")
             for item in negative_prices:
-                print(f"{item['date']} {item['time']} - {item['price']} EUR/kWh")
+                print(f"{item['date']},{item['time']},{item['price']} EUR/kWh")
         else:
             print("\n No negative prices found in the forecast.")
 

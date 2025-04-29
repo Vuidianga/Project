@@ -2,7 +2,7 @@ import requests
 import datetime
 
 # Your installation details
-PANEL_COUNT = 12
+PANEL_COUNT = 24
 PANEL_POWER_WP = 375
 PANEL_AREA_M2 = 1.8  # m² per panel
 PANEL_EFFICIENCY = 0.20  # 20%
