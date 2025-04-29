@@ -26,27 +26,10 @@
         "name": ""
     },
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "id": "706a742c0b62e1e3",
-        "type": "ui_group",
-        "name": "Location Input",
-        "tab": "",
-        "disp": true,
-        "width": 6,
-        "collapse": false,
-        "className": ""
-=======
-=======
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
         "id": "6c03dff826846f79",
         "type": "sqlitedb",
         "db": "C:\\Users\\asantee\\.node-red\\projects\\Project\\DataBase\\db.sqlite",
         "mode": "RWC"
-<<<<<<< HEAD
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
-=======
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
     },
     {
         "id": "0af3b0363a337d11",
@@ -60,18 +43,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "x": 2360,
-        "y": 180,
-=======
         "x": 2380,
         "y": 260,
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
-=======
-        "x": 2380,
-        "y": 260,
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
         "wires": []
     },
     {
@@ -100,9 +73,7 @@
                 "1e5dec98b2d97cc3",
                 "f0bc0b2d7ba5484a",
                 "cbeb37f343898efe",
-                "9a90f52afcac38b6",
-                "99cc92f7be54cd0a",
-                "9a85546e80245962"
+                "9a90f52afcac38b6"
             ]
         ]
     },
@@ -144,8 +115,8 @@
         "z": "4f197a1ac03259d0",
         "name": "Data Querry ",
         "info": "",
-        "x": 650,
-        "y": 20,
+        "x": 630,
+        "y": 40,
         "wires": []
     },
     {
@@ -154,18 +125,8 @@
         "z": "4f197a1ac03259d0",
         "name": "data_to_logic unit",
         "info": "",
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "x": 2320,
-        "y": 120,
-=======
         "x": 2360,
         "y": 100,
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
-=======
-        "x": 2360,
-        "y": 100,
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
         "wires": []
     },
     {
@@ -175,7 +136,7 @@
         "name": "get_hardware_component_status",
         "info": "",
         "x": 650,
-        "y": 460,
+        "y": 440,
         "wires": []
     },
     {
@@ -227,7 +188,7 @@
         "continuous": false,
         "stdInData": false,
         "x": 650,
-        "y": 60,
+        "y": 80,
         "wires": [
             [
                 "e9cf1031970a6702"
@@ -244,7 +205,7 @@
         "continuous": false,
         "stdInData": false,
         "x": 640,
-        "y": 220,
+        "y": 200,
         "wires": [
             [
                 "6ce78b6b369ffff1"
@@ -255,23 +216,13 @@
         "id": "f638736c0c10c459",
         "type": "pythonshell in",
         "z": "4f197a1ac03259d0",
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "name": "get_solar_data(fixed calibration)",
-        "pyfile": "C:\\Users\\vudia\\.node-red\\projects\\Project\\scripts\\get_solar_data.py",
-=======
         "name": "get_solar_data",
         "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\get_solar_data.py",
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
-=======
-        "name": "get_solar_data",
-        "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\get_solar_data.py",
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
-        "x": 690,
-        "y": 120,
+        "x": 640,
+        "y": 140,
         "wires": [
             [
                 "d94153e716c850fd"
@@ -287,8 +238,8 @@
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
-        "x": 670,
-        "y": 280,
+        "x": 650,
+        "y": 260,
         "wires": [
             [
                 "32e2bec2664d6799"
@@ -304,16 +255,8 @@
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "x": 690,
-        "y": 400,
-=======
-=======
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
         "x": 730,
         "y": 360,
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
         "wires": [
             [
                 "3fb6d188b0ca3098"
@@ -330,7 +273,7 @@
         "continuous": false,
         "stdInData": false,
         "x": 630,
-        "y": 660,
+        "y": 680,
         "wires": [
             [
                 "4d89cd8af18f0b22"
@@ -341,19 +284,6 @@
         "id": "c0071d0b8b153941",
         "type": "pythonshell in",
         "z": "4f197a1ac03259d0",
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "name": "combine_sort_and_append",
-        "pyfile": "C:\\Users\\vudia\\.node-red\\projects\\Project\\scripts\\combine_sort_and_append.py",
-        "virtualenv": "",
-        "continuous": false,
-        "stdInData": false,
-        "x": 1820,
-        "y": 180,
-        "wires": [
-            [
-                "693fa8576fef09e3"
-=======
         "name": "combine_sort_and_append_to_data_base",
         "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\combine_sort_and_append.py",
         "virtualenv": "",
@@ -365,20 +295,6 @@
             [
                 "693fa8576fef09e3",
                 "143a64dad64cabcc"
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
-=======
-        "name": "combine_sort_and_append_to_data_base",
-        "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\combine_sort_and_append.py",
-        "virtualenv": "",
-        "continuous": false,
-        "stdInData": false,
-        "x": 1860,
-        "y": 180,
-        "wires": [
-            [
-                "693fa8576fef09e3",
-                "143a64dad64cabcc"
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
             ]
         ]
     },
@@ -394,24 +310,10 @@
         "overwriteFile": "true",
         "encoding": "none",
         "x": 1010,
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "y": 280,
-        "wires": [
-            [
-                "f259e687832ad330",
-                "14b44b6aca05a049"
-=======
-=======
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
         "y": 260,
         "wires": [
             [
                 "f259e687832ad330"
-<<<<<<< HEAD
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
-=======
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
             ]
         ]
     },
@@ -427,14 +329,7 @@
         "overwriteFile": "true",
         "encoding": "none",
         "x": 1000,
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "y": 220,
-=======
-=======
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
         "y": 200,
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
         "wires": [
             [
                 "f259e687832ad330"
@@ -453,7 +348,7 @@
         "overwriteFile": "true",
         "encoding": "none",
         "x": 1020,
-        "y": 480,
+        "y": 440,
         "wires": [
             [
                 "f259e687832ad330"
@@ -475,16 +370,7 @@
         "y": 140,
         "wires": [
             [
-<<<<<<< HEAD
-<<<<<<< HEAD
-                "f259e687832ad330",
-                "678267ed67b95e62"
-=======
                 "f259e687832ad330"
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
-=======
-                "f259e687832ad330"
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
             ]
         ]
     },
@@ -499,8 +385,8 @@
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 1020,
-        "y": 400,
+        "x": 1000,
+        "y": 360,
         "wires": [
             [
                 "f259e687832ad330"
@@ -522,16 +408,7 @@
         "y": 80,
         "wires": [
             [
-<<<<<<< HEAD
-<<<<<<< HEAD
-                "f259e687832ad330",
-                "4f7a979ebaef398b"
-=======
                 "f259e687832ad330"
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
-=======
-                "f259e687832ad330"
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
             ]
         ]
     },
@@ -553,8 +430,8 @@
         "devicetypemustmatchexactly": true,
         "captureblutooth": false,
         "outputs": 1,
-        "x": 570,
-        "y": 540,
+        "x": 590,
+        "y": 500,
         "wires": [
             [
                 "2bcd55f22d8dd5a9",
@@ -574,11 +451,6 @@
         "overwriteFile": "false",
         "encoding": "none",
         "x": 2150,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
         "y": 180,
         "wires": [
             []
@@ -606,10 +478,6 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 1300,
-<<<<<<< HEAD
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
-=======
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
         "y": 180,
         "wires": [
             [
@@ -618,78 +486,6 @@
         ]
     },
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "id": "99cc92f7be54cd0a",
-        "type": "pythonshell in",
-        "z": "4f197a1ac03259d0",
-        "name": "get_negative_prices",
-        "pyfile": "C:\\Users\\vudia\\.node-red\\projects\\Project\\scripts\\get_negative_prices.py",
-        "virtualenv": "",
-        "continuous": false,
-        "stdInData": false,
-        "x": 660,
-        "y": 340,
-        "wires": [
-            [
-                "e11b05734da12d67"
-            ]
-        ]
-    },
-    {
-        "id": "e11b05734da12d67",
-        "type": "file",
-        "z": "4f197a1ac03259d0",
-        "name": "temp_negative_prices",
-        "filename": "C:\\Users\\vudia\\.node-red\\projects\\Project\\temporal_file\\temp_negative_prices.csv",
-        "filenameType": "str",
-        "appendNewline": true,
-        "createDir": false,
-        "overwriteFile": "true",
-        "encoding": "none",
-        "x": 1020,
-        "y": 340,
-        "wires": [
-            [
-                "f259e687832ad330",
-                "bbfb53bb75778bf9"
-            ]
-        ]
-    },
-    {
-        "id": "f259e687832ad330",
-        "type": "join",
-        "z": "4f197a1ac03259d0",
-        "name": "have all data",
-        "mode": "custom",
-        "build": "object",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "payload",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "useparts": false,
-        "accumulate": true,
-        "timeout": "",
-        "count": "4",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1300,
-        "y": 180,
-        "wires": [
-            [
-                "69e66e41133da508"
-            ]
-        ]
-    },
-    {
-=======
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
-=======
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
         "id": "69e66e41133da508",
         "type": "delay",
         "z": "4f197a1ac03259d0",
@@ -715,12 +511,6 @@
         ]
     },
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "id": "4f7a979ebaef398b",
-=======
-=======
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
         "id": "143a64dad64cabcc",
         "type": "sqlite",
         "z": "4f197a1ac03259d0",
@@ -734,6 +524,28 @@
             [
                 "0af3b0363a337d11"
             ]
+        ]
+    },
+    {
+        "id": "291e86a2e348d7d1",
+        "type": "exec",
+        "z": "4f197a1ac03259d0",
+        "command": "python3 C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\battery.py 1",
+        "addpay": "topic",
+        "append": "",
+        "useSpawn": "true",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "charge_battery",
+        "x": 680,
+        "y": 780,
+        "wires": [
+            [
+                "9e5b8309ea802eb9"
+            ],
+            [],
+            []
         ]
     },
     {
@@ -758,10 +570,6 @@
     },
     {
         "id": "9e5b8309ea802eb9",
-<<<<<<< HEAD
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
-=======
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
         "type": "debug",
         "z": "4f197a1ac03259d0",
         "name": "debug 4",
@@ -772,87 +580,11 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "x": 1280,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "678267ed67b95e62",
-        "type": "debug",
-        "z": "4f197a1ac03259d0",
-        "name": "debug 5",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1300,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "14b44b6aca05a049",
-        "type": "debug",
-        "z": "4f197a1ac03259d0",
-        "name": "debug 6",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1340,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "bbfb53bb75778bf9",
-        "type": "debug",
-        "z": "4f197a1ac03259d0",
-        "name": "debug 7",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1300,
-        "y": 380,
-        "wires": []
-    },
-    {
-        "id": "9a85546e80245962",
-        "type": "pythonshell in",
-        "z": "4f197a1ac03259d0",
-        "name": "solar_energy(user's calibration)",
-        "pyfile": "C:\\Users\\vudia\\.node-red\\projects\\Project\\scripts\\solar_radiation.py",
-        "virtualenv": "",
-        "continuous": false,
-        "stdInData": false,
-        "x": 690,
-        "y": 160,
-        "wires": [
-            [
-                "d94153e716c850fd"
-=======
         "x": 980,
         "y": 780,
         "wires": []
     },
     {
-=======
-        "x": 980,
-        "y": 780,
-        "wires": []
-    },
-    {
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
         "id": "7cc29534a80cb362",
         "type": "inject",
         "z": "4f197a1ac03259d0",
@@ -876,7 +608,9 @@
         "x": 440,
         "y": 780,
         "wires": [
-            []
+            [
+                "291e86a2e348d7d1"
+            ]
         ]
     },
     {
@@ -894,7 +628,9 @@
         "x": 430,
         "y": 860,
         "wires": [
-            []
+            [
+                "291e86a2e348d7d1"
+            ]
         ]
     },
     {
@@ -923,10 +659,6 @@
         "wires": [
             [
                 "53fe79661cd94c9c"
-<<<<<<< HEAD
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
-=======
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
             ]
         ]
     }
