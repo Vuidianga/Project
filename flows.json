@@ -26,6 +26,12 @@
         "name": ""
     },
     {
+        "id": "6c03dff826846f79",
+        "type": "sqlitedb",
+        "db": "C:\\Users\\asantee\\.node-red\\projects\\Project\\DataBase\\db.sqlite",
+        "mode": "RWC"
+    },
+    {
         "id": "0af3b0363a337d11",
         "type": "debug",
         "z": "4f197a1ac03259d0",
@@ -37,8 +43,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2360,
-        "y": 180,
+        "x": 2380,
+        "y": 260,
         "wires": []
     },
     {
@@ -119,8 +125,8 @@
         "z": "4f197a1ac03259d0",
         "name": "data_to_logic unit",
         "info": "",
-        "x": 2320,
-        "y": 120,
+        "x": 2360,
+        "y": 100,
         "wires": []
     },
     {
@@ -287,7 +293,8 @@
         "y": 180,
         "wires": [
             [
-                "693fa8576fef09e3"
+                "693fa8576fef09e3",
+                "143a64dad64cabcc"
             ]
         ]
     },
@@ -446,9 +453,7 @@
         "x": 2150,
         "y": 180,
         "wires": [
-            [
-                "0af3b0363a337d11"
-            ]
+            []
         ]
     },
     {
@@ -502,6 +507,158 @@
         "wires": [
             [
                 "c0071d0b8b153941"
+            ]
+        ]
+    },
+    {
+        "id": "143a64dad64cabcc",
+        "type": "sqlite",
+        "z": "4f197a1ac03259d0",
+        "mydb": "6c03dff826846f79",
+        "sqlquery": "fixed",
+        "sql": "SELECT * FROM data LIMIT 10",
+        "name": "dataBase",
+        "x": 2180,
+        "y": 260,
+        "wires": [
+            [
+                "0af3b0363a337d11"
+            ]
+        ]
+    },
+    {
+        "id": "291e86a2e348d7d1",
+        "type": "exec",
+        "z": "4f197a1ac03259d0",
+        "command": "python3 C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\battery.py 1",
+        "addpay": "topic",
+        "append": "",
+        "useSpawn": "true",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "charge_battery",
+        "x": 680,
+        "y": 780,
+        "wires": [
+            [
+                "9e5b8309ea802eb9"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "22bcc9c9defdb24b",
+        "type": "exec",
+        "z": "4f197a1ac03259d0",
+        "command": "",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 650,
+        "y": 860,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "9e5b8309ea802eb9",
+        "type": "debug",
+        "z": "4f197a1ac03259d0",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "7cc29534a80cb362",
+        "type": "inject",
+        "z": "4f197a1ac03259d0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 440,
+        "y": 780,
+        "wires": [
+            [
+                "291e86a2e348d7d1"
+            ]
+        ]
+    },
+    {
+        "id": "53fe79661cd94c9c",
+        "type": "function",
+        "z": "4f197a1ac03259d0",
+        "name": "kill_process",
+        "func": "msg.topic = \"kill\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 860,
+        "wires": [
+            [
+                "291e86a2e348d7d1"
+            ]
+        ]
+    },
+    {
+        "id": "def6b83c5dd16867",
+        "type": "inject",
+        "z": "4f197a1ac03259d0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 260,
+        "y": 860,
+        "wires": [
+            [
+                "53fe79661cd94c9c"
             ]
         ]
     }

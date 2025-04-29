@@ -18,16 +18,16 @@ def fetch_weather(latitude, longitude):
         response.raise_for_status()
         weather_data = response.json()
 
-
+        timezone = "+02:00"
         hours = weather_data.get("hourly", {}).get("time", [])
         temperatures = weather_data.get("hourly", {}).get("temperature_2m", [])
         weather_codes = weather_data.get("hourly", {}).get("weathercode", [])
-        print("Date,Time,Temperature (degree C) ,Weather condition")
+        print("Date,Time,Timezone,Temperature (degree C) ,Weather condition")
 
         for time, temp, code in zip(hours, temperatures, weather_codes):
             readable_time = datetime.datetime.fromisoformat(time).strftime("%Y-%m-%d %H:%M")
             condition = weather_code_to_description(code)
-            print(f"{readable_time[:10]},{readable_time[11:]},{temp},{condition}")
+            print(f"{readable_time[:10]},{readable_time[11:]},{timezone},{temp},{condition}")
 
     except requests.RequestException as e:
         print(f"Error fetching weather data: {e}")

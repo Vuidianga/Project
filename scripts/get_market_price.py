@@ -71,7 +71,7 @@ def get_market_price():
             #print("\n--- Current Electricity Prices ---")
             #print(f"Current Total Price: {price_info['current']['total']} EUR/kWh")
             #print(f"Today's Prices:")
-            print('Date,Time,Timezone, Prices[EUR/kWh]  ')
+            print('Date,Time,Timezone,Prices[EUR/kWh]')
             for price in price_info['today']:
                 print(f"{price['startsAt'][:10]},{price['startsAt'][11:16]},{price['startsAt'][23:]},{price['total']}")
 
