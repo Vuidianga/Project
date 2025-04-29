@@ -26,11 +26,6 @@ def sort_and_combine(folder_path, output_csv_path, sqlite_db_path, table_name="d
     # Group by Date, Time, and Timezone and merge non-null values
     combined_csv = combined_csv.groupby(['Date', 'Time', 'Timezone'], as_index=False).first()
 
-<<<<<<< HEAD
-    # Save back to output path (overwrite)
-    combined_csv.to_csv(output_path, index=False)
-    print(f"appended new data to database successfully")
-=======
     # Save to CSV
     combined_csv.to_csv(output_csv_path, index=False)
     print(f"Appended new data to CSV successfully.")
@@ -40,6 +35,7 @@ def sort_and_combine(folder_path, output_csv_path, sqlite_db_path, table_name="d
     combined_csv.to_sql(table_name, conn, if_exists='replace', index=False)
     conn.close()
     print(f"Written data to SQLite database at {sqlite_db_path}.")
+=======
 >>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
 
     return combined_csv

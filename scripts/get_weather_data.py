@@ -23,7 +23,11 @@ def fetch_weather(latitude, longitude):
         temperatures = weather_data.get("hourly", {}).get("temperature_2m", [])
         weather_codes = weather_data.get("hourly", {}).get("weathercode", [])
 <<<<<<< HEAD
+<<<<<<< HEAD
         print("Time,Temperature (degree C) ,Weather condition")
+=======
+        print("Date,Time,Timezone,Temperature (degree C) ,Weather condition")
+>>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
 =======
         print("Date,Time,Timezone,Temperature (degree C) ,Weather condition")
 >>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
@@ -31,8 +35,7 @@ def fetch_weather(latitude, longitude):
         for time, temp, code in zip(hours, temperatures, weather_codes):
             readable_time = datetime.datetime.fromisoformat(time).strftime("%Y-%m-%d %H:%M")
             condition = weather_code_to_description(code)
-<<<<<<< HEAD
-            print(f"{readable_time[:10]},{readable_time[11:]},{temp},{condition}")
+            print(f"{readable_time[:10]},{readable_time[11:]},{timezone},{temp},{condition}")
 =======
             print(f"{readable_time[:10]},{readable_time[11:]},{timezone},{temp},{condition}")
 >>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc

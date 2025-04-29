@@ -27,6 +27,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "id": "706a742c0b62e1e3",
         "type": "ui_group",
         "name": "Location Input",
@@ -36,10 +37,15 @@
         "collapse": false,
         "className": ""
 =======
+=======
+>>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
         "id": "6c03dff826846f79",
         "type": "sqlitedb",
         "db": "C:\\Users\\asantee\\.node-red\\projects\\Project\\DataBase\\db.sqlite",
         "mode": "RWC"
+<<<<<<< HEAD
+>>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
+=======
 >>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
     },
     {
@@ -55,8 +61,13 @@
         "statusVal": "",
         "statusType": "auto",
 <<<<<<< HEAD
+<<<<<<< HEAD
         "x": 2360,
         "y": 180,
+=======
+        "x": 2380,
+        "y": 260,
+>>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
 =======
         "x": 2380,
         "y": 260,
@@ -144,8 +155,13 @@
         "name": "data_to_logic unit",
         "info": "",
 <<<<<<< HEAD
+<<<<<<< HEAD
         "x": 2320,
         "y": 120,
+=======
+        "x": 2360,
+        "y": 100,
+>>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
 =======
         "x": 2360,
         "y": 100,
@@ -240,8 +256,13 @@
         "type": "pythonshell in",
         "z": "4f197a1ac03259d0",
 <<<<<<< HEAD
+<<<<<<< HEAD
         "name": "get_solar_data(fixed calibration)",
         "pyfile": "C:\\Users\\vudia\\.node-red\\projects\\Project\\scripts\\get_solar_data.py",
+=======
+        "name": "get_solar_data",
+        "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\get_solar_data.py",
+>>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
 =======
         "name": "get_solar_data",
         "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\get_solar_data.py",
@@ -284,9 +305,12 @@
         "continuous": false,
         "stdInData": false,
 <<<<<<< HEAD
+<<<<<<< HEAD
         "x": 690,
         "y": 400,
 =======
+=======
+>>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
         "x": 730,
         "y": 360,
 >>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
@@ -318,6 +342,7 @@
         "type": "pythonshell in",
         "z": "4f197a1ac03259d0",
 <<<<<<< HEAD
+<<<<<<< HEAD
         "name": "combine_sort_and_append",
         "pyfile": "C:\\Users\\vudia\\.node-red\\projects\\Project\\scripts\\combine_sort_and_append.py",
         "virtualenv": "",
@@ -328,6 +353,19 @@
         "wires": [
             [
                 "693fa8576fef09e3"
+=======
+        "name": "combine_sort_and_append_to_data_base",
+        "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\combine_sort_and_append.py",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 1860,
+        "y": 180,
+        "wires": [
+            [
+                "693fa8576fef09e3",
+                "143a64dad64cabcc"
+>>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
 =======
         "name": "combine_sort_and_append_to_data_base",
         "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\combine_sort_and_append.py",
@@ -357,16 +395,22 @@
         "encoding": "none",
         "x": 1010,
 <<<<<<< HEAD
+<<<<<<< HEAD
         "y": 280,
         "wires": [
             [
                 "f259e687832ad330",
                 "14b44b6aca05a049"
 =======
+=======
+>>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
         "y": 260,
         "wires": [
             [
                 "f259e687832ad330"
+<<<<<<< HEAD
+>>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
+=======
 >>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
             ]
         ]
@@ -384,8 +428,11 @@
         "encoding": "none",
         "x": 1000,
 <<<<<<< HEAD
+<<<<<<< HEAD
         "y": 220,
 =======
+=======
+>>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
         "y": 200,
 >>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
         "wires": [
@@ -429,8 +476,12 @@
         "wires": [
             [
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "f259e687832ad330",
                 "678267ed67b95e62"
+=======
+                "f259e687832ad330"
+>>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
 =======
                 "f259e687832ad330"
 >>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
@@ -472,8 +523,12 @@
         "wires": [
             [
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "f259e687832ad330",
                 "4f7a979ebaef398b"
+=======
+                "f259e687832ad330"
+>>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
 =======
                 "f259e687832ad330"
 >>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
@@ -520,7 +575,10 @@
         "encoding": "none",
         "x": 2150,
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
         "y": 180,
         "wires": [
             []
@@ -548,6 +606,9 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 1300,
+<<<<<<< HEAD
+>>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
+=======
 >>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
         "y": 180,
         "wires": [
@@ -557,6 +618,7 @@
         ]
     },
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         "id": "99cc92f7be54cd0a",
         "type": "pythonshell in",
@@ -626,6 +688,8 @@
     {
 =======
 >>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
+=======
+>>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
         "id": "69e66e41133da508",
         "type": "delay",
         "z": "4f197a1ac03259d0",
@@ -652,8 +716,11 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "id": "4f7a979ebaef398b",
 =======
+=======
+>>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
         "id": "143a64dad64cabcc",
         "type": "sqlite",
         "z": "4f197a1ac03259d0",
@@ -713,6 +780,9 @@
     },
     {
         "id": "9e5b8309ea802eb9",
+<<<<<<< HEAD
+>>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
+=======
 >>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
         "type": "debug",
         "z": "4f197a1ac03259d0",
@@ -724,6 +794,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
+<<<<<<< HEAD
 <<<<<<< HEAD
         "x": 1280,
         "y": 80,
@@ -797,6 +868,13 @@
         "wires": []
     },
     {
+=======
+        "x": 980,
+        "y": 780,
+        "wires": []
+    },
+    {
+>>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
         "id": "7cc29534a80cb362",
         "type": "inject",
         "z": "4f197a1ac03259d0",
@@ -871,6 +949,9 @@
         "wires": [
             [
                 "53fe79661cd94c9c"
+<<<<<<< HEAD
+>>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
+=======
 >>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
             ]
         ]
