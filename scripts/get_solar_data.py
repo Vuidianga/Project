@@ -2,7 +2,7 @@ import requests
 import datetime
 
 # Your installation details
-PANEL_COUNT = 12
+PANEL_COUNT = 24
 PANEL_POWER_WP = 375
 PANEL_AREA_M2 = 1.8  # m² per panel
 PANEL_EFFICIENCY = 0.20  # 20%
@@ -30,8 +30,17 @@ def fetch_solar_forecast(latitude, longitude):
 
         hours = solar_data.get("hourly", {}).get("time", [])
         shortwave = solar_data.get("hourly", {}).get("shortwave_radiation", [])
+<<<<<<< HEAD
+<<<<<<< HEAD
+        print("Time,Solar Production Estimate - kW")
+=======
         timezone = "+02:00"
         print("Date,Time,Timezone,Solar Production Estimate - kW")
+>>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
+=======
+        timezone = "+02:00"
+        print("Date,Time,Timezone,Solar Production Estimate - kW")
+>>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
 
         for time, sw in zip(hours, shortwave):
             estimated_power_watts = sw * EFFECTIVE_AREA  # W
@@ -39,6 +48,9 @@ def fetch_solar_forecast(latitude, longitude):
 
             readable_time = datetime.datetime.fromisoformat(time).strftime("%Y-%m-%d %H:%M")
             print(f"{readable_time[:10]},{readable_time[11:]},{timezone},{estimated_energy_kwh:.2f} ")
+=======
+            print(f"{readable_time[:10]},{readable_time[11:]},{timezone},{estimated_energy_kwh:.2f} ")
+>>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
 
     except requests.RequestException as e:
         print(f"Error fetching solar forecast: {e}")

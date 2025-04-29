@@ -35,6 +35,8 @@ def sort_and_combine(folder_path, output_csv_path, sqlite_db_path, table_name="d
     combined_csv.to_sql(table_name, conn, if_exists='replace', index=False)
     conn.close()
     print(f"Written data to SQLite database at {sqlite_db_path}.")
+=======
+>>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
 
     return combined_csv
 

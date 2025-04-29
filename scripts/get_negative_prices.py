@@ -1,7 +1,7 @@
 import requests
 
 def get_market_price():
-    API_KEY = 'yBAKkSc0W8n-xxpDnQ4brbAZiZ1T45eUlWkC-kNILNU'  # Replace with your actual API key
+    API_KEY = 'yBAKkSc0W8n-xxpDnQ4brbAZiZ1T45eUlWkC-kNILNU'  # Your API key
     url = 'https://api.tibber.com/v1-beta/gql'
 
     query = """
@@ -42,7 +42,7 @@ def get_market_price():
 
     try:
         response = requests.post(url, json={'query': query}, headers=headers)
-        response.raise_for_status()  # Raises an HTTPError for bad responses (4xx, 5xx)
+        response.raise_for_status()
 
         data = response.json()
 
@@ -50,12 +50,13 @@ def get_market_price():
             print(f"GraphQL Error: {data['errors']}")
             return
 
-        # Extract and print price info
         homes = data.get('data', {}).get('viewer', {}).get('homes', [])
 
         if not homes:
             print("No homes found in the response.")
             return
+
+        negative_prices = []
 
         for home in homes:
             subscription = home.get('currentSubscription')
@@ -68,35 +69,31 @@ def get_market_price():
                 print("No price info available.")
                 continue
 
-            #print("\n--- Current Electricity Prices ---")
-            #print(f"Current Total Price: {price_info['current']['total']} EUR/kWh")
-            #print(f"Today's Prices:")
-<<<<<<< HEAD
-<<<<<<< HEAD
-            print('Date,Time,Timezone, Prices[EUR/kWh]  ')
+            print("\n--- Negative Prices Today ---")
             for price in price_info['today']:
-
-                print(f"{price['startsAt'][:10]},{price['startsAt'][11:23]},{price['startsAt'][23:]},{price['total']}")
-
-
-=======
-            print('Date,Time,Timezone,Prices[EUR/kWh]')
-            for price in price_info['today']:
-                print(f"{price['startsAt'][:10]},{price['startsAt'][11:16]},{price['startsAt'][23:]},{price['total']}")
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
-=======
-            print('Date,Time,Timezone,Prices[EUR/kWh]')
-            for price in price_info['today']:
-                print(f"{price['startsAt'][:10]},{price['startsAt'][11:16]},{price['startsAt'][23:]},{price['total']}")
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
+                if price['energy'] < 0:
+                    negative_prices.append({
+                        'date': price['startsAt'][:10],
+                        'time': price['startsAt'][11:19],
+                        'price': price['energy']
+                    })
 
             if price_info['tomorrow']:
-                #print("\nTomorrow's Prices:")
+                print("\n--- Negative Prices Tomorrow ---")
                 for price in price_info['tomorrow']:
-                    print(f"{price['startsAt'][:10]},{price['startsAt'][11:16]},{price['startsAt'][23:]},{price['total']}")
-=======
-                    print(f"{price['startsAt'][:10]},{price['startsAt'][11:16]},{price['startsAt'][23:]},{price['total']}")
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
+                    if price['energy'] < 0:
+                        negative_prices.append({
+                            'date': price['startsAt'][:10],
+                            'time': price['startsAt'][11:19],
+                            'price': price['energy']
+                        })
+
+        if negative_prices:
+            print("\n Found Negative Prices:")
+            for item in negative_prices:
+                print(f"{item['date']},{item['time']},{item['price']} EUR/kWh")
+        else:
+            print("\n No negative prices found in the forecast.")
 
     except requests.exceptions.RequestException as e:
         print(f"Request Error: {e}")
