@@ -527,28 +527,6 @@
         ]
     },
     {
-        "id": "291e86a2e348d7d1",
-        "type": "exec",
-        "z": "4f197a1ac03259d0",
-        "command": "python3 C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\battery.py 1",
-        "addpay": "topic",
-        "append": "",
-        "useSpawn": "true",
-        "timer": "",
-        "winHide": false,
-        "oldrc": false,
-        "name": "charge_battery",
-        "x": 680,
-        "y": 780,
-        "wires": [
-            [
-                "9e5b8309ea802eb9"
-            ],
-            [],
-            []
-        ]
-    },
-    {
         "id": "22bcc9c9defdb24b",
         "type": "exec",
         "z": "4f197a1ac03259d0",
@@ -608,9 +586,7 @@
         "x": 440,
         "y": 780,
         "wires": [
-            [
-                "291e86a2e348d7d1"
-            ]
+            []
         ]
     },
     {
@@ -628,9 +604,7 @@
         "x": 430,
         "y": 860,
         "wires": [
-            [
-                "291e86a2e348d7d1"
-            ]
+            []
         ]
     },
     {
