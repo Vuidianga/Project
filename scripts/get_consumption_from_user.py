@@ -39,6 +39,8 @@ def get_consumption_from_user():
         #print(f"Home ID: {home_id}")
 
         # 2. Now fetch consumption data
+
+
         query_consumption = """
         {
             viewer {
@@ -46,7 +48,7 @@ def get_consumption_from_user():
                     consumption(resolution: HOURLY, last: 100) {
                         nodes {
                             to
-                            cost
+                            cost 
                             unitPrice
                             unitPriceVAT
                             consumption
@@ -75,7 +77,7 @@ def get_consumption_from_user():
             return
 
         # Print header
-        print("Date,Time,Timezone,Cost[EUR],UnitPrice[EUR/kWh],UnitPriceVAT[EUR/kWh],Consumption[kWh]")
+        print("Date,Time,Timezone,Consumption_Cost[EUR],Consumption_UnitPrice[EUR/kWh],Consumption_UnitPriceVAT[EUR/kWh],Consumption[kWh]")
 
         for entry in nodes:
             if entry.get('consumption') is not None:

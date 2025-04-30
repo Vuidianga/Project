@@ -57,7 +57,7 @@ def get_market_price():
             return
 
         negative_prices = []
-
+        print('Date,Time,Timezone,Negative_prices[EUR/kWh]')
         for home in homes:
             subscription = home.get('currentSubscription')
             if not subscription:
@@ -69,7 +69,6 @@ def get_market_price():
                 print("No price info available.")
                 continue
 
-            print("\n--- Negative Prices Today ---")
             for price in price_info['today']:
                 if price['energy'] < 0:
                     negative_prices.append({
@@ -79,7 +78,6 @@ def get_market_price():
                     })
 
             if price_info['tomorrow']:
-                print("\n--- Negative Prices Tomorrow ---")
                 for price in price_info['tomorrow']:
                     if price['energy'] < 0:
                         negative_prices.append({
@@ -89,11 +87,12 @@ def get_market_price():
                         })
 
         if negative_prices:
-            print("\n Found Negative Prices:")
+            #print("\n Found Negative Prices:")
             for item in negative_prices:
-                print(f"{item['date']},{item['time']},{item['price']} EUR/kWh")
-        else:
-            print("\n No negative prices found in the forecast.")
+                print(f"{price['startsAt'][:10]},{price['startsAt'][11:16]},{price['startsAt'][23:]},{price['total']}")
+
+        #else:
+        #    print("\n No negative prices found in the forecast.")
 
     except requests.exceptions.RequestException as e:
         print(f"Request Error: {e}")

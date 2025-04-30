@@ -3,19 +3,23 @@
 import time
 import os
 import sys
+import csv
 
-BATTERY_FILE = r"C:\Users\asantee\.node-red\projects\Project\battery_file"
+BATTERY_FILE = r"C:\Users\asantee\.node-red\projects\Project\battery_file.csv"
 
 def save_battery_state(level, status):
-    with open(BATTERY_FILE, "w") as f:
-        f.write(f"{level},{status}")
+    with open(BATTERY_FILE, mode="w", newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow(["Battery_level", "Battery_status"])
+        writer.writerow([f"{level:.2f}", status])
 
 def load_battery_state():
     if not os.path.exists(BATTERY_FILE):
         return 100.0, "idle"  # default battery level
-    with open(BATTERY_FILE, "r") as f:
-        content = f.read().strip()
-        level_str, status = content.split(",")
+    with open(BATTERY_FILE, mode="r") as f:
+        reader = csv.reader(f)
+        next(reader)  # skip header
+        level_str, status = next(reader)
         return float(level_str), status
 
 def charging(battery_level, switch, charging_power, battery_capacity):
@@ -47,17 +51,11 @@ def battery_status():
     print(f"Battery level is now {level:.2f}%")
     print(f"Status: {status.capitalize()}")
 
-
 def battery(_command, _status):
     level, previous_status = load_battery_state()
     charging_, discharging_ = False, False
-    _is_charging = False
-    _is_discharging = False
-
-    if _status == "charging":
-        _is_charging = True
-    elif _status == "discharging":
-        _is_discharging = True
+    _is_charging = _status == "charging"
+    _is_discharging = _status == "discharging"
 
     if _command == 1 and not _is_charging:
         level, charging_ = charging(level, True, 1000, 7000)
@@ -65,7 +63,6 @@ def battery(_command, _status):
         level, discharging_ = discharging(level, True, 1000, 7000)
     elif _command == 3:
         battery_status()
-
 
     new_status = "charging" if charging_ else "discharging" if discharging_ else "idle"
     save_battery_state(level, new_status)

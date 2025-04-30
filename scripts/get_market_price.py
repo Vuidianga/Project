@@ -3,7 +3,7 @@ import requests
 def get_market_price():
     API_KEY = 'yBAKkSc0W8n-xxpDnQ4brbAZiZ1T45eUlWkC-kNILNU'  # Replace with your actual API key
     url = 'https://api.tibber.com/v1-beta/gql'
-
+    # Price - The energy price
     query = """
     {
       viewer {
@@ -68,35 +68,17 @@ def get_market_price():
                 print("No price info available.")
                 continue
 
-            #print("\n--- Current Electricity Prices ---")
-            #print(f"Current Total Price: {price_info['current']['total']} EUR/kWh")
-            #print(f"Today's Prices:")
-<<<<<<< HEAD
-<<<<<<< HEAD
-            print('Date,Time,Timezone, Prices[EUR/kWh]  ')
-            for price in price_info['today']:
 
-                print(f"{price['startsAt'][:10]},{price['startsAt'][11:23]},{price['startsAt'][23:]},{price['total']}")
-
-
-=======
-            print('Date,Time,Timezone,Prices[EUR/kWh]')
+            print('Date,Time,Timezone,market_prices[EUR/kWh]')
             for price in price_info['today']:
                 print(f"{price['startsAt'][:10]},{price['startsAt'][11:16]},{price['startsAt'][23:]},{price['total']}")
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
-=======
-            print('Date,Time,Timezone,Prices[EUR/kWh]')
-            for price in price_info['today']:
-                print(f"{price['startsAt'][:10]},{price['startsAt'][11:16]},{price['startsAt'][23:]},{price['total']}")
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
 
             if price_info['tomorrow']:
                 #print("\nTomorrow's Prices:")
                 for price in price_info['tomorrow']:
                     print(f"{price['startsAt'][:10]},{price['startsAt'][11:16]},{price['startsAt'][23:]},{price['total']}")
-=======
-                    print(f"{price['startsAt'][:10]},{price['startsAt'][11:16]},{price['startsAt'][23:]},{price['total']}")
->>>>>>> 1a7402d1e953f386110a1fb376e3dcad00e997cc
+            print(f"{price['startsAt'][:10]},{price['startsAt'][11:16]},{price['startsAt'][23:]},{price['total']}")
+
 
     except requests.exceptions.RequestException as e:
         print(f"Request Error: {e}")

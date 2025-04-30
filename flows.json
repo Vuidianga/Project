@@ -32,6 +32,12 @@
         "mode": "RWC"
     },
     {
+        "id": "5eba37732014c571",
+        "type": "sqlitedb",
+        "db": "C:\\Users\\vudia\\.node-red\\projects\\Project\\DataBase\\db.sqlite",
+        "mode": "RWC"
+    },
+    {
         "id": "0af3b0363a337d11",
         "type": "debug",
         "z": "4f197a1ac03259d0",
@@ -43,69 +49,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2380,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "6834176699a5dcf7",
-        "type": "delay",
-        "z": "4f197a1ac03259d0",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "1",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 360,
-        "y": 200,
-        "wires": [
-            [
-                "95656262bdebca0c",
-                "f638736c0c10c459",
-                "1e5dec98b2d97cc3",
-                "f0bc0b2d7ba5484a",
-                "cbeb37f343898efe",
-                "9a90f52afcac38b6"
-            ]
-        ]
-    },
-    {
-        "id": "4af115a64b6fd9ff",
-        "type": "debug",
-        "z": "4f197a1ac03259d0",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2300,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "4d89cd8af18f0b22",
-        "type": "debug",
-        "z": "4f197a1ac03259d0",
-        "name": "debug 3",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2300,
+        "x": 2780,
         "y": 680,
         "wires": []
     },
@@ -113,9 +57,9 @@
         "id": "1207ab89c8b2f804",
         "type": "comment",
         "z": "4f197a1ac03259d0",
-        "name": "Data Querry ",
+        "name": "Api Data Querry ",
         "info": "",
-        "x": 630,
+        "x": 420,
         "y": 40,
         "wires": []
     },
@@ -125,18 +69,18 @@
         "z": "4f197a1ac03259d0",
         "name": "data_to_logic unit",
         "info": "",
-        "x": 2360,
-        "y": 100,
+        "x": 2800,
+        "y": 640,
         "wires": []
     },
     {
         "id": "f0a970a82f7c0c68",
         "type": "comment",
         "z": "4f197a1ac03259d0",
-        "name": "get_hardware_component_status",
+        "name": "Hardware_data_querry",
         "info": "",
-        "x": 650,
-        "y": 440,
+        "x": 440,
+        "y": 640,
         "wires": []
     },
     {
@@ -160,23 +104,20 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 150,
-        "y": 200,
+        "x": 130,
+        "y": 280,
         "wires": [
             [
-                "6834176699a5dcf7"
+                "c12b533134e118d6",
+                "48f068536eb824e0",
+                "3e5af9a8aa3ccae3",
+                "5a086b7c6c0946b7",
+                "4a65ee1bdbcd0fd7",
+                "38cb03c87f7afa89",
+                "8779e3ca9988dd19",
+                "408883c0fe5429d5"
             ]
         ]
-    },
-    {
-        "id": "f5be252955905415",
-        "type": "comment",
-        "z": "4f197a1ac03259d0",
-        "name": "data_to_logic unit",
-        "info": "",
-        "x": 2300,
-        "y": 460,
-        "wires": []
     },
     {
         "id": "95656262bdebca0c",
@@ -205,27 +146,10 @@
         "continuous": false,
         "stdInData": false,
         "x": 640,
-        "y": 200,
+        "y": 340,
         "wires": [
             [
                 "6ce78b6b369ffff1"
-            ]
-        ]
-    },
-    {
-        "id": "f638736c0c10c459",
-        "type": "pythonshell in",
-        "z": "4f197a1ac03259d0",
-        "name": "get_solar_data",
-        "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\get_solar_data.py",
-        "virtualenv": "",
-        "continuous": false,
-        "stdInData": false,
-        "x": 640,
-        "y": 140,
-        "wires": [
-            [
-                "d94153e716c850fd"
             ]
         ]
     },
@@ -239,7 +163,7 @@
         "continuous": false,
         "stdInData": false,
         "x": 650,
-        "y": 260,
+        "y": 400,
         "wires": [
             [
                 "32e2bec2664d6799"
@@ -256,27 +180,10 @@
         "continuous": false,
         "stdInData": false,
         "x": 730,
-        "y": 360,
+        "y": 460,
         "wires": [
             [
                 "3fb6d188b0ca3098"
-            ]
-        ]
-    },
-    {
-        "id": "658289e24a3e4843",
-        "type": "pythonshell in",
-        "z": "4f197a1ac03259d0",
-        "name": "get_battery_state",
-        "pyfile": "",
-        "virtualenv": "",
-        "continuous": false,
-        "stdInData": false,
-        "x": 630,
-        "y": 680,
-        "wires": [
-            [
-                "4d89cd8af18f0b22"
             ]
         ]
     },
@@ -289,11 +196,10 @@
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
-        "x": 1860,
-        "y": 180,
+        "x": 2040,
+        "y": 280,
         "wires": [
             [
-                "693fa8576fef09e3",
                 "143a64dad64cabcc"
             ]
         ]
@@ -310,7 +216,7 @@
         "overwriteFile": "true",
         "encoding": "none",
         "x": 1010,
-        "y": 260,
+        "y": 400,
         "wires": [
             [
                 "f259e687832ad330"
@@ -322,14 +228,14 @@
         "type": "file",
         "z": "4f197a1ac03259d0",
         "name": "temp_grid_price",
-        "filename": "C:\\Users\\asantee\\.node-red\\projects\\Project\\temporal_file\\grid_price.csv",
+        "filename": "C:\\Users\\asantee\\.node-red\\projects\\Project\\temporal_file\\temp_grid_price.csv",
         "filenameType": "str",
         "appendNewline": false,
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
         "x": 1000,
-        "y": 200,
+        "y": 340,
         "wires": [
             [
                 "f259e687832ad330"
@@ -348,7 +254,7 @@
         "overwriteFile": "true",
         "encoding": "none",
         "x": 1020,
-        "y": 440,
+        "y": 540,
         "wires": [
             [
                 "f259e687832ad330"
@@ -367,7 +273,7 @@
         "overwriteFile": "true",
         "encoding": "none",
         "x": 990,
-        "y": 140,
+        "y": 160,
         "wires": [
             [
                 "f259e687832ad330"
@@ -386,7 +292,7 @@
         "overwriteFile": "true",
         "encoding": "none",
         "x": 1000,
-        "y": 360,
+        "y": 460,
         "wires": [
             [
                 "f259e687832ad330"
@@ -417,7 +323,7 @@
         "type": "shelly-gen2",
         "z": "4f197a1ac03259d0",
         "hostname": "",
-        "description": "",
+        "description": "get_user_consumption_from_meter",
         "mode": "polling",
         "verbose": false,
         "server": "",
@@ -430,30 +336,12 @@
         "devicetypemustmatchexactly": true,
         "captureblutooth": false,
         "outputs": 1,
-        "x": 590,
-        "y": 500,
+        "x": 680,
+        "y": 540,
         "wires": [
             [
-                "2bcd55f22d8dd5a9",
-                "4af115a64b6fd9ff"
+                "2bcd55f22d8dd5a9"
             ]
-        ]
-    },
-    {
-        "id": "693fa8576fef09e3",
-        "type": "file",
-        "z": "4f197a1ac03259d0",
-        "name": "final_csv_db",
-        "filename": "C:\\Users\\asantee\\.node-red\\projects\\Project\\DataBase\\db.csv",
-        "filenameType": "str",
-        "appendNewline": true,
-        "createDir": false,
-        "overwriteFile": "false",
-        "encoding": "none",
-        "x": 2150,
-        "y": 180,
-        "wires": [
-            []
         ]
     },
     {
@@ -471,14 +359,14 @@
         "useparts": false,
         "accumulate": true,
         "timeout": "",
-        "count": "4",
+        "count": "5",
         "reduceRight": false,
         "reduceExp": "",
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 1300,
-        "y": 180,
+        "x": 1480,
+        "y": 280,
         "wires": [
             [
                 "69e66e41133da508"
@@ -502,8 +390,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 1540,
-        "y": 180,
+        "x": 1720,
+        "y": 280,
         "wires": [
             [
                 "c0071d0b8b153941"
@@ -518,8 +406,8 @@
         "sqlquery": "fixed",
         "sql": "SELECT * FROM data LIMIT 10",
         "name": "dataBase",
-        "x": 2180,
-        "y": 260,
+        "x": 2500,
+        "y": 680,
         "wires": [
             [
                 "0af3b0363a337d11"
@@ -530,9 +418,9 @@
         "id": "291e86a2e348d7d1",
         "type": "exec",
         "z": "4f197a1ac03259d0",
-        "command": "python3 C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\battery.py 1",
+        "command": "python3 C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\battery.py",
         "addpay": "topic",
-        "append": "",
+        "append": "1",
         "useSpawn": "true",
         "timer": "",
         "winHide": false,
@@ -542,7 +430,8 @@
         "y": 780,
         "wires": [
             [
-                "9e5b8309ea802eb9"
+                "9e5b8309ea802eb9",
+                "7a270dba3707785c"
             ],
             [],
             []
@@ -559,11 +448,14 @@
         "timer": "",
         "winHide": false,
         "oldrc": false,
-        "name": "",
-        "x": 650,
-        "y": 860,
+        "name": "discharge_battery",
+        "x": 690,
+        "y": 940,
         "wires": [
-            [],
+            [
+                "adcb46c63190de66",
+                "7a270dba3707785c"
+            ],
             [],
             []
         ]
@@ -580,12 +472,544 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 980,
-        "y": 780,
+        "x": 1340,
+        "y": 760,
         "wires": []
     },
     {
-        "id": "7cc29534a80cb362",
+        "id": "9cce8dfb2e92a5a0",
+        "type": "exec",
+        "z": "4f197a1ac03259d0",
+        "command": "",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "battery_status",
+        "x": 680,
+        "y": 1080,
+        "wires": [
+            [
+                "f8c956d71ff78cb6",
+                "7a270dba3707785c"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "adcb46c63190de66",
+        "type": "debug",
+        "z": "4f197a1ac03259d0",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "f8c956d71ff78cb6",
+        "type": "debug",
+        "z": "4f197a1ac03259d0",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1480,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "c12b533134e118d6",
+        "type": "delay",
+        "z": "4f197a1ac03259d0",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 400,
+        "y": 80,
+        "wires": [
+            [
+                "95656262bdebca0c"
+            ]
+        ]
+    },
+    {
+        "id": "5a086b7c6c0946b7",
+        "type": "delay",
+        "z": "4f197a1ac03259d0",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "15",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 410,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4a65ee1bdbcd0fd7",
+        "type": "delay",
+        "z": "4f197a1ac03259d0",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "20",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 410,
+        "y": 400,
+        "wires": [
+            [
+                "f0bc0b2d7ba5484a"
+            ]
+        ]
+    },
+    {
+        "id": "3e5af9a8aa3ccae3",
+        "type": "delay",
+        "z": "4f197a1ac03259d0",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 410,
+        "y": 160,
+        "wires": [
+            [
+                "c36d623b44c475f0"
+            ]
+        ]
+    },
+    {
+        "id": "48f068536eb824e0",
+        "type": "delay",
+        "z": "4f197a1ac03259d0",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 400,
+        "y": 460,
+        "wires": [
+            [
+                "cbeb37f343898efe"
+            ]
+        ]
+    },
+    {
+        "id": "c36d623b44c475f0",
+        "type": "pythonshell in",
+        "z": "4f197a1ac03259d0",
+        "name": "get_solar_data(fixed calibration)",
+        "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\get_solar_data.py",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 690,
+        "y": 160,
+        "wires": [
+            [
+                "d94153e716c850fd"
+            ]
+        ]
+    },
+    {
+        "id": "2f62ef67c96f74ac",
+        "type": "pythonshell in",
+        "z": "4f197a1ac03259d0",
+        "name": "get_negative_prices",
+        "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\get_negative_prices.py",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 660,
+        "y": 280,
+        "wires": [
+            [
+                "15b390bf6afbdd51"
+            ]
+        ]
+    },
+    {
+        "id": "8e5e53ca363cc8c7",
+        "type": "pythonshell in",
+        "z": "4f197a1ac03259d0",
+        "name": "solar_energy(user's calibration)",
+        "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\solar_radiation.py",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 690,
+        "y": 220,
+        "wires": [
+            [
+                "07f31524fee6bfb8"
+            ]
+        ]
+    },
+    {
+        "id": "38cb03c87f7afa89",
+        "type": "delay",
+        "z": "4f197a1ac03259d0",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 400,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8779e3ca9988dd19",
+        "type": "delay",
+        "z": "4f197a1ac03259d0",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 410,
+        "y": 280,
+        "wires": [
+            [
+                "2f62ef67c96f74ac"
+            ]
+        ]
+    },
+    {
+        "id": "15b390bf6afbdd51",
+        "type": "file",
+        "z": "4f197a1ac03259d0",
+        "name": "temp_negative_prices",
+        "filename": "C:\\Users\\asantee\\.node-red\\projects\\Project\\temporal_file\\temp_negative_prices.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1020,
+        "y": 280,
+        "wires": [
+            [
+                "f259e687832ad330"
+            ]
+        ]
+    },
+    {
+        "id": "07f31524fee6bfb8",
+        "type": "file",
+        "z": "4f197a1ac03259d0",
+        "name": "temp_solar_user_caliberated",
+        "filename": "C:\\Users\\asantee\\.node-red\\projects\\Project\\temporal_file\\temp_solar_user_caliberated.csv",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1040,
+        "y": 220,
+        "wires": [
+            [
+                "f259e687832ad330"
+            ]
+        ]
+    },
+    {
+        "id": "408883c0fe5429d5",
+        "type": "delay",
+        "z": "4f197a1ac03259d0",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 400,
+        "y": 540,
+        "wires": [
+            [
+                "9a90f52afcac38b6"
+            ]
+        ]
+    },
+    {
+        "id": "15d3b962cad1ba5e",
+        "type": "switch",
+        "z": "4f197a1ac03259d0",
+        "name": "discharge_on",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 420,
+        "y": 920,
+        "wires": [
+            [
+                "22bcc9c9defdb24b"
+            ]
+        ]
+    },
+    {
+        "id": "8e05df4020a65249",
+        "type": "switch",
+        "z": "4f197a1ac03259d0",
+        "name": "get_battery_status",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 430,
+        "y": 1080,
+        "wires": [
+            [
+                "9cce8dfb2e92a5a0"
+            ]
+        ]
+    },
+    {
+        "id": "5573d3ce7b524d08",
+        "type": "switch",
+        "z": "4f197a1ac03259d0",
+        "name": "discahrge_off",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 420,
+        "y": 980,
+        "wires": [
+            [
+                "22bcc9c9defdb24b"
+            ]
+        ]
+    },
+    {
+        "id": "0a3bfa07086fcc83",
+        "type": "file",
+        "z": "4f197a1ac03259d0",
+        "name": "temp_consump_shelly",
+        "filename": "C:\\Users\\asantee\\.node-red\\projects\\Project\\temporal_file\\temp_market_prices.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1020,
+        "y": 680,
+        "wires": [
+            [
+                "976e50b0afc8f1a1",
+                "143a64dad64cabcc"
+            ]
+        ]
+    },
+    {
+        "id": "a9a6387bbfa5e51f",
+        "type": "shelly-gen2",
+        "z": "4f197a1ac03259d0",
+        "hostname": "",
+        "description": "",
+        "mode": "polling",
+        "verbose": false,
+        "server": "",
+        "outputmode": "event",
+        "uploadretryinterval": 5000,
+        "pollinginterval": 5000,
+        "pollstatus": false,
+        "getstatusoncommand": true,
+        "devicetype": "",
+        "devicetypemustmatchexactly": true,
+        "captureblutooth": false,
+        "outputs": 1,
+        "x": 650,
+        "y": 680,
+        "wires": [
+            [
+                "0a3bfa07086fcc83"
+            ]
+        ]
+    },
+    {
+        "id": "7b5d198d28ab4662",
+        "type": "delay",
+        "z": "4f197a1ac03259d0",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 400,
+        "y": 680,
+        "wires": [
+            [
+                "a9a6387bbfa5e51f"
+            ]
+        ]
+    },
+    {
+        "id": "3df338df1d83b309",
+        "type": "comment",
+        "z": "4f197a1ac03259d0",
+        "name": "meter_readings",
+        "info": "",
+        "x": 620,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "7a270dba3707785c",
+        "type": "file in",
+        "z": "4f197a1ac03259d0",
+        "name": "battery_status",
+        "filename": "C:\\Users\\asantee\\.node-red\\projects\\Project\\temporal_file\\battery_file.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 1200,
+        "y": 920,
+        "wires": [
+            [
+                "8d1656bafdd9a3a3"
+            ]
+        ]
+    },
+    {
+        "id": "8d1656bafdd9a3a3",
+        "type": "debug",
+        "z": "4f197a1ac03259d0",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1480,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "41d14b51e26e1384",
         "type": "inject",
         "z": "4f197a1ac03259d0",
         "name": "",
@@ -605,60 +1029,56 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 440,
+        "x": 180,
+        "y": 680,
+        "wires": [
+            [
+                "7b5d198d28ab4662"
+            ]
+        ]
+    },
+    {
+        "id": "976e50b0afc8f1a1",
+        "type": "debug",
+        "z": "4f197a1ac03259d0",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1340,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "9eb0125ac6550100",
+        "type": "inject",
+        "z": "4f197a1ac03259d0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
         "y": 780,
         "wires": [
             [
                 "291e86a2e348d7d1"
-            ]
-        ]
-    },
-    {
-        "id": "53fe79661cd94c9c",
-        "type": "function",
-        "z": "4f197a1ac03259d0",
-        "name": "kill_process",
-        "func": "msg.topic = \"kill\";\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 430,
-        "y": 860,
-        "wires": [
-            [
-                "291e86a2e348d7d1"
-            ]
-        ]
-    },
-    {
-        "id": "def6b83c5dd16867",
-        "type": "inject",
-        "z": "4f197a1ac03259d0",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 260,
-        "y": 860,
-        "wires": [
-            [
-                "53fe79661cd94c9c"
             ]
         ]
     }
