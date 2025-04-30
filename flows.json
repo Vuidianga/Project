@@ -79,8 +79,8 @@
         "z": "4f197a1ac03259d0",
         "name": "Hardware_data_querry",
         "info": "",
-        "x": 440,
-        "y": 640,
+        "x": 200,
+        "y": 620,
         "wires": []
     },
     {
@@ -418,7 +418,7 @@
         "id": "291e86a2e348d7d1",
         "type": "exec",
         "z": "4f197a1ac03259d0",
-        "command": "python3 C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\battery.py",
+        "command": "python3 -u C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\battery.py",
         "addpay": "topic",
         "append": "1",
         "useSpawn": "true",
@@ -430,8 +430,7 @@
         "y": 780,
         "wires": [
             [
-                "9e5b8309ea802eb9",
-                "7a270dba3707785c"
+                "9e5b8309ea802eb9"
             ],
             [],
             []
@@ -441,20 +440,19 @@
         "id": "22bcc9c9defdb24b",
         "type": "exec",
         "z": "4f197a1ac03259d0",
-        "command": "",
-        "addpay": "",
-        "append": "",
-        "useSpawn": "false",
+        "command": "python3  -u C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\battery.py ",
+        "addpay": "topic",
+        "append": "2",
+        "useSpawn": "true",
         "timer": "",
         "winHide": false,
         "oldrc": false,
         "name": "discharge_battery",
         "x": 690,
-        "y": 940,
+        "y": 860,
         "wires": [
             [
-                "adcb46c63190de66",
-                "7a270dba3707785c"
+                "adcb46c63190de66"
             ],
             [],
             []
@@ -480,20 +478,19 @@
         "id": "9cce8dfb2e92a5a0",
         "type": "exec",
         "z": "4f197a1ac03259d0",
-        "command": "",
-        "addpay": "",
-        "append": "",
-        "useSpawn": "false",
+        "command": "python3 -u C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\battery.py",
+        "addpay": "topic",
+        "append": "3",
+        "useSpawn": "true",
         "timer": "",
         "winHide": false,
         "oldrc": false,
         "name": "battery_status",
         "x": 680,
-        "y": 1080,
+        "y": 1020,
         "wires": [
             [
-                "f8c956d71ff78cb6",
-                "7a270dba3707785c"
+                "f8c956d71ff78cb6"
             ],
             [],
             []
@@ -511,8 +508,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 880,
-        "y": 960,
+        "x": 1360,
+        "y": 840,
         "wires": []
     },
     {
@@ -527,8 +524,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1480,
-        "y": 1060,
+        "x": 1340,
+        "y": 1000,
         "wires": []
     },
     {
@@ -817,81 +814,6 @@
         ]
     },
     {
-        "id": "15d3b962cad1ba5e",
-        "type": "switch",
-        "z": "4f197a1ac03259d0",
-        "name": "discharge_on",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 420,
-        "y": 920,
-        "wires": [
-            [
-                "22bcc9c9defdb24b"
-            ]
-        ]
-    },
-    {
-        "id": "8e05df4020a65249",
-        "type": "switch",
-        "z": "4f197a1ac03259d0",
-        "name": "get_battery_status",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 430,
-        "y": 1080,
-        "wires": [
-            [
-                "9cce8dfb2e92a5a0"
-            ]
-        ]
-    },
-    {
-        "id": "5573d3ce7b524d08",
-        "type": "switch",
-        "z": "4f197a1ac03259d0",
-        "name": "discahrge_off",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 420,
-        "y": 980,
-        "wires": [
-            [
-                "22bcc9c9defdb24b"
-            ]
-        ]
-    },
-    {
         "id": "0a3bfa07086fcc83",
         "type": "file",
         "z": "4f197a1ac03259d0",
@@ -973,42 +895,6 @@
         "wires": []
     },
     {
-        "id": "7a270dba3707785c",
-        "type": "file in",
-        "z": "4f197a1ac03259d0",
-        "name": "battery_status",
-        "filename": "C:\\Users\\asantee\\.node-red\\projects\\Project\\temporal_file\\battery_file.csv",
-        "filenameType": "str",
-        "format": "utf8",
-        "chunk": false,
-        "sendError": false,
-        "encoding": "none",
-        "allProps": false,
-        "x": 1200,
-        "y": 920,
-        "wires": [
-            [
-                "8d1656bafdd9a3a3"
-            ]
-        ]
-    },
-    {
-        "id": "8d1656bafdd9a3a3",
-        "type": "debug",
-        "z": "4f197a1ac03259d0",
-        "name": "debug 3",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1480,
-        "y": 920,
-        "wires": []
-    },
-    {
         "id": "41d14b51e26e1384",
         "type": "inject",
         "z": "4f197a1ac03259d0",
@@ -1079,6 +965,113 @@
         "wires": [
             [
                 "291e86a2e348d7d1"
+            ]
+        ]
+    },
+    {
+        "id": "dd6ece493dd53997",
+        "type": "inject",
+        "z": "4f197a1ac03259d0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 860,
+        "wires": [
+            [
+                "22bcc9c9defdb24b"
+            ]
+        ]
+    },
+    {
+        "id": "e2855ecd08bc80fe",
+        "type": "exec",
+        "z": "4f197a1ac03259d0",
+        "command": "taskkill /IM python3.13.exe  /F",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "stop",
+        "x": 650,
+        "y": 940,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "2f6886dfeda60a4a",
+        "type": "inject",
+        "z": "4f197a1ac03259d0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 940,
+        "wires": [
+            [
+                "e2855ecd08bc80fe"
+            ]
+        ]
+    },
+    {
+        "id": "80d455359251b570",
+        "type": "inject",
+        "z": "4f197a1ac03259d0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 1020,
+        "wires": [
+            [
+                "9cce8dfb2e92a5a0"
             ]
         ]
     }
