@@ -508,7 +508,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1360,
+        "x": 1340,
         "y": 840,
         "wires": []
     },
@@ -824,7 +824,7 @@
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 1020,
+        "x": 1140,
         "y": 680,
         "wires": [
             [
@@ -855,7 +855,7 @@
         "y": 680,
         "wires": [
             [
-                "0a3bfa07086fcc83"
+                "091611f635a005de"
             ]
         ]
     },
@@ -1072,6 +1072,30 @@
         "wires": [
             [
                 "9cce8dfb2e92a5a0"
+            ]
+        ]
+    },
+    {
+        "id": "091611f635a005de",
+        "type": "csv",
+        "z": "4f197a1ac03259d0",
+        "name": "temp_consump_shelly",
+        "spec": "rfc",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\r\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 900,
+        "y": 680,
+        "wires": [
+            [
+                "0a3bfa07086fcc83"
             ]
         ]
     }
