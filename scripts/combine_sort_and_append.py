@@ -40,7 +40,7 @@ def sort_and_combine(folder_path, output_csv_path, sqlite_db_path, table_name="d
 
 if __name__ == "__main__":
     sort_and_combine(
-        r"C:\Users\asantee\.node-red\projects\Project\temporal_file",
-        r"C:\Users\asantee\.node-red\projects\Project\DataBase\db.csv",
-        r"C:\Users\asantee\.node-red\projects\Project\DataBase\db.sqlite"
+        "/home/pi/.node-red/projects/Project/temporal_file",
+        "/home/pi/.node-red/projects/Project/DataBase/db.csv",
+        "/home/pi/.node-red/projects/Project/DataBase/db.sqlite"
     )

@@ -4,7 +4,9 @@
     "version": "0.0.1",
     "dependencies": {
         "node-red-contrib-pythonshell": "1.5.4",
-        "node-red-contrib-tibber-api": "6.2.0"
+        "node-red-contrib-tibber-api": "6.2.0",
+        "node-red-contrib-shelly": "11.5.9",
+        "node-red-node-sqlite": "1.1.0"
     },
     "node-red": {
         "settings": {

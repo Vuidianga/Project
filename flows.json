@@ -8,6 +8,18 @@
         "env": []
     },
     {
+        "id": "6c03dff826846f79",
+        "type": "sqlitedb",
+        "db": "/home/pi/.node-red/projects/Project/DataBase/db.sqlite",
+        "mode": "RWC"
+    },
+    {
+        "id": "5eba37732014c571",
+        "type": "sqlitedb",
+        "db": "C:\\Users\\vudia\\.node-red\\projects\\Project\\DataBase\\db.sqlite",
+        "mode": "RWC"
+    },
+    {
         "id": "a4a67dfe31634376",
         "type": "tibber-api-endpoint",
         "queryUrl": "https://api.tibber.com/v1-beta/gql",
@@ -26,18 +38,6 @@
         "name": ""
     },
     {
-        "id": "6c03dff826846f79",
-        "type": "sqlitedb",
-        "db": "C:\\Users\\asantee\\.node-red\\projects\\Project\\DataBase\\db.sqlite",
-        "mode": "RWC"
-    },
-    {
-        "id": "5eba37732014c571",
-        "type": "sqlitedb",
-        "db": "C:\\Users\\vudia\\.node-red\\projects\\Project\\DataBase\\db.sqlite",
-        "mode": "RWC"
-    },
-    {
         "id": "0af3b0363a337d11",
         "type": "debug",
         "z": "4f197a1ac03259d0",
@@ -49,7 +49,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2780,
+        "x": 2400,
         "y": 680,
         "wires": []
     },
@@ -59,7 +59,7 @@
         "z": "4f197a1ac03259d0",
         "name": "Api Data Querry ",
         "info": "",
-        "x": 420,
+        "x": 520,
         "y": 40,
         "wires": []
     },
@@ -69,7 +69,7 @@
         "z": "4f197a1ac03259d0",
         "name": "data_to_logic unit",
         "info": "",
-        "x": 2800,
+        "x": 2400,
         "y": 640,
         "wires": []
     },
@@ -79,143 +79,22 @@
         "z": "4f197a1ac03259d0",
         "name": "Hardware_data_querry",
         "info": "",
-        "x": 200,
-        "y": 620,
+        "x": 660,
+        "y": 640,
         "wires": []
-    },
-    {
-        "id": "89346c3eb7a35b8c",
-        "type": "inject",
-        "z": "4f197a1ac03259d0",
-        "name": "start_querry_data_signal",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 130,
-        "y": 280,
-        "wires": [
-            [
-                "c12b533134e118d6",
-                "48f068536eb824e0",
-                "3e5af9a8aa3ccae3",
-                "5a086b7c6c0946b7",
-                "4a65ee1bdbcd0fd7",
-                "38cb03c87f7afa89",
-                "8779e3ca9988dd19",
-                "408883c0fe5429d5"
-            ]
-        ]
-    },
-    {
-        "id": "95656262bdebca0c",
-        "type": "pythonshell in",
-        "z": "4f197a1ac03259d0",
-        "name": "get_weather_data",
-        "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\get_weather_data.py",
-        "virtualenv": "",
-        "continuous": false,
-        "stdInData": false,
-        "x": 650,
-        "y": 80,
-        "wires": [
-            [
-                "e9cf1031970a6702"
-            ]
-        ]
-    },
-    {
-        "id": "1e5dec98b2d97cc3",
-        "type": "pythonshell in",
-        "z": "4f197a1ac03259d0",
-        "name": "get_grid_price",
-        "pyfile": "",
-        "virtualenv": "",
-        "continuous": false,
-        "stdInData": false,
-        "x": 640,
-        "y": 340,
-        "wires": [
-            [
-                "6ce78b6b369ffff1"
-            ]
-        ]
-    },
-    {
-        "id": "f0bc0b2d7ba5484a",
-        "type": "pythonshell in",
-        "z": "4f197a1ac03259d0",
-        "name": "get_market_price",
-        "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\get_market_price.py",
-        "virtualenv": "",
-        "continuous": false,
-        "stdInData": false,
-        "x": 650,
-        "y": 400,
-        "wires": [
-            [
-                "32e2bec2664d6799"
-            ]
-        ]
-    },
-    {
-        "id": "cbeb37f343898efe",
-        "type": "pythonshell in",
-        "z": "4f197a1ac03259d0",
-        "name": "get_energy_consumption_from_user(tibber)",
-        "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\get_consumption_from_user.py",
-        "virtualenv": "",
-        "continuous": false,
-        "stdInData": false,
-        "x": 730,
-        "y": 460,
-        "wires": [
-            [
-                "3fb6d188b0ca3098"
-            ]
-        ]
-    },
-    {
-        "id": "c0071d0b8b153941",
-        "type": "pythonshell in",
-        "z": "4f197a1ac03259d0",
-        "name": "combine_sort_and_append_to_data_base",
-        "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\combine_sort_and_append.py",
-        "virtualenv": "",
-        "continuous": false,
-        "stdInData": false,
-        "x": 2040,
-        "y": 280,
-        "wires": [
-            [
-                "143a64dad64cabcc"
-            ]
-        ]
     },
     {
         "id": "32e2bec2664d6799",
         "type": "file",
         "z": "4f197a1ac03259d0",
         "name": "temp_market_price",
-        "filename": "C:\\Users\\asantee\\.node-red\\projects\\Project\\temporal_file\\temp_market_prices.csv",
+        "filename": "/home/pi/.node-red/projects/Project/temporal_file/temp_market_prices.csv",
         "filenameType": "str",
         "appendNewline": true,
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 1010,
+        "x": 1110,
         "y": 400,
         "wires": [
             [
@@ -228,13 +107,13 @@
         "type": "file",
         "z": "4f197a1ac03259d0",
         "name": "temp_grid_price",
-        "filename": "C:\\Users\\asantee\\.node-red\\projects\\Project\\temporal_file\\temp_grid_price.csv",
+        "filename": "/home/pi/.node-red/projects/Project/temporal_file/temp_grid_price.csv",
         "filenameType": "str",
         "appendNewline": false,
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 1000,
+        "x": 1100,
         "y": 340,
         "wires": [
             [
@@ -247,13 +126,13 @@
         "type": "file",
         "z": "4f197a1ac03259d0",
         "name": "temp_consump_shelly",
-        "filename": "C:\\Users\\asantee\\.node-red\\projects\\Project\\temporal_file\\temp_market_prices.csv",
+        "filename": "/home/pi/.node-red/projects/Project/temporal_file/temp_market_prices.csv",
         "filenameType": "str",
         "appendNewline": true,
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 1020,
+        "x": 1120,
         "y": 540,
         "wires": [
             [
@@ -266,13 +145,13 @@
         "type": "file",
         "z": "4f197a1ac03259d0",
         "name": "temp_solar",
-        "filename": "C:\\Users\\asantee\\.node-red\\projects\\Project\\temporal_file\\temp_solar_data.csv",
+        "filename": "/home/pi/.node-red/projects/Project/temporal_file/temp_solar_data.csv",
         "filenameType": "str",
         "appendNewline": true,
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 990,
+        "x": 1090,
         "y": 160,
         "wires": [
             [
@@ -285,13 +164,13 @@
         "type": "file",
         "z": "4f197a1ac03259d0",
         "name": "temp_consum",
-        "filename": "C:\\Users\\asantee\\.node-red\\projects\\Project\\temporal_file\\temp_user_consumption.csv",
+        "filename": "/home/pi/.node-red/projects/Project/temporal_file/temp_user_consumption.csv",
         "filenameType": "str",
         "appendNewline": true,
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 1000,
+        "x": 1100,
         "y": 460,
         "wires": [
             [
@@ -304,13 +183,13 @@
         "type": "file",
         "z": "4f197a1ac03259d0",
         "name": "temp_weather_data",
-        "filename": "C:\\Users\\asantee\\.node-red\\projects\\Project\\temporal_file\\temp_weather.csv",
+        "filename": "/home/pi/.node-red/projects/Project/temporal_file/temp_weather.csv",
         "filenameType": "str",
         "appendNewline": false,
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 1020,
+        "x": 1120,
         "y": 80,
         "wires": [
             [
@@ -322,7 +201,7 @@
         "id": "9a90f52afcac38b6",
         "type": "shelly-gen2",
         "z": "4f197a1ac03259d0",
-        "hostname": "",
+        "hostname": "192.168.33.1",
         "description": "get_user_consumption_from_meter",
         "mode": "polling",
         "verbose": false,
@@ -332,11 +211,11 @@
         "pollinginterval": 5000,
         "pollstatus": false,
         "getstatusoncommand": true,
-        "devicetype": "",
+        "devicetype": "Relay",
         "devicetypemustmatchexactly": true,
         "captureblutooth": false,
         "outputs": 1,
-        "x": 680,
+        "x": 780,
         "y": 540,
         "wires": [
             [
@@ -390,7 +269,7 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 1720,
+        "x": 1660,
         "y": 280,
         "wires": [
             [
@@ -406,7 +285,7 @@
         "sqlquery": "fixed",
         "sql": "SELECT * FROM data LIMIT 10",
         "name": "dataBase",
-        "x": 2500,
+        "x": 2220,
         "y": 680,
         "wires": [
             [
@@ -418,7 +297,7 @@
         "id": "291e86a2e348d7d1",
         "type": "exec",
         "z": "4f197a1ac03259d0",
-        "command": "python3 -u C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\battery.py",
+        "command": "python3 -u /home/pi/.node-red/projects/Project/scripts/battery.py",
         "addpay": "topic",
         "append": "1",
         "useSpawn": "true",
@@ -440,7 +319,7 @@
         "id": "22bcc9c9defdb24b",
         "type": "exec",
         "z": "4f197a1ac03259d0",
-        "command": "python3  -u C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\battery.py ",
+        "command": "python3  -u /home/pi/.node-red/projects/Project/scripts/battery.py ",
         "addpay": "topic",
         "append": "2",
         "useSpawn": "true",
@@ -478,7 +357,7 @@
         "id": "9cce8dfb2e92a5a0",
         "type": "exec",
         "z": "4f197a1ac03259d0",
-        "command": "python3 -u C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\battery.py",
+        "command": "python3 -u /home/pi/.node-red/projects/Project/scripts/battery.py",
         "addpay": "topic",
         "append": "3",
         "useSpawn": "true",
@@ -545,7 +424,7 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 400,
+        "x": 500,
         "y": 80,
         "wires": [
             [
@@ -570,7 +449,7 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 410,
+        "x": 510,
         "y": 340,
         "wires": [
             []
@@ -593,7 +472,7 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 410,
+        "x": 510,
         "y": 400,
         "wires": [
             [
@@ -618,7 +497,7 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 410,
+        "x": 510,
         "y": 160,
         "wires": [
             [
@@ -643,62 +522,11 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 400,
+        "x": 500,
         "y": 460,
         "wires": [
             [
                 "cbeb37f343898efe"
-            ]
-        ]
-    },
-    {
-        "id": "c36d623b44c475f0",
-        "type": "pythonshell in",
-        "z": "4f197a1ac03259d0",
-        "name": "get_solar_data(fixed calibration)",
-        "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\get_solar_data.py",
-        "virtualenv": "",
-        "continuous": false,
-        "stdInData": false,
-        "x": 690,
-        "y": 160,
-        "wires": [
-            [
-                "d94153e716c850fd"
-            ]
-        ]
-    },
-    {
-        "id": "2f62ef67c96f74ac",
-        "type": "pythonshell in",
-        "z": "4f197a1ac03259d0",
-        "name": "get_negative_prices",
-        "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\get_negative_prices.py",
-        "virtualenv": "",
-        "continuous": false,
-        "stdInData": false,
-        "x": 660,
-        "y": 280,
-        "wires": [
-            [
-                "15b390bf6afbdd51"
-            ]
-        ]
-    },
-    {
-        "id": "8e5e53ca363cc8c7",
-        "type": "pythonshell in",
-        "z": "4f197a1ac03259d0",
-        "name": "solar_energy(user's calibration)",
-        "pyfile": "C:\\Users\\asantee\\.node-red\\projects\\Project\\scripts\\solar_radiation.py",
-        "virtualenv": "",
-        "continuous": false,
-        "stdInData": false,
-        "x": 690,
-        "y": 220,
-        "wires": [
-            [
-                "07f31524fee6bfb8"
             ]
         ]
     },
@@ -719,7 +547,7 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 400,
+        "x": 500,
         "y": 220,
         "wires": [
             []
@@ -742,7 +570,7 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 410,
+        "x": 510,
         "y": 280,
         "wires": [
             [
@@ -755,13 +583,13 @@
         "type": "file",
         "z": "4f197a1ac03259d0",
         "name": "temp_negative_prices",
-        "filename": "C:\\Users\\asantee\\.node-red\\projects\\Project\\temporal_file\\temp_negative_prices.csv",
+        "filename": "/home/pi/.node-red/projects/Project/temporal_file/temp_negative_prices.csv",
         "filenameType": "str",
         "appendNewline": true,
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 1020,
+        "x": 1120,
         "y": 280,
         "wires": [
             [
@@ -774,13 +602,13 @@
         "type": "file",
         "z": "4f197a1ac03259d0",
         "name": "temp_solar_user_caliberated",
-        "filename": "C:\\Users\\asantee\\.node-red\\projects\\Project\\temporal_file\\temp_solar_user_caliberated.csv",
+        "filename": "/home/pi/.node-red/projects/Project/temporal_file/temp_solar_user_caliberated.csv",
         "filenameType": "str",
         "appendNewline": false,
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 1040,
+        "x": 1140,
         "y": 220,
         "wires": [
             [
@@ -805,7 +633,7 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 400,
+        "x": 500,
         "y": 540,
         "wires": [
             [
@@ -814,31 +642,11 @@
         ]
     },
     {
-        "id": "0a3bfa07086fcc83",
-        "type": "file",
-        "z": "4f197a1ac03259d0",
-        "name": "temp_consump_shelly",
-        "filename": "C:\\Users\\asantee\\.node-red\\projects\\Project\\temporal_file\\temp_market_prices.csv",
-        "filenameType": "str",
-        "appendNewline": true,
-        "createDir": false,
-        "overwriteFile": "true",
-        "encoding": "none",
-        "x": 1140,
-        "y": 680,
-        "wires": [
-            [
-                "976e50b0afc8f1a1",
-                "143a64dad64cabcc"
-            ]
-        ]
-    },
-    {
         "id": "a9a6387bbfa5e51f",
         "type": "shelly-gen2",
         "z": "4f197a1ac03259d0",
-        "hostname": "",
-        "description": "",
+        "hostname": "192.168.2.102",
+        "description": "shelly_switch",
         "mode": "polling",
         "verbose": false,
         "server": "",
@@ -847,15 +655,15 @@
         "pollinginterval": 5000,
         "pollstatus": false,
         "getstatusoncommand": true,
-        "devicetype": "",
+        "devicetype": "Relay",
         "devicetypemustmatchexactly": true,
         "captureblutooth": false,
         "outputs": 1,
-        "x": 650,
+        "x": 670,
         "y": 680,
         "wires": [
             [
-                "091611f635a005de"
+                "976e50b0afc8f1a1"
             ]
         ]
     },
@@ -866,7 +674,7 @@
         "name": "",
         "pauseType": "delay",
         "timeout": "5",
-        "timeoutUnits": "minutes",
+        "timeoutUnits": "seconds",
         "rate": "1",
         "nbRateUnits": "1",
         "rateUnits": "second",
@@ -890,7 +698,7 @@
         "z": "4f197a1ac03259d0",
         "name": "meter_readings",
         "info": "",
-        "x": 620,
+        "x": 720,
         "y": 500,
         "wires": []
     },
@@ -1001,10 +809,10 @@
         "id": "e2855ecd08bc80fe",
         "type": "exec",
         "z": "4f197a1ac03259d0",
-        "command": "taskkill /IM python3.13.exe  /F",
+        "command": "pkill -f \"python3 -u /home/pi/.node-red/projects/Project/scripts/battery.py\"",
         "addpay": "",
         "append": "",
-        "useSpawn": "false",
+        "useSpawn": "true",
         "timer": "",
         "winHide": false,
         "oldrc": false,
@@ -1076,26 +884,199 @@
         ]
     },
     {
-        "id": "091611f635a005de",
-        "type": "csv",
+        "id": "95656262bdebca0c",
+        "type": "pythonshell in",
         "z": "4f197a1ac03259d0",
-        "name": "temp_consump_shelly",
-        "spec": "rfc",
-        "sep": ",",
-        "hdrin": "",
-        "hdrout": "none",
-        "multi": "one",
-        "ret": "\\r\\n",
-        "temp": "",
-        "skip": "0",
-        "strings": true,
-        "include_empty_strings": "",
-        "include_null_values": "",
-        "x": 900,
-        "y": 680,
+        "name": "get_weather_data",
+        "pyfile": "/home/pi/.node-red/projects/Project/scripts/get_weather_data.py",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 750,
+        "y": 80,
         "wires": [
             [
-                "0a3bfa07086fcc83"
+                "e9cf1031970a6702"
+            ]
+        ]
+    },
+    {
+        "id": "1e5dec98b2d97cc3",
+        "type": "pythonshell in",
+        "z": "4f197a1ac03259d0",
+        "name": "get_grid_price",
+        "pyfile": "",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 740,
+        "y": 340,
+        "wires": [
+            [
+                "6ce78b6b369ffff1"
+            ]
+        ]
+    },
+    {
+        "id": "f0bc0b2d7ba5484a",
+        "type": "pythonshell in",
+        "z": "4f197a1ac03259d0",
+        "name": "get_market_price",
+        "pyfile": "/home/pi/.node-red/projects/Project/scripts/get_market_price.py",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 750,
+        "y": 400,
+        "wires": [
+            [
+                "32e2bec2664d6799"
+            ]
+        ]
+    },
+    {
+        "id": "cbeb37f343898efe",
+        "type": "pythonshell in",
+        "z": "4f197a1ac03259d0",
+        "name": "get_energy_consumption_from_user(tibber)",
+        "pyfile": "/home/pi/.node-red/projects/Project/scripts/get_consumption_from_user.py",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 830,
+        "y": 460,
+        "wires": [
+            [
+                "3fb6d188b0ca3098"
+            ]
+        ]
+    },
+    {
+        "id": "c0071d0b8b153941",
+        "type": "pythonshell in",
+        "z": "4f197a1ac03259d0",
+        "name": "combine_sort_and_append_to_data_base",
+        "pyfile": "/home/pi/.node-red/projects/Project/scripts/combine_sort_and_append.py",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 1940,
+        "y": 280,
+        "wires": [
+            [
+                "143a64dad64cabcc"
+            ]
+        ]
+    },
+    {
+        "id": "c36d623b44c475f0",
+        "type": "pythonshell in",
+        "z": "4f197a1ac03259d0",
+        "name": "get_solar_data(fixed calibration)",
+        "pyfile": "/home/pi/.node-red/projects/Project/scripts/get_solar_data.py",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 790,
+        "y": 160,
+        "wires": [
+            [
+                "d94153e716c850fd"
+            ]
+        ]
+    },
+    {
+        "id": "2f62ef67c96f74ac",
+        "type": "pythonshell in",
+        "z": "4f197a1ac03259d0",
+        "name": "get_negative_prices",
+        "pyfile": "/home/pi/.node-red/projects/Project/scripts/get_negative_prices.py",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 760,
+        "y": 280,
+        "wires": [
+            [
+                "15b390bf6afbdd51"
+            ]
+        ]
+    },
+    {
+        "id": "8e5e53ca363cc8c7",
+        "type": "pythonshell in",
+        "z": "4f197a1ac03259d0",
+        "name": "solar_energy(user's calibration)",
+        "pyfile": "/home/pi/.node-red/projects/Project/scripts/solar_radiation.py",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 790,
+        "y": 220,
+        "wires": [
+            [
+                "07f31524fee6bfb8"
+            ]
+        ]
+    },
+    {
+        "id": "a50c6266d9a82b05",
+        "type": "trigger",
+        "z": "4f197a1ac03259d0",
+        "name": "15_mins_loop",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "-15",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "min",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 280,
+        "y": 280,
+        "wires": [
+            [
+                "c12b533134e118d6",
+                "408883c0fe5429d5",
+                "3e5af9a8aa3ccae3",
+                "8779e3ca9988dd19",
+                "38cb03c87f7afa89",
+                "5a086b7c6c0946b7",
+                "4a65ee1bdbcd0fd7",
+                "48f068536eb824e0"
+            ]
+        ]
+    },
+    {
+        "id": "89346c3eb7a35b8c",
+        "type": "inject",
+        "z": "4f197a1ac03259d0",
+        "name": "start_querry_data_signal",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 120,
+        "wires": [
+            [
+                "a50c6266d9a82b05"
             ]
         ]
     }
