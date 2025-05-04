@@ -2,7 +2,7 @@
     {
         "id": "4f197a1ac03259d0",
         "type": "tab",
-        "label": "API and data_base",
+        "label": "API and Data_base",
         "disabled": false,
         "info": "",
         "env": []
@@ -1879,7 +1879,7 @@
         "type": "function",
         "z": "6912ad3d7a04a7bd",
         "name": "Logout",
-        "func": "global.set(\"user\", null);\n\nreturn [\n    {\n        payload: {\n            \"page\": \"Login\",\n            \"pages\": {\n                \"hide\": [\"Dashboard\", \"User\", \"Download CSV\"],\n                \"show\": [\"Login\", \"Sign Up\"]\n            }\n        }\n    },\n    {\n        payload: \"Successfully logged out\"\n    }\n];",
+        "func": "global.set(\"user\", null);\n\nreturn [\n    {\n        payload: {\n            \"page\": \"Login\",\n            \"pages\": {\n                \"hide\": [\"Dashboard\", \"User\"],\n                \"show\": [\"Login\", \"Sign Up\"]\n            }\n        }\n    },\n    {\n        payload: \"Successfully logged out\"\n    }\n];",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -1997,7 +1997,7 @@
         "type": "function",
         "z": "6912ad3d7a04a7bd",
         "name": "Login",
-        "func": "global.set(\"user\", msg.payload[0]);\n\nreturn {\n    payload: {\n        page: 'Dashboard',\n        pages: {\n            show: [\"Dashboard\", \"User\", \"Download CSV\"],\n            hide: [\"Login\", \"Sign Up\"]\n        }\n    }\n};",
+        "func": "global.set(\"user\", msg.payload[0]);\n\nreturn {\n    payload: {\n        page: 'Dashboard',\n        pages: {\n            show: [\"Dashboard\", \"User\"],\n            hide: [\"Login\", \"Sign Up\"]\n        }\n    }\n};",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -2650,6 +2650,67 @@
         "x": 1420,
         "y": 420,
         "wires": []
+    },
+    {
+        "id": "6c60ba79a3968ab8",
+        "type": "debug",
+        "z": "6912ad3d7a04a7bd",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1400,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "5e92e2fee05595a3",
+        "type": "sqlite",
+        "z": "6912ad3d7a04a7bd",
+        "mydb": "e83b4a7ea1491943",
+        "sqlquery": "fixed",
+        "sql": "SELECT * FROM users LIMIT 20",
+        "name": "view user",
+        "x": 1180,
+        "y": 740,
+        "wires": [
+            [
+                "6c60ba79a3968ab8"
+            ]
+        ]
+    },
+    {
+        "id": "62ec65afcc37eb5a",
+        "type": "inject",
+        "z": "6912ad3d7a04a7bd",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 980,
+        "y": 780,
+        "wires": [
+            [
+                "5e92e2fee05595a3"
+            ]
+        ]
     },
     {
         "id": "84e6f0ad8b9e9646",
