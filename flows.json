@@ -2,10 +2,33 @@
     {
         "id": "4f197a1ac03259d0",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "API and data_base",
         "disabled": false,
         "info": "",
         "env": []
+    },
+    {
+        "id": "044f20c844345fc7",
+        "type": "tab",
+        "label": "Logic",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6912ad3d7a04a7bd",
+        "type": "tab",
+        "label": "Authentication",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "76643284bdc41c45",
+        "type": "tab",
+        "label": "Dashboard",
+        "disabled": false,
+        "info": ""
     },
     {
         "id": "6c03dff826846f79",
@@ -38,6 +61,400 @@
         "name": ""
     },
     {
+        "id": "0134108270e9170b",
+        "type": "sqlitedb",
+        "db": "C:\\Users\\engsh\\Downloads\\THWS\\Industerial Project\\.json\\01-05-2025\\db_1.sqlite",
+        "mode": "RWC"
+    },
+    {
+        "id": "tab1_ui",
+        "type": "ui_tab",
+        "name": "Dashboard",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "group1",
+        "type": "ui_group",
+        "name": "Main Dashboard",
+        "tab": "tab1_ui",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "33657242ef5fb037",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "e83b4a7ea1491943",
+        "type": "sqlitedb",
+        "db": "/home/pi/.node-red/projects/Project/DataBase/user_data_base.sqlite",
+        "mode": "RWC"
+    },
+    {
+        "id": "38228510344247f8",
+        "type": "ui-base",
+        "name": "base",
+        "path": "/dashboard",
+        "includeClientData": false,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 5,
+        "showDisconnectNotification": true,
+        "allowInstall": true
+    },
+    {
+        "id": "60ac3cbdefc9f2e1",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094ce",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "14px"
+        }
+    },
+    {
+        "id": "1dbc57c30b7ebe69",
+        "type": "ui-page",
+        "name": "Login",
+        "ui": "38228510344247f8",
+        "path": "/login",
+        "icon": "login",
+        "layout": "notebook",
+        "theme": "60ac3cbdefc9f2e1",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "6"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "6"
+            }
+        ],
+        "order": 2,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "a4a1c767e4909e29",
+        "type": "ui-page",
+        "name": "Sign Up",
+        "ui": "38228510344247f8",
+        "path": "/sign-up",
+        "icon": "account",
+        "layout": "notebook",
+        "theme": "60ac3cbdefc9f2e1",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 3,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "b015f86c38354e01",
+        "type": "ui-page",
+        "name": "User",
+        "ui": "38228510344247f8",
+        "path": "/user",
+        "icon": "account",
+        "layout": "notebook",
+        "theme": "60ac3cbdefc9f2e1",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 4,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "a51d60ef20086f86",
+        "type": "ui-page",
+        "name": "Dashboard",
+        "ui": "38228510344247f8",
+        "path": "/",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "60ac3cbdefc9f2e1",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "2f47a39f3cc9930a",
+        "type": "ui-group",
+        "name": "Login",
+        "page": "1dbc57c30b7ebe69",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "e0f7da5a3b24256b",
+        "type": "ui-group",
+        "name": "Sign up",
+        "page": "a4a1c767e4909e29",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "a7d84b864bcdbb8d",
+        "type": "ui-group",
+        "name": "Log Out",
+        "page": "b015f86c38354e01",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "1dd26d328a9f311f",
+        "type": "ui-group",
+        "name": "Sub-Login",
+        "page": "1dbc57c30b7ebe69",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "d5dc624819206887",
+        "type": "ui-group",
+        "name": "Sub-Sign Up",
+        "page": "a4a1c767e4909e29",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "4f854fe43a9cd673",
+        "type": "ui-group",
+        "name": "Main_page",
+        "page": "a51d60ef20086f86",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
         "id": "0af3b0363a337d11",
         "type": "debug",
         "z": "4f197a1ac03259d0",
@@ -49,8 +466,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2400,
-        "y": 680,
+        "x": 2520,
+        "y": 520,
         "wires": []
     },
     {
@@ -61,16 +478,6 @@
         "info": "",
         "x": 520,
         "y": 40,
-        "wires": []
-    },
-    {
-        "id": "496db75d3898523e",
-        "type": "comment",
-        "z": "4f197a1ac03259d0",
-        "name": "data_to_logic unit",
-        "info": "",
-        "x": 2400,
-        "y": 640,
         "wires": []
     },
     {
@@ -201,7 +608,7 @@
         "id": "9a90f52afcac38b6",
         "type": "shelly-gen2",
         "z": "4f197a1ac03259d0",
-        "hostname": "192.168.33.1",
+        "hostname": "192.168.1.1",
         "description": "get_user_consumption_from_meter",
         "mode": "polling",
         "verbose": false,
@@ -211,7 +618,7 @@
         "pollinginterval": 5000,
         "pollstatus": false,
         "getstatusoncommand": true,
-        "devicetype": "Relay",
+        "devicetype": "Measure",
         "devicetypemustmatchexactly": true,
         "captureblutooth": false,
         "outputs": 1,
@@ -219,7 +626,8 @@
         "y": 540,
         "wires": [
             [
-                "2bcd55f22d8dd5a9"
+                "2bcd55f22d8dd5a9",
+                "cfbbd1363239d9b7"
             ]
         ]
     },
@@ -283,10 +691,10 @@
         "z": "4f197a1ac03259d0",
         "mydb": "6c03dff826846f79",
         "sqlquery": "fixed",
-        "sql": "SELECT * FROM data LIMIT 10",
+        "sql": "SELECT * FROM data LIMIT 500",
         "name": "dataBase",
-        "x": 2220,
-        "y": 680,
+        "x": 2300,
+        "y": 480,
         "wires": [
             [
                 "0af3b0363a337d11"
@@ -740,7 +1148,8 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
         "x": 1340,
@@ -1077,6 +1486,1495 @@
         "wires": [
             [
                 "a50c6266d9a82b05"
+            ]
+        ]
+    },
+    {
+        "id": "cfbbd1363239d9b7",
+        "type": "debug",
+        "z": "4f197a1ac03259d0",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1160,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "74c975dd5fcaf451",
+        "type": "inject",
+        "z": "4f197a1ac03259d0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 460,
+        "y": 600,
+        "wires": [
+            [
+                "9a90f52afcac38b6"
+            ]
+        ]
+    },
+    {
+        "id": "5949d7bd1f9cf338",
+        "type": "comment",
+        "z": "044f20c844345fc7",
+        "name": "DATA FETCHING (48h from DB)",
+        "info": "",
+        "x": 150,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "ff1afcd16b71435f",
+        "type": "comment",
+        "z": "044f20c844345fc7",
+        "name": "PROCESSING AND AVERAGE PRICE CALCULATION",
+        "info": "",
+        "x": 750,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "a27b74b438d45d17",
+        "type": "comment",
+        "z": "044f20c844345fc7",
+        "name": "CHECK FOR SOLAR SURPLUS",
+        "info": "",
+        "x": 1050,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "c687e9d45fc0f52a",
+        "type": "comment",
+        "z": "044f20c844345fc7",
+        "name": "DECIDE ENERGY ACTION + CONTROL SHELLY",
+        "info": "",
+        "x": 1100,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "06fe13d2d0e6db3d",
+        "type": "comment",
+        "z": "044f20c844345fc7",
+        "name": "DASHBOARD CHARTS: PLANNED VS EXECUTED (48H)",
+        "info": "",
+        "x": 1100,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "686441a20e3712fa",
+        "type": "inject",
+        "z": "044f20c844345fc7",
+        "name": "Trigger (Every 48h at 13:05)",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "05 13 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 500,
+        "wires": [
+            [
+                "522747c96f342858"
+            ]
+        ]
+    },
+    {
+        "id": "59803d104fd11acf",
+        "type": "sqlite",
+        "z": "044f20c844345fc7",
+        "mydb": "6c03dff826846f79",
+        "sqlquery": "fixed",
+        "sql": "\nSELECT \n  Date,\n  Time,\n  \"Consumption_UnitPrice[EUR/kWh]\" AS price_no_tax,\n  \"Solar_Production_Estimate[kW]\" AS solar_production,\n  \"Consumption[kWh]\" AS solar_consumption\nFROM data\nWHERE Date = date('now') OR Date = date('now', '+1 day')\n",
+        "name": "Fetch Energy Data (Today + Tomorrow)",
+        "x": 460,
+        "y": 200,
+        "wires": [
+            [
+                "e79c850f39f6bd4f",
+                "7941cd6d51b72d39"
+            ]
+        ]
+    },
+    {
+        "id": "e79c850f39f6bd4f",
+        "type": "debug",
+        "z": "044f20c844345fc7",
+        "name": "Fetched 48h Data",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "7941cd6d51b72d39",
+        "type": "function",
+        "z": "044f20c844345fc7",
+        "name": "Process Energy Data",
+        "func": "\nlet rows = msg.payload;\nlet avgPrice = rows.reduce((acc, r) => acc + r.price_no_tax, 0) / rows.length;\nmsg.payload = rows;\nmsg.averagePrice = avgPrice;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 240,
+        "wires": [
+            [
+                "bda9b068f810b222",
+                "c4fe3a2947618682",
+                "7ebf12986586d30e"
+            ]
+        ]
+    },
+    {
+        "id": "bda9b068f810b222",
+        "type": "function",
+        "z": "044f20c844345fc7",
+        "name": "Check Solar > Consumption",
+        "func": "\nlet now = new Date();\nlet match = msg.payload.find(row => {\n    let t = new Date(row.Date + 'T' + row.Time + ':00');\n    return t <= now && now < new Date(t.getTime() + 15 * 60000);\n});\nif (match && match.solar_production > match.solar_consumption) {\n    msg.payload = \"Surplus: Charging grid.\";\n} else {\n    msg.payload = \"\";\n}\nreturn msg;\n",
+        "outputs": 1,
+        "x": 1050,
+        "y": 200,
+        "wires": [
+            [
+                "08e987b848232f99",
+                "5dcf87c01cd1d655"
+            ]
+        ]
+    },
+    {
+        "id": "08e987b848232f99",
+        "type": "ui_text",
+        "z": "044f20c844345fc7",
+        "group": "group1",
+        "order": 6,
+        "name": "Surplus Solar",
+        "label": "Solar Status",
+        "format": "{{msg.payload}}",
+        "x": 1300,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "7ebf12986586d30e",
+        "type": "function",
+        "z": "044f20c844345fc7",
+        "name": "Decide Source + Control Shelly",
+        "func": "\nlet now = new Date();\nlet current = msg.payload.find(r => {\n    let t = new Date(r.Date + 'T' + r.Time + ':00');\n    return t <= now && now < new Date(t.getTime() + 15 * 60000);\n});\n\nif (!current) return null;\nlet price = current.price_no_tax;\nlet avg = msg.averagePrice;\nlet shellyMsg = {};\n\nif (price < 0 || price < avg * 0.8) {\n    shellyMsg.payload = { turn: \"on\" }; // charging\n} else if (price > avg * 1.2) {\n    shellyMsg.payload = { turn: \"off\" }; // discharging\n} else {\n    shellyMsg.payload = { turn: \"on\" };\n}\n\nshellyMsg.url = \"http://192.168.2.102/relay/0\";\nreturn shellyMsg;\n",
+        "outputs": 1,
+        "x": 1100,
+        "y": 280,
+        "wires": [
+            [
+                "9295ce3c54e5d8ce"
+            ]
+        ]
+    },
+    {
+        "id": "9295ce3c54e5d8ce",
+        "type": "http request",
+        "z": "044f20c844345fc7",
+        "name": "Send to Shelly Switch",
+        "method": "POST",
+        "url": "",
+        "x": 1400,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c4fe3a2947618682",
+        "type": "function",
+        "z": "044f20c844345fc7",
+        "name": "Generate Energy Plans (48h)",
+        "func": "\nlet labels = [];\nlet planned = [];\nlet executed = [];\n\nlet data = msg.payload;\nlet avg = msg.averagePrice;\n\ndata.forEach((row) => {\n    let label = row.Date + \" \" + row.Time;\n    labels.push(label);\n\n    let price = row.price_no_tax;\n    let solar = row.solar_production;\n    let usage = row.solar_consumption;\n\n    planned.push(price < 0 || price < avg * 0.8 ? 1 : price > avg * 1.2 ? -1 : 0);\n    executed.push(solar > usage ? 1 : price > avg * 1.2 ? -1 : 0);\n});\n\nmsg.preplan = {\n    payload: [{\n        series: [\"Planned\"],\n        data: [planned],\n        labels: labels\n    }]\n};\n\nmsg.execution = {\n    payload: [{\n        series: [\"Executed\"],\n        data: [executed],\n        labels: labels\n    }]\n};\n\nreturn [msg.preplan, msg.execution];\n",
+        "outputs": 2,
+        "x": 1100,
+        "y": 360,
+        "wires": [
+            [
+                "f4b8ec96e0f51765"
+            ],
+            [
+                "c3cf424eb5e5734b"
+            ]
+        ]
+    },
+    {
+        "id": "f4b8ec96e0f51765",
+        "type": "ui_chart",
+        "z": "044f20c844345fc7",
+        "name": "Planned Energy Source (48h)",
+        "group": "group1",
+        "order": 8,
+        "width": "12",
+        "height": "5",
+        "label": "Planned Energy Source (Next 48h)",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "dd HH:mm",
+        "interpolate": "step-after",
+        "nodata": "",
+        "dot": false,
+        "ymin": "-10",
+        "ymax": "10",
+        "removeOlder": 48,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "hour",
+        "cutout": "",
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#003f5c",
+            "#ffa600",
+            "#2f4b7c",
+            "#00bfae",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1450,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c3cf424eb5e5734b",
+        "type": "ui_chart",
+        "z": "044f20c844345fc7",
+        "name": "Executed Energy Source (48h)",
+        "group": "group1",
+        "order": 9,
+        "width": "12",
+        "height": "5",
+        "label": "Executed Energy Source (From Tibber)",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "dd HH:mm",
+        "interpolate": "step-after",
+        "nodata": "",
+        "dot": false,
+        "ymin": "-3",
+        "ymax": "3",
+        "removeOlder": 48,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "hour",
+        "cutout": "",
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#a05195",
+            "#ff7c43",
+            "#d45087",
+            "#665191",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1450,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5dcf87c01cd1d655",
+        "type": "debug",
+        "z": "044f20c844345fc7",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1280,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "522747c96f342858",
+        "type": "function",
+        "z": "044f20c844345fc7",
+        "name": "Build SQL Query",
+        "func": "const now = new Date();\nlet start = new Date();\n\n// Set the start time to 7 days ago (you can adjust this dynamically if needed)\nstart.setDate(now.getDate() - 7);\n\n// Format for SQLite 'YYYY-MM-DD'\nconst startTime = start.toISOString().slice(0, 10);\nconst endTime = now.toISOString().slice(0, 10);\n\n// Generate SQL query using the Date column\nmsg.topic = `SELECT * FROM data WHERE Date BETWEEN '${startTime}' AND '${endTime}'`;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 320,
+        "wires": [
+            [
+                "59803d104fd11acf"
+            ]
+        ]
+    },
+    {
+        "id": "758bbe8a1baae6c0",
+        "type": "comment",
+        "z": "6912ad3d7a04a7bd",
+        "name": "User Authentication",
+        "info": "Table Design\n\n",
+        "x": 150,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "34e697c94da4e18e",
+        "type": "function",
+        "z": "6912ad3d7a04a7bd",
+        "name": "Logout",
+        "func": "global.set(\"user\", null);\n\nreturn [\n    {\n        payload: {\n            \"page\": \"Login\",\n            \"pages\": {\n                \"hide\": [\"Dashboard\", \"User\", \"Download CSV\"],\n                \"show\": [\"Login\", \"Sign Up\"]\n            }\n        }\n    },\n    {\n        payload: \"Successfully logged out\"\n    }\n];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 780,
+        "wires": [
+            [
+                "6a258f0deb30e8a7"
+            ],
+            [
+                "21a0770d7ff34e63"
+            ]
+        ]
+    },
+    {
+        "id": "2661950aa5e19493",
+        "type": "switch",
+        "z": "6912ad3d7a04a7bd",
+        "name": "",
+        "property": "payload.password",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "payload.passwordConfirm",
+                "vt": "msg"
+            },
+            {
+                "t": "neq",
+                "v": "payload.passwordConfirm",
+                "vt": "msg"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 250,
+        "y": 600,
+        "wires": [
+            [
+                "1038d41c43b8ddc6"
+            ],
+            [
+                "299bb9708a7b782d",
+                "ec4fbdf45f0439c0"
+            ]
+        ]
+    },
+    {
+        "id": "1038d41c43b8ddc6",
+        "type": "function",
+        "z": "6912ad3d7a04a7bd",
+        "name": "Hash password",
+        "func": "const encoder = new util.TextEncoder()\nconst data = encoder.encode(msg.payload.password)\nconst hashBuffer = await crypto.subtle.digest('SHA-256', data)\nconst hashArray = Array.from(new Uint8Array(hashBuffer))\nconst pass = hashArray.map(b => b.toString(16).padStart(2, '0')).join('')\n\nmsg.topic = `INSERT INTO users (username, password)\n            VALUES ('${msg.payload.username}', '${pass}');`\nreturn {\n    params: {\n        $username: msg.payload.username,\n        $password: pass\n    }\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "crypto",
+                "module": "crypto"
+            }
+        ],
+        "x": 420,
+        "y": 540,
+        "wires": [
+            [
+                "76fc568baef722ef"
+            ]
+        ]
+    },
+    {
+        "id": "76fc568baef722ef",
+        "type": "sqlite",
+        "z": "6912ad3d7a04a7bd",
+        "mydb": "e83b4a7ea1491943",
+        "sqlquery": "prepared",
+        "sql": "INSERT INTO users (username, password) VALUES ($username, $password);",
+        "name": "SQL Create user",
+        "x": 630,
+        "y": 540,
+        "wires": [
+            [
+                "ca99c2f66bc9b221"
+            ]
+        ]
+    },
+    {
+        "id": "299bb9708a7b782d",
+        "type": "function",
+        "z": "6912ad3d7a04a7bd",
+        "name": "Passwords don't match",
+        "func": "msg.payload = `<p style=\"color: red;\">Passwords don't match</p>`\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 680,
+        "wires": [
+            [
+                "21a0770d7ff34e63"
+            ]
+        ]
+    },
+    {
+        "id": "43632276a84e2dca",
+        "type": "function",
+        "z": "6912ad3d7a04a7bd",
+        "name": "Login",
+        "func": "global.set(\"user\", msg.payload[0]);\n\nreturn {\n    payload: {\n        page: 'Dashboard',\n        pages: {\n            show: [\"Dashboard\", \"User\", \"Download CSV\"],\n            hide: [\"Login\", \"Sign Up\"]\n        }\n    }\n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1010,
+        "y": 460,
+        "wires": [
+            [
+                "6a258f0deb30e8a7"
+            ]
+        ]
+    },
+    {
+        "id": "7f7652150ba575ab",
+        "type": "function",
+        "z": "6912ad3d7a04a7bd",
+        "name": "Page permissions",
+        "func": "const user = global.get(\"user\")\n\nconst page = msg.name\nglobal.set(\"currentPage\", page);\n\nconst allowSignUp = global.get(\"allowSignUp\")\n\nmsg.payload = {}\n\nif (!allowSignUp && page == 'Sign Up') msg.payload = \"Login\"\n\nif (!['Login', ...(allowSignUp ? ['Sign Up'] : [])].includes(page)) {\n    if (!user) msg.payload = \"Login\"\n} else{\n    if (user) msg.payload = \"Dashboard\"\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 380,
+        "wires": [
+            [
+                "6a258f0deb30e8a7"
+            ]
+        ]
+    },
+    {
+        "id": "ba5efde3dffc8413",
+        "type": "change",
+        "z": "6912ad3d7a04a7bd",
+        "name": "Enable Sign Up",
+        "rules": [
+            {
+                "t": "set",
+                "p": "allowSignUp",
+                "pt": "global",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 180,
+        "wires": [
+            [
+                "a860e462d16982d5"
+            ]
+        ]
+    },
+    {
+        "id": "e4f3fa8e4e4f5241",
+        "type": "inject",
+        "z": "6912ad3d7a04a7bd",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 600,
+        "y": 180,
+        "wires": [
+            [
+                "ba5efde3dffc8413"
+            ]
+        ]
+    },
+    {
+        "id": "939acc55a206e249",
+        "type": "change",
+        "z": "6912ad3d7a04a7bd",
+        "name": "Disable Sign Up",
+        "rules": [
+            {
+                "t": "set",
+                "p": "allowSignUp",
+                "pt": "global",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 220,
+        "wires": [
+            [
+                "4f47e426e2671699"
+            ]
+        ]
+    },
+    {
+        "id": "d113b540c174657e",
+        "type": "inject",
+        "z": "6912ad3d7a04a7bd",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 600,
+        "y": 220,
+        "wires": [
+            [
+                "939acc55a206e249"
+            ]
+        ]
+    },
+    {
+        "id": "296d1c1f5047b357",
+        "type": "function",
+        "z": "6912ad3d7a04a7bd",
+        "name": "User already exists | error",
+        "func": "const text = msg.error.message == \"Error: SQLITE_CONSTRAINT: UNIQUE constraint failed: users.username\"\n    ? \"User already exists\"\n    : msg.error.message\nreturn { payload: `<p style=\"color: red;\">${text}</p>` };",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 620,
+        "wires": [
+            [
+                "21a0770d7ff34e63"
+            ]
+        ]
+    },
+    {
+        "id": "34c821dbc820789c",
+        "type": "catch",
+        "z": "6912ad3d7a04a7bd",
+        "name": "",
+        "scope": [
+            "76fc568baef722ef"
+        ],
+        "uncaught": false,
+        "x": 510,
+        "y": 620,
+        "wires": [
+            [
+                "296d1c1f5047b357"
+            ]
+        ]
+    },
+    {
+        "id": "b9b5614c7dff264a",
+        "type": "function",
+        "z": "6912ad3d7a04a7bd",
+        "name": "Hash password",
+        "func": "const encoder = new util.TextEncoder()\nconst data = encoder.encode(msg.payload.password)\nconst hashBuffer = await crypto.subtle.digest('SHA-256', data)\nconst hashArray = Array.from(new Uint8Array(hashBuffer))\nconst pass = hashArray.map(b => b.toString(16).padStart(2, '0')).join('')\n\nreturn {\n    params: {\n        $username: msg.payload.username,\n        $password: pass\n    }\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "crypto",
+                "module": "crypto"
+            }
+        ],
+        "x": 480,
+        "y": 460,
+        "wires": [
+            [
+                "ca99c2f66bc9b221"
+            ]
+        ]
+    },
+    {
+        "id": "ca99c2f66bc9b221",
+        "type": "sqlite",
+        "z": "6912ad3d7a04a7bd",
+        "mydb": "e83b4a7ea1491943",
+        "sqlquery": "prepared",
+        "sql": "SELECT * FROM users \nWHERE username = $username\nAND password = $password\nLIMIT 1;",
+        "name": "Get user",
+        "x": 680,
+        "y": 460,
+        "wires": [
+            [
+                "1b38b1ec1ed249aa"
+            ]
+        ]
+    },
+    {
+        "id": "a860e462d16982d5",
+        "type": "function",
+        "z": "6912ad3d7a04a7bd",
+        "name": "Show New user",
+        "func": "return {\n    payload: {\n        groups: {\n            show: ['Login:Sub-Login']\n        },\n        \"pages\": {\n            \"show\": [\"Sign Up\"]\n        }\n    }\n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 180,
+        "wires": [
+            [
+                "6a258f0deb30e8a7"
+            ]
+        ]
+    },
+    {
+        "id": "4f47e426e2671699",
+        "type": "function",
+        "z": "6912ad3d7a04a7bd",
+        "name": "Hide New user",
+        "func": "return {\n    payload: {\n        groups: {\n            hide: ['Login:Sub-Login']\n        },\n        \"pages\": {\n            \"hide\": [\"Sign Up\"]\n        }\n    }\n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 220,
+        "wires": [
+            [
+                "6a258f0deb30e8a7"
+            ]
+        ]
+    },
+    {
+        "id": "1b38b1ec1ed249aa",
+        "type": "switch",
+        "z": "6912ad3d7a04a7bd",
+        "name": "User exists",
+        "property": "payload.length",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 850,
+        "y": 460,
+        "wires": [
+            [
+                "43632276a84e2dca"
+            ],
+            [
+                "9b60cd0b89fd6534"
+            ]
+        ]
+    },
+    {
+        "id": "9b60cd0b89fd6534",
+        "type": "function",
+        "z": "6912ad3d7a04a7bd",
+        "name": "Bad credentials",
+        "func": "msg.payload = `<p style=\"color: red;\">Wrong user or password</p>`\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 520,
+        "wires": [
+            [
+                "21a0770d7ff34e63"
+            ]
+        ]
+    },
+    {
+        "id": "4c8391745dc721c7",
+        "type": "function",
+        "z": "6912ad3d7a04a7bd",
+        "name": "Get current username",
+        "func": "return { payload: global.get(\"user\")?.username };",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 320,
+        "wires": [
+            [
+                "ca837ca722728964"
+            ]
+        ]
+    },
+    {
+        "id": "ad1f09f897a372dc",
+        "type": "ui-form",
+        "z": "6912ad3d7a04a7bd",
+        "name": "Login",
+        "group": "2f47a39f3cc9930a",
+        "label": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Username",
+                "key": "username",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Password",
+                "key": "password",
+                "type": "password",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "username": "",
+            "password": ""
+        },
+        "payload": "",
+        "submit": "Login",
+        "cancel": "Clear",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": false,
+        "className": "",
+        "dropdownOptions": [],
+        "x": 300,
+        "y": 460,
+        "wires": [
+            [
+                "b9b5614c7dff264a"
+            ]
+        ]
+    },
+    {
+        "id": "ec4fbdf45f0439c0",
+        "type": "ui-form",
+        "z": "6912ad3d7a04a7bd",
+        "name": "Sign up",
+        "group": "e0f7da5a3b24256b",
+        "label": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Username",
+                "key": "username",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Password",
+                "key": "password",
+                "type": "password",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Confirm password",
+                "key": "passwordConfirm",
+                "type": "password",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "username": "",
+            "password": "",
+            "passwordConfirm": ""
+        },
+        "payload": "",
+        "submit": "Submit",
+        "cancel": "Clear",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "dropdownOptions": [],
+        "x": 100,
+        "y": 600,
+        "wires": [
+            [
+                "2661950aa5e19493"
+            ]
+        ]
+    },
+    {
+        "id": "85c88bb25ccfa16c",
+        "type": "ui-button",
+        "z": "6912ad3d7a04a7bd",
+        "group": "a7d84b864bcdbb8d",
+        "name": "Log Out",
+        "label": "Log Out",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 440,
+        "y": 780,
+        "wires": [
+            [
+                "34e697c94da4e18e"
+            ]
+        ]
+    },
+    {
+        "id": "1b3d1d8f7a398607",
+        "type": "ui-button",
+        "z": "6912ad3d7a04a7bd",
+        "group": "1dd26d328a9f311f",
+        "name": "Sign up link",
+        "label": "New user",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "emulateClick": true,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "Sign Up",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 930,
+        "y": 140,
+        "wires": [
+            [
+                "6a258f0deb30e8a7"
+            ]
+        ]
+    },
+    {
+        "id": "ec1ccb5848100e40",
+        "type": "ui-button",
+        "z": "6912ad3d7a04a7bd",
+        "group": "d5dc624819206887",
+        "name": "Login link",
+        "label": "Already have a user",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "emulateClick": true,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "Login",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 920,
+        "y": 260,
+        "wires": [
+            [
+                "6a258f0deb30e8a7"
+            ]
+        ]
+    },
+    {
+        "id": "ca837ca722728964",
+        "type": "ui-text",
+        "z": "6912ad3d7a04a7bd",
+        "group": "a7d84b864bcdbb8d",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Current user",
+        "label": "Current User:",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": true,
+        "font": "",
+        "fontSize": "19",
+        "color": "#0956f1",
+        "wrapText": false,
+        "className": "{{msg.payload}}",
+        "x": 930,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "21a0770d7ff34e63",
+        "type": "ui-notification",
+        "z": "6912ad3d7a04a7bd",
+        "ui": "38228510344247f8",
+        "position": "top center",
+        "colorDefault": true,
+        "color": "#000000",
+        "displayTime": "5",
+        "showCountdown": true,
+        "outputs": 1,
+        "allowDismiss": false,
+        "dismissText": "",
+        "allowConfirm": false,
+        "confirmText": "",
+        "raw": true,
+        "className": "",
+        "name": "Notification",
+        "x": 1170,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6a258f0deb30e8a7",
+        "type": "ui-control",
+        "z": "6912ad3d7a04a7bd",
+        "name": "",
+        "ui": "38228510344247f8",
+        "events": "all",
+        "x": 1220,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bd899096891058a2",
+        "type": "ui-control",
+        "z": "6912ad3d7a04a7bd",
+        "name": "",
+        "ui": "38228510344247f8",
+        "events": "all",
+        "x": 480,
+        "y": 340,
+        "wires": [
+            [
+                "7f7652150ba575ab",
+                "4c8391745dc721c7"
+            ]
+        ]
+    },
+    {
+        "id": "8cda0d1ea6ab664d",
+        "type": "ui-text",
+        "z": "6912ad3d7a04a7bd",
+        "group": "4f854fe43a9cd673",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "welcome",
+        "label": "Successfully logged in!! Shaddy Dashboard goes here",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "x": 1420,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "84e6f0ad8b9e9646",
+        "type": "sqlite",
+        "z": "76643284bdc41c45",
+        "mydb": "6c03dff826846f79",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "Query Energy DB",
+        "x": 590,
+        "y": 60,
+        "wires": [
+            [
+                "b80add8848b8f90f"
+            ]
+        ]
+    },
+    {
+        "id": "b80add8848b8f90f",
+        "type": "function",
+        "z": "76643284bdc41c45",
+        "name": "Format Chart Data",
+        "func": "let labels = [], consumption = [], solar = [], cost = [], unit_price = [], weather = [];\n\nmsg.payload.forEach(row => {\n    const label = row.Date + ' ' + row.Time;      // ✅ Combines Date + Time columns\n    labels.push(label);\n\n    consumption.push(row['Consumption[kWh]']);    // ✅ Matches column names exactly\n    solar.push(row['Solar_Production_Estimate[kW]']);\n    cost.push(row['Consumption_Cost[EUR]']);\n    unit_price.push(row['Consumption_UnitPrice[EUR/kWh]']);\n    weather.push(row['Weather condition']);\n});\n\nreturn [\n    { payload: [{ series: ['Consumption'], data: [consumption], labels }] },\n    { payload: [{ series: ['Solar Production'], data: [solar], labels }] },\n    { payload: [{ series: ['Cost'], data: [cost], labels }] },\n    { payload: [{ series: ['Unit Price'], data: [unit_price], labels }] },\n    { payload: [{ series: ['Weather'], data: [weather], labels }] }\n];\n",
+        "outputs": 4,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 860,
+        "y": 60,
+        "wires": [
+            [
+                "ff254faea357d6f5"
+            ],
+            [
+                "35be178260a7e436"
+            ],
+            [
+                "6099a38935ab9e0e"
+            ],
+            [
+                "1b20df5b5724200b",
+                "3d1f6fd3e517b6e0"
+            ]
+        ]
+    },
+    {
+        "id": "ff254faea357d6f5",
+        "type": "ui_chart",
+        "z": "76643284bdc41c45",
+        "name": "Consumption (kWh)",
+        "group": "group1",
+        "order": 2,
+        "width": "12",
+        "height": "5",
+        "label": "Consumption (kWh)",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "dd HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": "",
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#3b83bd",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1300,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "35be178260a7e436",
+        "type": "ui_chart",
+        "z": "76643284bdc41c45",
+        "name": "Solar Production",
+        "group": "group1",
+        "order": 3,
+        "width": "12",
+        "height": "5",
+        "label": "Solar Production (kW)",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "dd HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": "",
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#ffa500",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1350,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6099a38935ab9e0e",
+        "type": "ui_chart",
+        "z": "76643284bdc41c45",
+        "name": "Cost (EUR)",
+        "group": "group1",
+        "order": 4,
+        "width": "12",
+        "height": "5",
+        "label": "Cost (EUR)",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "dd HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": "",
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#ff0000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1370,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3d1f6fd3e517b6e0",
+        "type": "ui_chart",
+        "z": "76643284bdc41c45",
+        "name": "Unit Price (EUR/kWh)",
+        "group": "group1",
+        "order": 5,
+        "width": "12",
+        "height": "5",
+        "label": "Unit Price (EUR/kWh)",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "dd HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": "",
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#9933ff",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1380,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1b20df5b5724200b",
+        "type": "debug",
+        "z": "76643284bdc41c45",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "3c028a6e005cfc4e",
+        "type": "ui_date_picker",
+        "z": "76643284bdc41c45",
+        "name": "Start Date",
+        "label": "Start Date",
+        "group": "group1",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "topic": "start",
+        "x": 140,
+        "y": 180,
+        "wires": [
+            [
+                "3f478418b0247ec2"
+            ]
+        ]
+    },
+    {
+        "id": "cd8a4b85193237b8",
+        "type": "ui_date_picker",
+        "z": "76643284bdc41c45",
+        "name": "End Date",
+        "label": "End Date",
+        "group": "group1",
+        "order": 2,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "topic": "end",
+        "x": 100,
+        "y": 280,
+        "wires": [
+            [
+                "3f478418b0247ec2"
+            ]
+        ]
+    },
+    {
+        "id": "3f478418b0247ec2",
+        "type": "join",
+        "z": "76643284bdc41c45",
+        "name": "Join Start & End Dates",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "",
+        "joinerType": "str",
+        "useparts": true,
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 350,
+        "y": 220,
+        "wires": [
+            [
+                "f7176ec0715c5bf4"
+            ]
+        ]
+    },
+    {
+        "id": "f7176ec0715c5bf4",
+        "type": "function",
+        "z": "76643284bdc41c45",
+        "name": "Build SQL Query",
+        "func": "// Ensure date values from payload are properly formatted\nconst startDate = new Date(msg.payload.start);\nconst endDate = new Date(msg.payload.end);\n\n// Check if dates are valid\nif (isNaN(startDate) || isNaN(endDate)) {\n    node.error(\"Invalid date selected.\");\n    return null;\n}\n\n// Set start time to 00:00:00 and end time to 23:59:59 for selected dates\nstartDate.setHours(0, 0, 0, 0);\nendDate.setHours(23, 59, 59, 999);\n\nconst startTime = startDate.toISOString().slice(0, 19);\nconst endTime = endDate.toISOString().slice(0, 19);\n\nmsg.topic = `\nSELECT * FROM data \nWHERE datetime(Date || 'T' || Time || ':00' || Timezone)\nBETWEEN datetime('${startTime}') AND datetime('${endTime}')\n`;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 60,
+        "wires": [
+            [
+                "84e6f0ad8b9e9646"
             ]
         ]
     }
