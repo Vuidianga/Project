@@ -8,14 +8,6 @@
         "env": []
     },
     {
-        "id": "044f20c844345fc7",
-        "type": "tab",
-        "label": "Logic",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "6912ad3d7a04a7bd",
         "type": "tab",
         "label": "Authentication",
@@ -499,7 +491,8 @@
         "y": 340,
         "wires": [
             [
-                "f259e687832ad330"
+                "f259e687832ad330",
+                "f9a20ac9abfcebc5"
             ]
         ]
     },
@@ -822,8 +815,8 @@
         "z": "4f197a1ac03259d0",
         "name": "",
         "pauseType": "delay",
-        "timeout": "15",
-        "timeoutUnits": "minutes",
+        "timeout": "1",
+        "timeoutUnits": "hours",
         "rate": "1",
         "nbRateUnits": "1",
         "rateUnits": "second",
@@ -833,10 +826,12 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 510,
+        "x": 500,
         "y": 340,
         "wires": [
-            []
+            [
+                "1e5dec98b2d97cc3"
+            ]
         ]
     },
     {
@@ -845,7 +840,7 @@
         "z": "4f197a1ac03259d0",
         "name": "",
         "pauseType": "delay",
-        "timeout": "20",
+        "timeout": "5",
         "timeoutUnits": "minutes",
         "rate": "1",
         "nbRateUnits": "1",
@@ -856,7 +851,7 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 510,
+        "x": 500,
         "y": 400,
         "wires": [
             [
@@ -870,7 +865,7 @@
         "z": "4f197a1ac03259d0",
         "name": "",
         "pauseType": "delay",
-        "timeout": "10",
+        "timeout": "5",
         "timeoutUnits": "minutes",
         "rate": "1",
         "nbRateUnits": "1",
@@ -881,7 +876,7 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 510,
+        "x": 500,
         "y": 160,
         "wires": [
             [
@@ -943,7 +938,7 @@
         "z": "4f197a1ac03259d0",
         "name": "",
         "pauseType": "delay",
-        "timeout": "10",
+        "timeout": "1",
         "timeoutUnits": "minutes",
         "rate": "1",
         "nbRateUnits": "1",
@@ -954,7 +949,7 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 510,
+        "x": 500,
         "y": 280,
         "wires": [
             [
@@ -1246,7 +1241,7 @@
         "type": "pythonshell in",
         "z": "4f197a1ac03259d0",
         "name": "get_grid_price",
-        "pyfile": "",
+        "pyfile": "/home/pi/.node-red/projects/Project/scripts/get_grid_prices.py",
         "virtualenv": "",
         "continuous": false,
         "stdInData": false,
@@ -1271,7 +1266,8 @@
         "y": 400,
         "wires": [
             [
-                "32e2bec2664d6799"
+                "32e2bec2664d6799",
+                "82fb81b4502b7dde"
             ]
         ]
     },
@@ -1340,7 +1336,8 @@
         "y": 280,
         "wires": [
             [
-                "15b390bf6afbdd51"
+                "15b390bf6afbdd51",
+                "659fa8ea788c463a"
             ]
         ]
     },
@@ -1625,7 +1622,7 @@
         "type": "debug",
         "z": "4f197a1ac03259d0",
         "name": "debug 2",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1696,463 +1693,51 @@
         "wires": []
     },
     {
-        "id": "preplan_chart",
-        "type": "ui_chart",
-        "z": "044f20c844345fc7",
-        "name": "Planned Energy Source (48h)",
-        "group": "group1",
-        "order": 8,
-        "width": "12",
-        "height": "5",
-        "label": "Planned Energy Source (Next 48h)",
-        "chartType": "line",
-        "legend": "true",
-        "xformat": "dd HH:mm",
-        "interpolate": "step-after",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": 48,
-        "removeOlderUnit": "hour",
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#003f5c",
-            "#ffa600",
-            "#2f4b7c",
-            "#00bfae"
-        ],
-        "outputs": 1,
-        "x": 1960,
-        "y": 620,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "executed_chart",
-        "type": "ui_chart",
-        "z": "044f20c844345fc7",
-        "name": "Executed Energy Source (48h)",
-        "group": "group1",
-        "order": 9,
-        "width": "12",
-        "height": "5",
-        "label": "Executed Energy Source (From Tibber)",
-        "chartType": "line",
-        "legend": "true",
-        "xformat": "dd HH:mm",
-        "interpolate": "step-after",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": 48,
-        "removeOlderUnit": "hour",
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#a05195",
-            "#ff7c43",
-            "#d45087",
-            "#665191"
-        ],
-        "outputs": 1,
-        "x": 1960,
-        "y": 700,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "68d76b63eb7b2367",
-        "type": "inject",
-        "z": "044f20c844345fc7",
-        "name": "Trigger (Every 48h at 13:05)",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "5 13 */2 * *",
-        "once": false,
-        "onceDelay": 0.1,
-        "payload": "",
-        "payloadType": "date",
-        "x": 580,
-        "y": 320,
-        "wires": [
-            [
-                "c014cb74e6c039d0"
-            ]
-        ]
-    },
-    {
-        "id": "c014cb74e6c039d0",
-        "type": "sqlite",
-        "z": "044f20c844345fc7",
-        "mydb": "962221d873768ba1",
-        "sqlquery": "fixed",
-        "sql": "\nSELECT \n  Date,\n  Time,\n  \"Prices[EUR/kWh]\" AS price_no_tax,\n  \"Solar Production Estimate - kW\" AS solar_production,\n  \"Consumption[kWh]\" AS solar_consumption\nFROM data\nWHERE Date = date('now') OR Date = date('now', '+1 day')\n",
-        "name": "Fetch Energy Data (Today + Tomorrow)",
-        "x": 660,
-        "y": 160,
-        "wires": [
-            [
-                "abe99c021031e2f5",
-                "fix_mapping_node"
-            ]
-        ]
-    },
-    {
-        "id": "abe99c021031e2f5",
+        "id": "82fb81b4502b7dde",
         "type": "debug",
-        "z": "044f20c844345fc7",
-        "name": "Fetched 48h Data",
+        "z": "4f197a1ac03259d0",
+        "name": "debug 11",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
+        "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 960,
-        "y": 120,
+        "x": 940,
+        "y": 380,
         "wires": []
     },
     {
-        "id": "550b29ee5b8cabcb",
-        "type": "function",
-        "z": "044f20c844345fc7",
-        "name": "Check Solar > Consumption",
-        "func": "\nlet now = new Date();\nlet match = msg.payload.find(row => {\n    let t = new Date(row.Date + 'T' + row.Time + ':00');\n    return t <= now && now < new Date(t.getTime() + 15 * 60000);\n});\nif (match && match.solar_production > match.solar_consumption) {\n    msg.payload = \"Surplus: Charging grid.\";\n} else {\n    msg.payload = \"\";\n}\nreturn msg;\n",
-        "outputs": 1,
-        "x": 1260,
-        "y": 160,
-        "wires": [
-            [
-                "bbbc3ab82befc3ea"
-            ]
-        ]
-    },
-    {
-        "id": "bbbc3ab82befc3ea",
-        "type": "ui_text",
-        "z": "044f20c844345fc7",
-        "group": "group1",
-        "order": 6,
-        "name": "Surplus Solar",
-        "label": "Solar Status",
-        "format": "{{msg.payload}}",
-        "x": 1510,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "a7baa8ae584a4a55",
-        "type": "function",
-        "z": "044f20c844345fc7",
-        "name": "Decide Source + Control Shelly",
-        "func": "\nlet now = new Date();\nlet current = msg.payload.find(r => {\n    let t = new Date(r.Date + 'T' + r.Time + ':00');\n    return t <= now && now < new Date(t.getTime() + 15 * 60000);\n});\n\nif (!current) return null;\nlet price = current.price_no_tax;\nlet avg = msg.averagePrice;\nlet shellyMsg = {};\n\nif (price < 0 || price < avg * 0.8) {\n    shellyMsg.payload = { turn: \"on\" }; // charging\n} else if (price > avg * 1.2) {\n    shellyMsg.payload = { turn: \"off\" }; // discharging\n} else {\n    shellyMsg.payload = { turn: \"on\" };\n}\n\nshellyMsg.url = \"http://192.168.2.102/relay/0\";\nreturn shellyMsg;\n",
-        "outputs": 1,
-        "x": 1310,
-        "y": 240,
-        "wires": [
-            [
-                "c2dc8809158d6ec7"
-            ]
-        ]
-    },
-    {
-        "id": "c2dc8809158d6ec7",
-        "type": "http request",
-        "z": "044f20c844345fc7",
-        "name": "Send to Shelly Switch",
-        "method": "POST",
-        "url": "",
-        "x": 1610,
-        "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "85e92626c4d9887e",
-        "type": "function",
-        "z": "044f20c844345fc7",
-        "name": "Generate Energy Plans (48h)",
-        "func": "\nlet labels = [];\nlet planned = [];\nlet executed = [];\n\nlet battery = 2.5;\nconst capacity = 5.0;\nconst chargeRate = 5.0;\nconst dischargeRate = 5.0 / 3;\nconst lookAhead = 2;\n\nfunction simulateLoad(hour, season) {\n    if (season === 'winter') {\n        if (hour >= 6 && hour < 9) return 0.25 + 0.35 * Math.sin((hour - 6)/3);\n        if (hour >= 16 && hour < 20) return 0.6 + 0.5 * Math.sin((hour - 16)/4);\n        return 0.4;\n    }\n    if (season === 'summer') {\n        if (hour >= 12 && hour < 16) return 0.8 + 1.2 * Math.sin((hour - 12)/4);\n        return 0.4;\n    }\n    if (season === 'spring' || season === 'autumn') {\n        if (hour >= 7 && hour < 10) return 0.4 + 0.4 * Math.sin((hour - 7)/3);\n        if (hour >= 17 && hour < 21) return 0.6 + 0.6 * Math.sin((hour - 17)/4);\n        return 0.35;\n    }\n    return 0.4;\n}\n\nlet data = msg.payload;\nlet avg = msg.averagePrice;\nlet now = new Date();\nlet month = now.getMonth() + 1;\nlet season = (month <= 2 || month === 12) ? \"winter\" : (month <= 5) ? \"spring\" : (month <= 8) ? \"summer\" : \"autumn\";\n\ndata.forEach((row, idx, arr) => {\n    let label = row.Date + \" \" + row.Time;\n    labels.push(label);\n\n    let price = row.price_no_tax;\n    let solar = row.solar_production || 0;\n    let usage = simulateLoad(parseInt(row.Time.split(\":\")[0]), season);\n\n    // Look ahead to find any low price coming\n    let upcomingPrices = arr.slice(idx+1, idx+1+lookAhead).map(r => r.price_no_tax);\n    let lowComing = upcomingPrices.some(p => p !== null && p < 0.03);\n\n    let action = 0; // 1 = charge/solar, -1 = discharge, 0 = grid\n    let executedAction = 0;\n    let shelly = false;\n\n    // Pre-discharge if low price coming\n    if (lowComing && battery > 0) {\n        let discharge = Math.min(dischargeRate, battery);\n        battery -= discharge;\n        action = -1;\n    }\n\n    if (price < 0.03) {\n        let charge = Math.min(chargeRate, capacity - battery);\n        battery += charge;\n        action = 1;\n        shelly = true;\n    } else if (solar > usage) {\n        let charge = Math.min(chargeRate, capacity - battery);\n        battery += charge;\n        action = 1;\n        shelly = true;\n    } else if (price > avg * 1.2 && battery > 0) {\n        let discharge = Math.min(dischargeRate, battery);\n        battery -= discharge;\n        action = -1;\n    } else {\n        action = 0;\n    }\n\n    battery = Math.max(0, Math.min(battery, capacity));\n    executedAction = (solar > usage) ? 1 : (price > avg * 1.2 ? -1 : 0);\n\n    planned.push(action);\n    executed.push(executedAction);\n});\n\nmsg.preplan = {\n    payload: [{\n        series: [\"Planned\"],\n        data: [planned],\n        labels: labels\n    }]\n};\n\nmsg.execution = {\n    payload: [{\n        series: [\"Executed\"],\n        data: [executed],\n        labels: labels\n    }]\n};\n\nreturn [msg.preplan, msg.execution];\n",
-        "outputs": 2,
-        "x": 1310,
-        "y": 320,
-        "wires": [
-            [
-                "planned_chart_corrected"
-            ],
-            [
-                "4ce3ea4c4757ef41",
-                "acfa73e002b8d8c9"
-            ]
-        ]
-    },
-    {
-        "id": "829cd47add88d38a",
-        "type": "ui_chart",
-        "z": "044f20c844345fc7",
-        "name": "Planned Energy Source (48h)",
-        "group": "group1",
-        "order": 8,
-        "width": "12",
-        "height": "5",
-        "label": "Planned Energy Source (Next 48h)",
-        "chartType": "line",
-        "legend": "true",
-        "xformat": "dd HH:mm",
-        "interpolate": "step-after",
-        "nodata": "",
-        "dot": false,
-        "ymin": "-1",
-        "ymax": "1",
-        "removeOlder": 48,
-        "removeOlderPoints": "",
-        "removeOlderUnit": "hour",
-        "cutout": "",
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#003f5c",
-            "#ffa600",
-            "#2f4b7c",
-            "#00bfae",
-            "#000000",
-            "#000000",
-            "#000000",
-            "#000000",
-            "#000000"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 1660,
-        "y": 360,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "4ce3ea4c4757ef41",
-        "type": "ui_chart",
-        "z": "044f20c844345fc7",
-        "name": "Executed Energy Source (48h)",
-        "group": "group1",
-        "order": 9,
-        "width": "12",
-        "height": "5",
-        "label": "Executed Energy Source (From Tibber)",
-        "chartType": "line",
-        "legend": "true",
-        "xformat": "dd HH:mm",
-        "interpolate": "step-after",
-        "nodata": "payload",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": 48,
-        "removeOlderPoints": "",
-        "removeOlderUnit": "hour",
-        "cutout": "",
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#a05195",
-            "#ff7c43",
-            "#d45087",
-            "#665191",
-            "#000000",
-            "#000000",
-            "#000000",
-            "#000000",
-            "#000000"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 1660,
-        "y": 440,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "11dbdb6741035383",
-        "type": "ui_chart",
-        "z": "044f20c844345fc7",
-        "name": "Battery Level (48h)",
-        "group": "group1",
-        "order": 8,
-        "width": "12",
-        "height": "5",
-        "label": "Battery Level (kWh)",
-        "chartType": "line",
-        "legend": "true",
-        "xformat": "dd HH:mm",
-        "interpolate": "step-after",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": 48,
-        "removeOlderUnit": "hour",
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#003f5c",
-            "#ffa600",
-            "#2f4b7c",
-            "#00bfae"
-        ],
-        "outputs": 1,
-        "x": 820,
-        "y": 480,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "da947269b496a966",
-        "type": "ui_chart",
-        "z": "044f20c844345fc7",
-        "name": "Shelly Switch State (48h)",
-        "group": "group1",
-        "order": 8,
-        "width": "12",
-        "height": "5",
-        "label": "Switch State",
-        "chartType": "line",
-        "legend": "true",
-        "xformat": "dd HH:mm",
-        "interpolate": "step-after",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": 48,
-        "removeOlderUnit": "hour",
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#003f5c",
-            "#ffa600",
-            "#2f4b7c",
-            "#00bfae"
-        ],
-        "outputs": 1,
-        "x": 820,
-        "y": 520,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "planned_chart_corrected",
-        "type": "ui_chart",
-        "z": "044f20c844345fc7",
-        "name": "Planned Energy Source (Next 48h)",
-        "group": "group1",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "label": "Planned Energy Source (Next 48h)",
-        "chartType": "line",
-        "legend": "true",
-        "xformat": "auto",
-        "interpolate": "linear",
-        "nodata": "No data yet",
-        "dot": false,
-        "ymin": "-1",
-        "ymax": "1",
-        "removeOlder": "48",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "3600",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#ff7f0e",
-            "#2ca02c",
-            "#000000",
-            "#000000",
-            "#000000",
-            "#000000",
-            "#000000",
-            "#000000"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 1300,
-        "y": 500,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "acfa73e002b8d8c9",
+        "id": "659fa8ea788c463a",
         "type": "debug",
-        "z": "044f20c844345fc7",
-        "name": "debug 3",
-        "active": false,
+        "z": "4f197a1ac03259d0",
+        "name": "debug 8",
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1580,
+        "x": 940,
         "y": 300,
         "wires": []
     },
     {
-        "id": "fix_mapping_node",
-        "type": "function",
-        "z": "044f20c844345fc7",
-        "name": "Fix Data Mapping",
-        "func": "let rows = msg.payload;\n\n// Fix mapping: convert raw column values into working fields\nrows.forEach(r => {\n    r.price_no_tax = parseFloat(r[\"Prices[EUR/kWh]\"]) || parseFloat(r[\"UnitPrice[EUR/kWh]\"]) || 0;\n    r.solar_production = parseFloat(r[\"Solar Production Estimate - kW\"]) || 0;\n});\n\nlet avgPrice = rows.reduce((acc, r) => acc + r.price_no_tax, 0) / rows.length;\n\nmsg.payload = rows;\nmsg.averagePrice = avgPrice;\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 990,
-        "y": 280,
-        "wires": [
-            [
-                "550b29ee5b8cabcb",
-                "a7baa8ae584a4a55",
-                "85e92626c4d9887e",
-                "b5dec39ee7f45a1b"
-            ]
-        ]
-    },
-    {
-        "id": "b5dec39ee7f45a1b",
+        "id": "f9a20ac9abfcebc5",
         "type": "debug",
-        "z": "044f20c844345fc7",
-        "name": "debug 8",
-        "active": false,
+        "z": "4f197a1ac03259d0",
+        "name": "debug 12",
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1160,
-        "y": 400,
+        "x": 900,
+        "y": 600,
         "wires": []
     },
     {
@@ -3628,7 +3213,7 @@
         "height": 8,
         "className": "",
         "interpolation": "linear",
-        "x": 1190,
+        "x": 1140,
         "y": 140,
         "wires": [
             []
@@ -3704,13 +3289,13 @@
         "name": "Grid Consumption (kWh)",
         "label": "Grid Consumption (kWh)",
         "order": 9,
-        "chartType": "line",
+        "chartType": "bar",
         "category": "topic",
         "categoryType": "msg",
         "xAxisLabel": "Time",
         "xAxisProperty": "x",
         "xAxisPropertyType": "property",
-        "xAxisType": "time",
+        "xAxisType": "category",
         "xAxisFormat": "dd/LL HH:mm",
         "xAxisFormatType": "custom",
         "xmin": "",
@@ -3752,7 +3337,7 @@
         "height": 8,
         "className": "",
         "interpolation": "linear",
-        "x": 1210,
+        "x": 1150,
         "y": 60,
         "wires": [
             []
@@ -4000,7 +3585,6 @@
         "id": "ba79080895fdc83f",
         "type": "ui-chart",
         "z": "c7803a1abcb5e1e8",
-        "d": true,
         "group": "4f854fe43a9cd673",
         "name": "Negative prices (EUR/kWh)",
         "label": "Negative prices (EUR/kWh)",
@@ -4053,8 +3637,8 @@
         "height": "8",
         "className": "",
         "interpolation": "linear",
-        "x": 1200,
-        "y": 360,
+        "x": 1180,
+        "y": 380,
         "wires": [
             []
         ]
@@ -4145,8 +3729,8 @@
         "onceDelay": 0.1,
         "payload": "",
         "payloadType": "date",
-        "x": 580,
-        "y": 320,
+        "x": 340,
+        "y": 160,
         "wires": [
             [
                 "2d31c025626216b7"
@@ -4159,14 +3743,16 @@
         "z": "8894e458c60c45f5",
         "mydb": "962221d873768ba1",
         "sqlquery": "fixed",
-        "sql": "\nSELECT \n  Date,\n  Time,\n  \"Prices[EUR/kWh]\" AS price_no_tax,\n  \"Solar Production Estimate - kW\" AS solar_production,\n  \"Consumption[kWh]\" AS solar_consumption\nFROM data\nWHERE Date = date('now') OR Date = date('now', '+1 day')\n",
+        "sql": "\nSELECT \n  Date,\n  Time,\n  \"Consumption_UnitPriceVAT[EUR/kWh]\" AS price_no_tax,\n  \"solar_Production_Estimate[kW]\" AS solar_production,\n  \"Consumption[kWh]\" AS solar_consumption\nFROM data\nWHERE Date = date('now') OR Date = date('now', '+1 day')\n",
         "name": "Fetch Energy Data (Today + Tomorrow)",
         "x": 660,
         "y": 160,
         "wires": [
             [
                 "067eb77a3f80dddd",
-                "32065ce5d6edb24c"
+                "bec2c04de08b7999",
+                "67efda5c833a0317",
+                "correct_plan_node"
             ]
         ]
     },
@@ -4175,7 +3761,7 @@
         "type": "debug",
         "z": "8894e458c60c45f5",
         "name": "Fetched 48h Data",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4241,25 +3827,6 @@
         "y": 240,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "706a41a0b0e13f78",
-        "type": "function",
-        "z": "8894e458c60c45f5",
-        "name": "Generate Energy Plans (48h)",
-        "func": "\nlet labels = [];\nlet planned = [];\nlet executed = [];\n\nlet battery = 2.5;\nconst capacity = 5.0;\nconst chargeRate = 5.0;\nconst dischargeRate = 5.0 / 3;\nconst lookAhead = 2;\n\nfunction simulateLoad(hour, season) {\n    if (season === 'winter') {\n        if (hour >= 6 && hour < 9) return 0.25 + 0.35 * Math.sin((hour - 6)/3);\n        if (hour >= 16 && hour < 20) return 0.6 + 0.5 * Math.sin((hour - 16)/4);\n        return 0.4;\n    }\n    if (season === 'summer') {\n        if (hour >= 12 && hour < 16) return 0.8 + 1.2 * Math.sin((hour - 12)/4);\n        return 0.4;\n    }\n    if (season === 'spring' || season === 'autumn') {\n        if (hour >= 7 && hour < 10) return 0.4 + 0.4 * Math.sin((hour - 7)/3);\n        if (hour >= 17 && hour < 21) return 0.6 + 0.6 * Math.sin((hour - 17)/4);\n        return 0.35;\n    }\n    return 0.4;\n}\n\nlet data = msg.payload;\nlet avg = msg.averagePrice;\nlet now = new Date();\nlet month = now.getMonth() + 1;\nlet season = (month <= 2 || month === 12) ? \"winter\" : (month <= 5) ? \"spring\" : (month <= 8) ? \"summer\" : \"autumn\";\n\ndata.forEach((row, idx, arr) => {\n    let label = row.Date + \" \" + row.Time;\n    labels.push(label);\n\n    let price = row.price_no_tax;\n    let solar = row.solar_production || 0;\n    let usage = simulateLoad(parseInt(row.Time.split(\":\")[0]), season);\n\n    // Look ahead to find any low price coming\n    let upcomingPrices = arr.slice(idx+1, idx+1+lookAhead).map(r => r.price_no_tax);\n    let lowComing = upcomingPrices.some(p => p !== null && p < 0.03);\n\n    let action = 0; // 1 = charge/solar, -1 = discharge, 0 = grid\n    let executedAction = 0;\n    let shelly = false;\n\n    // Pre-discharge if low price coming\n    if (lowComing && battery > 0) {\n        let discharge = Math.min(dischargeRate, battery);\n        battery -= discharge;\n        action = -1;\n    }\n\n    if (price < 0.03) {\n        let charge = Math.min(chargeRate, capacity - battery);\n        battery += charge;\n        action = 1;\n        shelly = true;\n    } else if (solar > usage) {\n        let charge = Math.min(chargeRate, capacity - battery);\n        battery += charge;\n        action = 1;\n        shelly = true;\n    } else if (price > avg * 1.2 && battery > 0) {\n        let discharge = Math.min(dischargeRate, battery);\n        battery -= discharge;\n        action = -1;\n    } else {\n        action = 0;\n    }\n\n    battery = Math.max(0, Math.min(battery, capacity));\n    executedAction = (solar > usage) ? 1 : (price > avg * 1.2 ? -1 : 0);\n\n    planned.push(action);\n    executed.push(executedAction);\n});\n\nmsg.preplan = {\n    payload: [{\n        series: [\"Planned\"],\n        data: [planned],\n        labels: labels\n    }]\n};\n\nmsg.execution = {\n    payload: [{\n        series: [\"Executed\"],\n        data: [executed],\n        labels: labels\n    }]\n};\n\nreturn [msg.preplan, msg.execution];\n",
-        "outputs": 2,
-        "x": 1310,
-        "y": 320,
-        "wires": [
-            [
-                "0485ec35757230a3"
-            ],
-            [
-                "194c68c46a92bc5b",
-                "8a8b376f2398bf59"
-            ]
         ]
     },
     {
@@ -4469,7 +4036,7 @@
         "type": "debug",
         "z": "8894e458c60c45f5",
         "name": "debug 3",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4481,42 +4048,26 @@
         "wires": []
     },
     {
-        "id": "32065ce5d6edb24c",
+        "id": "correct_plan_node",
         "type": "function",
         "z": "8894e458c60c45f5",
-        "name": "Fix Data Mapping",
-        "func": "let rows = msg.payload;\n\n// Fix mapping: convert raw column values into working fields\nrows.forEach(r => {\n    r.price_no_tax = parseFloat(r[\"Prices[EUR/kWh]\"]) || parseFloat(r[\"UnitPrice[EUR/kWh]\"]) || 0;\n    r.solar_production = parseFloat(r[\"Solar Production Estimate - kW\"]) || 0;\n});\n\nlet avgPrice = rows.reduce((acc, r) => acc + r.price_no_tax, 0) / rows.length;\n\nmsg.payload = rows;\nmsg.averagePrice = avgPrice;\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
+        "name": "Generate Corrected Energy Plans (48h)",
+        "func": "let labels = [];\nlet planned = [];\nlet executed = [];\n\nlet battery = 2.5;\nconst capacity = 5.0;\nconst chargeRate = 5.0;\nconst dischargeRate = 5.0 / 3;\nconst lookAhead = 2;\n\nlet now = new Date();\nlet month = now.getMonth() + 1;\nlet season = (month <= 2 || month === 12) ? \"winter\" : (month <= 5) ? \"spring\" : (month <= 8) ? \"summer\" : \"autumn\";\n\nfunction simulateLoad(hour, season) {\n    if (season === 'winter') {\n        if (hour >= 6 && hour < 9) return 0.25 + 0.35 * Math.sin((hour - 6)/3 * Math.PI);\n        if (hour >= 16 && hour < 20) return 0.6 + 0.5 * Math.sin((hour - 16)/4 * Math.PI);\n        return 0.4;\n    }\n    if (season === 'summer') {\n        if (hour >= 12 && hour < 16) return 0.8 + 1.2 * Math.sin((hour - 12)/4 * Math.PI);\n        return 0.4;\n    }\n    if (season === 'spring' || season === 'autumn') {\n        if (hour >= 7 && hour < 10) return 0.4 + 0.4 * Math.sin((hour - 7)/3 * Math.PI);\n        if (hour >= 17 && hour < 21) return 0.6 + 0.6 * Math.sin((hour - 17)/4 * Math.PI);\n        return 0.35;\n    }\n    return 0.4;\n}\n\nlet data = msg.payload;\nlet avg = msg.averagePrice || 0.2;\n\ndata.forEach((row, idx, arr) => {\n    let label = row.Date + \" \" + row.Time;\n    labels.push(label);\n\n    let price = parseFloat(row.price_no_tax) || 0;\n    let solar = parseFloat(row.solar_production) || 0;\n    let usage = simulateLoad(parseInt(row.Time.split(\":\")[0]), season);\n\n    let action = 0;\n    let executedAction = 0;\n\n    if ((price < 0.03 || solar > usage) && battery < capacity) {\n        battery += Math.min(chargeRate, capacity - battery);\n        action = 1;\n    } else if (price > avg * 1.2 && battery > 0) {\n        battery -= Math.min(dischargeRate, battery);\n        action = -1;\n    } else {\n        action = 0;\n    }\n\n    battery = Math.max(0, Math.min(battery, capacity));\n    executedAction = (solar > usage) ? 1 : (price > avg * 1.2 ? -1 : 0);\n\n    planned.push(action);\n    executed.push(executedAction);\n});\n\nlet preplanMsg = {\n    payload: [{\n        series: [\"Planned\"],\n        data: [planned],\n        labels: labels\n    }]\n};\n\nlet executionMsg = {\n    payload: [{\n        series: [\"Executed\"],\n        data: [executed],\n        labels: labels\n    }]\n};\n\nreturn [preplanMsg, executionMsg];",
+        "outputs": 2,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 990,
-        "y": 280,
+        "x": 960,
+        "y": 300,
         "wires": [
             [
-                "bec2c04de08b7999",
-                "67efda5c833a0317",
-                "706a41a0b0e13f78",
-                "1ca65e2bfcec6f84"
+                "8a8b376f2398bf59"
+            ],
+            [
+                "a04da5f21b461eb0",
+                "194c68c46a92bc5b"
             ]
         ]
-    },
-    {
-        "id": "1ca65e2bfcec6f84",
-        "type": "debug",
-        "z": "8894e458c60c45f5",
-        "name": "debug 8",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1160,
-        "y": 400,
-        "wires": []
     }
 ]
