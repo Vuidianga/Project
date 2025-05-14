@@ -5,6 +5,7 @@ import json
 import warnings
 from datetime import datetime
 
+
 def process_consumption_data(input_folder, output_csv_path, sqlite_db_path, table_name="consumption"):
     # Suppress future warnings
     warnings.simplefilter(action='ignore', category=FutureWarning)
@@ -24,7 +25,7 @@ def process_consumption_data(input_folder, output_csv_path, sqlite_db_path, tabl
     ]
 
     # Initialize empty DataFrame with all columns
-    combined_data = pd.DataFrame(columns=all_columns)
+    new_data = pd.DataFrame(columns=all_columns)
 
     # Process all JSON files in the input folder
     for file in os.listdir(input_folder):
@@ -48,7 +49,7 @@ def process_consumption_data(input_folder, output_csv_path, sqlite_db_path, tabl
                     # Create DataFrame from the processed data
                     temp_df = pd.DataFrame([processed_data])
 
-                    # Ensure all columns are present (in case new columns were added)
+                    # Ensure all columns are present
                     for col in all_columns:
                         if col not in temp_df.columns:
                             temp_df[col] = None
@@ -57,90 +58,96 @@ def process_consumption_data(input_folder, output_csv_path, sqlite_db_path, tabl
                     temp_df = temp_df[all_columns]
 
                     # Find existing rows with same Date+Time
-                    if not combined_data.empty:
-                        mask = (combined_data['Date'] == processed_data['Date']) & \
-                               (combined_data['Time'] == processed_data['Time'])
+                    if not new_data.empty:
+                        mask = (new_data['Date'] == processed_data['Date']) & \
+                               (new_data['Time'] == processed_data['Time'])
                         if mask.any():
                             # Update existing row with new non-null values
                             idx = mask.idxmax()
                             for col in all_columns:
                                 if pd.notna(temp_df[col].iloc[0]):
-                                    combined_data.at[idx, col] = temp_df[col].iloc[0]
+                                    new_data.at[idx, col] = temp_df[col].iloc[0]
                             continue
 
                     # If no existing row, append new data
-                    combined_data = pd.concat([combined_data, temp_df], ignore_index=True)
+                    new_data = pd.concat([new_data, temp_df], ignore_index=True)
 
             except Exception as e:
                 print(f"Warning: Failed to process file {file}: {e}")
 
-    # If no data was loaded, return
-    if combined_data.empty:
-        print("No valid JSON data found.")
+    # If no new data was loaded, return
+    if new_data.empty:
+        print("No new JSON data found.")
         return None
 
     # Check required columns
-    if 'Date' not in combined_data.columns or 'Time' not in combined_data.columns:
+    if 'Date' not in new_data.columns or 'Time' not in new_data.columns:
         print("Error: 'Date' or 'Time' columns are missing.")
         return None
 
     # Create datetime column for sorting
-    combined_data["Date_Time"] = pd.to_datetime(combined_data["Date"] + " " + combined_data["Time"])
+    new_data["Date_Time"] = pd.to_datetime(new_data["Date"] + " " + new_data["Time"])
+    new_data = new_data.sort_values(by=["Date_Time"])
 
-    # Sort by datetime in DESCENDING order (newest first)
-    combined_data = combined_data.sort_values(by=["Date_Time"], ascending=False)
-
-    # Handle existing CSV file
+    # Handle CSV file (same as before)
     if os.path.exists(output_csv_path):
         try:
-            existing_data = pd.read_csv(output_csv_path)
-
-            # Ensure all columns are present in existing data
+            existing_csv_data = pd.read_csv(output_csv_path)
             for col in all_columns:
-                if col not in existing_data.columns:
-                    existing_data[col] = None
-
-            # Reorder columns
-            existing_data = existing_data[all_columns]
-
-            # Create datetime column for existing data
-            existing_data["Date_Time"] = pd.to_datetime(existing_data["Date"] + " " + existing_data["Time"])
-
-            # Combine with new data (new data first)
-            combined_data = pd.concat([combined_data, existing_data], ignore_index=True)
-
-            # Remove duplicates (keeping first occurrence which will be the newer data)
-            combined_data = combined_data.drop_duplicates(
-                subset=['Date', 'Time'],
-                keep='first'
-            )
-
-            # Sort again in descending order
-            combined_data = combined_data.sort_values(by=["Date_Time"], ascending=False)
-
+                if col not in existing_csv_data.columns:
+                    existing_csv_data[col] = None
+            existing_csv_data = existing_csv_data[all_columns]
+            
+            # Combine with new data and remove duplicates
+            combined_csv_data = pd.concat([existing_csv_data, new_data], ignore_index=True)
+            combined_csv_data = combined_csv_data.drop_duplicates(subset=['Date', 'Time'], keep='last')
+            combined_csv_data["Date_Time"] = pd.to_datetime(combined_csv_data["Date"] + " " + combined_csv_data["Time"])
+            combined_csv_data = combined_csv_data.sort_values(by=["Date_Time"])
         except Exception as e:
             print(f"Warning: Failed to read existing CSV, using new data only. Error: {e}")
-
-    # Convert lists to strings for database compatibility
-    combined_data['user_calibrated_phase'] = combined_data['user_calibrated_phase'].apply(
-        lambda x: str(x) if isinstance(x, list) else x
-    )
+            combined_csv_data = new_data
+    else:
+        combined_csv_data = new_data
 
     # Save to CSV
     try:
-        combined_data.to_csv(output_csv_path, index=False)
+        combined_csv_data.to_csv(output_csv_path, index=False)
         print(f"Data successfully saved to CSV at {output_csv_path}")
     except Exception as e:
         print(f"Error: Failed to write CSV. {e}")
         return None
 
-    # Save to SQLite database
+    # Handle SQLite database - THE KEY FIX IS HERE
     try:
         conn = sqlite3.connect(sqlite_db_path)
-        combined_data.to_sql(
+        
+        # Read existing database data
+        try:
+            existing_db_data = pd.read_sql(f"SELECT * FROM {table_name}", conn)
+            for col in all_columns:
+                if col not in existing_db_data.columns:
+                    existing_db_data[col] = None
+            existing_db_data = existing_db_data[all_columns]
+        except:
+            # Table doesn't exist or is empty
+            existing_db_data = pd.DataFrame(columns=all_columns)
+        
+        # Combine with new data and remove duplicates
+        combined_db_data = pd.concat([existing_db_data, new_data], ignore_index=True)
+        combined_db_data = combined_db_data.drop_duplicates(subset=['Date', 'Time'], keep='last')
+        combined_db_data["Date_Time"] = pd.to_datetime(combined_db_data["Date"] + " " + combined_db_data["Time"])
+        combined_db_data = combined_db_data.sort_values(by=["Date_Time"])
+        
+        # Convert lists to strings for database compatibility
+        combined_db_data['user_calibrated_phase'] = combined_db_data['user_calibrated_phase'].apply(
+            lambda x: str(x) if isinstance(x, list) else x
+        )
+        
+        # Write the complete dataset back to database
+        combined_db_data.to_sql(
             table_name,
             conn,
-            if_exists='replace',
+            if_exists='replace',  # Safe because we've merged all data
             index=False,
             dtype={'user_calibrated_phase': 'TEXT'}
         )
@@ -150,7 +157,7 @@ def process_consumption_data(input_folder, output_csv_path, sqlite_db_path, tabl
         print(f"Error: Failed to write to SQLite database. {e}")
         return None
 
-    return combined_data
+    return combined_db_data
 
 if __name__ == "__main__":
     process_consumption_data(

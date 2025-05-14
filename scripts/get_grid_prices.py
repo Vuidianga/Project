@@ -27,13 +27,13 @@ def get_tariff(t: time) -> float:
 # Align current time to the next 15-minute mark
 now = datetime.now().replace(second=0, microsecond=0)
 minute = now.minute
-remainder = (15 - minute % 15) % 15
+remainder = (60 - minute % 60) % 60
 start_time = now + timedelta(minutes=remainder)
 
 # Generate 96 intervals (15 min for 24h)
 print('Date,Time,Timezone,Grid_prices[EUR/kWh]')
-for i in range(96):
-    timestamp = start_time + timedelta(minutes=15 * i)
+for i in range(60):
+    timestamp = start_time + timedelta(minutes=60 * i)
     date_str = timestamp.strftime('%Y-%m-%d')
     time_str = timestamp.strftime('%H:%M')
     price = get_tariff(timestamp.time())

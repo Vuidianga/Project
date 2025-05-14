@@ -92,9 +92,9 @@ def get_market_price():
                         })
 
         if negative_prices:
-            print('Date,Time,Timezone,market_prices[EUR/kWh]')
+            print('Date,Time,Timezone,Negative_prices[EUR/kWh]')
             for item in negative_prices:
-                print(f"{item['date']},{item['time']},{item['timezone']},{item['price']} EUR/kWh")
+                print(f"{item['date']},{item['time']},{item['timezone']},{item['price']}")
 
         else:
             print("\n No negative prices found in the forecast.")
